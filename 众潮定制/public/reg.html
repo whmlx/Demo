@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	body{
+		margin:0px;
+	}
+	.bgPng{
+		position:fixed;
+		width:100%;
+		height:100%;
+		background-image:url(../image/largebg.png);
+		background-position:center;
+		min-width:1200px;
+		overflow-y:scroll;
+		background-size:cover;
+	}
+	.icon-login{
+		display:inline-block;
+		background:url(../image/login_register.png)no-repeat;
+	}
+	.goBack{
+		position:absolute;
+		left:60px;
+		top:40px;
+		height:40px !important;
+		width:40px !important;
+		background-position:-178px 0 !important;
+	}
+	.goHome{
+		position:absolute;
+		left:118px;
+		top:40px;
+		height:40px;
+		line-height:40px;
+		font-size:18px;
+		color:#fff;
+		text-decoration:none;
+	}
+	.reg-wrap{
+		margin-top:-290px;
+	}
+	section{
+		width:560px;
+		text-align:center;
+		position:absolute;
+		top:50%;
+		right:0;
+		left:0;
+		margin:auto;
+		border:0px solid red;
+	}
+	.logo{
+		display:block;
+		width:302px;
+		height:82px;
+		margin:0 auto 40px;
+	}
+	img{
+		border:none;
+	}
+	#reg{
+		width:100%;
+		background:#fff;
+		position:relative;
+		padding:35px 0;
+	}
+	.pd-form .form-head2{
+		font-size:28px;
+		font-weight:bold;
+	}
+	.pd-form .form-head{
+		color:#333;
+		text-align:center;
+		margin-bottom:36px;
+	}
+	.login-yz{
+		position:absolute;
+		left:92px;
+		top:78px;
+	}
+	.yz{
+		text-align:left:
+		color:#ca0b3d;
+		height:30px;
+		line-height:30px;
+		font-size:14px;
+	}
+	.pd-form .form-input {
+		width: 378px;
+		height: 38px;
+		margin: 0 auto 10px;
+		text-align: left;
+		border: 1px solid #e6e6e6;
+		position: relative;
+	}	
+	.icon-login {
+		display: inline-block;
+		width: 38px;
+		height: 38px;
+		background: url(../image/login_register.png) no-repeat;
+		background-position: 11px 10px;
+	}
+	.pd-form .form-input input {
+		float: right;
+		width: 330px;
+		height: 100%;
+		outline: none;
+		border: none;
+		color: #262626 !important;
+		padding: 0 5px;
+	}
+	.pd-form .form-input .icon-phone {
+		background-position: 10px -25px;
+	}
+	.pd-form .form-input .icon-password {
+		background-position: 10px -61px;
+	}
+	.form-code {
+   width: 378px;
+   height: 40px;
+   margin: auto;
+   position: relative;
+	}
+	.input-code {
+   float: left;
+   width: 238px;
+   height: 38px;
+   border: 1px solid #e6e6e6;
+   text-align: left;
+	}
+	.input-code i {
+   display: inline-block;
+   width: 38px;
+   height: 38px;
+	}
+	.icon-code {
+   background-position: 11px -94px;
+	}
+	.input-code input {
+	background: transparent;
+	 height: 100%;
+   width: 190px;
+   float: right;
+   border: none;
+   outline: none;
+   padding: 0 5px;
+	}
+	.get-code {
+   float: right;
+   width: 120px;
+   height: 40px;
+   font-size: 14px;
+   color: #fff;
+	 background: #404040;
+   border: none;
+   outline: none;
+   border-radius: 2px;
+	}
+
+	.button_reg{
+		width:378px;
+		height:50px;
+		border:none;
+		margin:0 auto 20px;	
+		padding-top:30px;
+	}
+	#reg_1{
+		height:50px;
+		background:#000;
+		color:#fff;
+		font-size:18px;
+		border:none;
+		border-radius:5px;
+	}
+	.form-foot{
+		width:380px;
+		border:0px solid red;
+		margin:0 auto 40px;
+	}
+	.form-foot a{
+		text-decoration:none;
+		color:black;
+	}
+	.link-left{
+		float:left;
+		font-size:12px;
+	}
+	.link-right{
+		float:right;
+		font-size:18px;
+	}
+
+	#error{
+		position:absolute;
+		left:385px;
+		right:-200px;
+		top:8px;
+		border:0px solid red;
+		display:none;
+	}
+	#error1{
+		position:absolute;
+		left:385px;
+		right:-200px;
+		top:8px;
+		border:0px solid red;
+		display:none;
+	}
+	#error2{
+		position:absolute;
+		width:200px;
+		left:385px;
+		right:-200px;
+		top:8px;
+		border:0px solid red;
+		display:none;
+	}
+	#error3{
+		position:absolute;
+		left:385px;
+		right:-200px;
+		top:8px;
+		border:0px solid red;
+		display:none;
+	}
+	#error4{
+		position:absolute;
+		left:385px;
+		right:-200px;
+		top:8px;
+		border:0px solid red;
+		display:none;
+	}
+	.InfoImg{
+		width:6px;
+		height:24px;
+		float:left;
+		background:url(../image/reg/triangle.png)center no-repeat;
+	}
+	.reg-yz{
+		float:left;
+		font-size:12px;
+		color:#fff;
+		padding:4px;
+		background:#ca0b3d;
+		border-radius:2px;
+	}
+</style>	
+<script>
+	function show(){
+		var $uname=document.getElementById("uname").value; 
+		if($uname==""){
+			document.getElementById('error').style.display="inline";
+			document.getElementById('b1').style.border="1px solid red";
+		}else{
+			document.getElementById('error').style.display="none";
+			document.getElementById('b1').style.border="1px solid #e6e6e6";
+		}
+	}
+	//验证手机号是否重复
+	function show1(){
+		var $phone=document.getElementById("phone").value;
+		if($phone=="" || !(/^1[3456789]\d{9}$/.test($phone))){
+			document.getElementById('error1').style.display="inline";
+			document.getElementById('error4').style.display="none";
+			document.getElementById('b2').style.border="1px solid red";
+			return;
+		}else{
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+			if(xhr.readyState==4 && xhr.status==200){
+				var result=xhr.responseText;
+				if(result==1){
+					document.getElementById('error1').style.display="none";
+					document.getElementById('error4').style.display="inline";
+					document.getElementById('b2').style.border="1px solid red";
+					document.getElementById("reg_1").disabled =true;
+				}else{
+					document.getElementById('error4').style.display="none";
+					document.getElementById('error1').style.display="none";
+					document.getElementById('b2').style.border="1px solid #e6e6e6";
+					document.getElementById("reg_1").disabled =false;
+				}
+			}
+		}
+			xhr.open('get',`reg/v1/reg/${$phone}`,true);
+			xhr.send();
+		}
+	}
+			
+	function show2(){
+		var $pwd=document.getElementById("pwd").value; 
+		if($pwd=="" || !(/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/.test($pwd))){
+			document.getElementById('error2').style.display="inline";
+			document.getElementById('b3').style.border="1px solid red";
+			document.getElementById("reg_1").disabled =true;
+		}else{
+			document.getElementById('error2').style.display="none";
+			document.getElementById('b3').style.border="1px solid #e6e6e6";
+			document.getElementById("reg_1").disabled =false;
+		}
+	}
+	function show3(){
+		var $code=document.getElementById("code").value; 
+		if($code=="" || $code.length!=6){
+			document.getElementById('error3').style.display="inline";
+			document.getElementById('b4').style.border="1px solid red";
+		}else{
+			document.getElementById('error3').style.display="none";
+			document.getElementById('b4').style.border="1px solid #e6e6e6";
+		}
+	}
+	function bigImg(x){
+		x.style.border="1px solid black";
+	}
+	function normalImg(x){
+		x.style.border="1px solid #e6e6e6";
+	}
+
+	//注册
+	function reg(){
+		var $uname=uname.value;
+		var $phone=phone.value;
+		var $pwd=pwd.value;
+
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4 && xhr.status==200){
+				
+				var result=xhr.responseText;
+				if(result=='1'){
+					alert('注册成功');
+					//window.location.href='http://127.0.0.1:8080/head.html';
+					localStorage.setItem("name",uname.value);
+					window.open("http://127.0.0.1:8080/index.html", "_self");
+					
+				}else{
+					alert('注册失败');
+				}
+			}
+		}
+			xhr.open("post","/reg/v1/reg",true);
+			var formdata="uname="+$uname+"&phone="+$phone+"&pwd="+$pwd;
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			xhr.send(formdata);
+	}
+
+
+</script>
+<body>
+	<div class="bgPng">
+		<a href="index.html" class="icon-login goBack"></a>
+		<a href="index.html" class="goHome">返回商城主页</a>
+
+		<section class="reg-wrap pd-form">
+			<a href="" class="logo">
+			<img src="../image/reg/login_reg_logo.png" alt="">
+			</a>
+			<div id="reg">
+				<p class="form-head form-head2">注册</p>
+				<p class="yz login-yz"></p>
+
+				<p class="form-input form-input1" id="b1" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
+					<i class="icon-login icon-gongsi"></i>
+					<input type="text" class="ph-color" id="uname" placeholder="请输入真实姓名" onblur="show()"
+					onmouseout="show()">
+					<span id="error" >
+						<span class="InfoImg"></span>
+						<span class="reg-yz">请输入真实姓名</span>
+					</span>
+				</p>
+
+				<p class="form-input form-input1" id="b2" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
+					<i class="icon-login icon-phone"></i>
+					<input type="text" class="ph-color" id="phone" placeholder="请输入手机号" onblur="show1()" onmouseout="show1()">
+					<span id="error1">
+						<span class="InfoImg"></span>
+						<span class="reg-yz">请输入正确格式的手机号</span>
+					</span>
+					<span id="error4">
+						<span class="InfoImg"></span>
+						<span class="reg-yz">手机号已注册</span>
+					</span>
+				</p>
+
+				<p class="form-input" id="b3" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
+					<i class="icon-login icon-password"></i>
+					<input type="password" class="ph-color" id="pwd" placeholder="6-20位数字或英文组合密码" onblur="show2()" onmouseout="show2()">
+					<span id="error2">
+						<span class="InfoImg"></span>
+						<span class="reg-yz">请输入6-20位数字或英文组合密码</span>
+					</span>
+				</p>
+
+				<p class="form-code">
+					<span class="input-code" id="b4" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
+						<i	class="icon-login icon-code"></i>
+						<input type="text" class="ph-color" id="code" placeholder="请输入验证码" maxlength="6" onblur="show3()" onmouseout="show3()">
+					</span>
+					<button class="get-code" onclick="sendCode()">获取验证码</button>
+					<span id="error3">
+						<span class="InfoImg"></span>
+						<span class="reg-yz">请输入验证码</span>
+					</span>
+				</p>
+
+				<p class="button_reg button_reg1">
+					<button id="reg_1" onclick="reg()" style="width:100%">注  册</button>
+				</p>
+
+				<p class="form-foot">
+					<span class="link-left">注册即同意</span>
+					<a href="" class="link-left">《用户协议》</a>
+					<a href="" class="link-right">登录</a>
+				</p>
+		</section>
+	</div>
+</body>
+</html>	

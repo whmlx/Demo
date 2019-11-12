@@ -1,0 +1,1749 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script src="js/jquery.min.js"></script>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	#clear {
+		clear: both;
+	}
+
+	/*头部*/
+	.head {
+		height: 36px;
+		background: #f2f2f2;
+		line-height: 36px;
+		min-width: 1200px;
+	}
+
+	.top {
+		width: 1190px;
+		border: 0px solid red;
+		height: 36px;
+		margin: 0 auto;
+	}
+
+	.top-left {
+		float: left;
+	}
+
+	.top-left a {
+		color: #333;
+		text-decoration: none;
+	}
+
+	.home {
+		height: 16px;
+		line-height: 16px;
+		background: url(./image/home.png) left center no-repeat;
+		padding-left: 22px;
+	}
+
+	.top-left-right {
+		float: right;
+	}
+
+	.top-right {
+		float: right;
+	}
+
+	.top-right-span a {
+		color: #333;
+		text-decoration: none;
+		padding-left: 20px;
+	}
+
+	.bottom {
+		margin-bottom: 22px;
+	}
+
+	.bottom-logo {
+		text-align: center;
+		margin-top: 32px;
+		margin-bottom: 22px;
+	}
+
+	.bottom-search {
+		text-align: center;
+	}
+
+	/*搜索框*/
+	.input-cart {
+		width: 370px;
+		height: 22px;
+		border: 0px solid red;
+		margin: 0 auto;
+	}
+
+	.input-cart input {
+		width: 300px;
+		height: 22px;
+		border: none;
+		border-bottom: 1px solid #e6e6e6;
+		outline: none;
+	}
+
+	.input-cart div {
+		float: left;
+	}
+
+	.search {
+		margin: 0 10px;
+	}
+
+	/*导航栏*/
+	#nav {
+		margin-top: 30px;
+		border-bottom: 2px solid red;
+		min-width: 1200px;
+	}
+
+	.nav {
+		width: 1190px;
+		height: 40px;
+		margin: 0 auto;
+	}
+
+	.all-class {
+		display: block;
+		width: 160px;
+		height: 40px;
+		color: #fff;
+		font-size: 16px;
+		background: url("./image/menu.png") 32px center no-repeat;
+		background-color: #fd3555;
+		text-decoration: none;
+		line-height: 40px;
+		text-indent: 60px;
+		float: left;
+	}
+
+	.nav-class ul li {
+		float: left;
+		list-style: none;
+	}
+
+	.nav-class ul li a {
+		text-decoration: none;
+		margin-left: 60px;
+		color: #333;
+		font-size: 18px;
+		line-height: 40px;
+	}
+
+	.nav-right {
+		float: right;
+		width: 268px;
+		height: 39px;
+	}
+
+	.nav-right span {
+		line-height: 40px;
+	}
+
+	.nav-right span a {
+		text-decoration: none;
+		color: #333;
+		font-size: 18px;
+	}
+
+	/*所有分类*/
+	#banner-f {
+		width: 100%;
+		height: 560px;
+		background: #f5f5f5;
+		min-width: 1200px;
+	}
+
+	#banner {
+		width: 1190px;
+		margin: 0 auto;
+		position: relative;
+		background: #f5f5f5;
+	}
+
+	.banner-left {
+		width: 160px;
+		height: 560px;
+		border: 0px solid red;
+		float: left;
+		background: white;
+	}
+
+	.banner-left ul {
+		position: absolute;
+		left: 0px;
+		top: 5px;
+	}
+
+	.banner-left ul li {
+		width: 160px;
+		height: 40px;
+		border: 0px solid red;
+		list-style: none;
+		font-size: 14px;
+		text-align: center;
+		background: #fff;
+		color: #333;
+		line-height: 40px;
+		letter-spacing: 15px;
+		text-indent: 15px;
+	}
+	/* 轮播图 */
+	#banner-right {
+		width: 1026px;
+		height: 560px;
+		border: 0px solid red;
+		float: left;
+		overflow:hidden;
+		position: relative;
+	}
+	#banner-right-ul.transition{
+		transition: all .5s liner;
+	}
+	#banner-right-ul>li{
+		width:1026px;
+		float:left;
+	}
+	#ul-idxs{
+		width:100px;
+		margin:0 auto;
+		list-style:none;
+		position:absolute;
+		bottom:25px;
+		left:50%;
+		margin-left:-50px;
+	}
+	#ul-idxs>li{
+		float:left;
+		width:10px; height:10px;
+		background-color:red;
+		border-radius:5px;
+		margin:0 5px;
+		cursor:pointer;
+    }
+	#ul-idxs>li.active{
+		background-color:blue;
+	}
+
+
+	/*本季新品*/
+	#new-f {
+		width: 100%;
+		background: #f5f5f5;
+		min-width: 1200px;
+	}
+
+	#new {
+		width: 1190px;
+		height: 456px;
+		border: 0px solid red;
+		margin: 0 auto;
+		position: relative;
+		padding-bottom: 24px;
+	}
+
+	.new-head {
+		padding-top: 30px;
+	}
+
+	.new-head-left {
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	.new-head-right {
+		float: right;
+	}
+
+	.new-head-right a {
+		text-decoration: none;
+		color: #333;
+		font-weight: bold;
+	}
+
+	.new-goods ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		float: left;
+	}
+
+	.new-goods ul li:not(:last-child) {
+
+		margin-right: 25px;
+	}
+
+	.new-goods ul li {
+		float: left;
+	}
+
+	.new-goods .goods-4 {
+		margin-right: 0;
+	}
+
+	.new-goods img {
+		width: 278px;
+		height: 278px;
+	}
+
+	.new-goods p {
+		margin: 0;
+		padding: 0;
+	}
+
+	.new-goods .p1 {
+		font-size: 16px;
+		color: #333333;
+		font-weight: bold;
+	}
+
+	/*特价促销*/
+	#special-f {
+		min-width: 1200px;
+		width: 100%;
+		background: #f0f0f0;
+	}
+
+	#special {
+		width: 1190px;
+		height: 472px;
+		border: 0px solid red;
+		margin: 0 auto;
+		padding-bottom: 40px;
+	}
+
+	.special-left {
+		float: left;
+	}
+
+	.special-left-1 img {
+		margin-bottom: 10px;
+		margin-right: 10px;
+	}
+
+	.special-right-1 img {
+		margin-bottom: 10px;
+	}
+
+	.special-center {
+		float: left;
+	}
+
+	.special-right {
+		float: right;
+	}
+
+	/*服装精选*/
+	/*礼品精选*/
+	#selected-f ,#lipin-f{
+		width: 100%;
+		background: white;
+		min-width: 1200px;
+	}
+
+	#selected {
+		width: 1190px;
+		height: 682px;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin: 0 auto;
+		display: flex;
+		border: 0px solid red;
+		position: relative;
+		padding-bottom: 30px;
+	}
+
+	#selected>div:first-child {
+		width: 1190px;
+		height: 32px;
+		border: 0px solid red;
+		padding-top: 30px;
+	}
+
+	#selected>div:nth-child(2) {
+		width: 410px;
+		height: 610px;
+		border: 0px solid red;
+		margin-right: 10px;
+	}
+
+	#selected>div:nth-child(3) {
+		width: 770px;
+		height: 620px;
+		border: 0px solid red;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		display: flex;
+	}
+
+	#selected>div:nth-child(3)>:first-child {
+		width: 250px;
+		height: 300px;
+		border: 1px solid #f2f2f2;
+		background: #fff;
+	}
+
+	#selected>div:nth-child(3)>:nth-child(2) {
+		width: 250px;
+		height: 300px;
+		border: 1px solid #f2f2f2;
+		background: #fff;
+	}
+
+	#selected>div:nth-child(3)>:nth-child(3) {
+		width: 250px;
+		height: 300px;
+		border: 1px solid #f2f2f2;
+		background: #fff;
+	}
+
+	#selected>div:nth-child(3)>:nth-child(4) {
+		width: 250px;
+		height: 300px;
+		border: 1px solid #f2f2f2;
+		background: #fff;
+	}
+
+	#selected>div:nth-child(3)>:nth-child(5) {
+		width: 250px;
+		height: 300px;
+		border: 1px solid #f2f2f2;
+		background: #fff;
+	}
+
+	#selected>div:nth-child(3)>:nth-child(6) {
+		width: 250px;
+		height: 300px;
+		border: 1px solid #f2f2f2;
+		background: #fff;
+	}
+
+	.selected-p1 {
+		font-size: 14px;
+		color: #333333;
+		text-align: center;
+	}
+
+	.selected-p2 {
+		font-size: 14px;
+		color: #333333;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	/*七城分站*/
+	#city-f {
+		width: 100%;
+		background: #fff;
+		min-width: 1200px;
+	}
+
+	#city {
+		width: 1190px;
+		height: 662px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		border: 0px solid red;
+		flex-wrap: wrap;
+		padding-bottom: 40px;
+	}
+
+	#city>div:first-child {
+		width: 1190px;
+		height: 32px;
+		border: 0px solid red;
+		padding-top: 30px;
+	}
+
+	#city>div:nth-child(2) {
+		width: 590px;
+		height: 290px;
+		border: 0px solid red;
+		background: #fcfcfc;
+	}
+
+	#city>div:nth-child(3) {
+		width: 290px;
+		height: 290px;
+		border: 0px solid red;
+		background: #fcfcfc;
+	}
+
+	#city>div:nth-child(4) {
+		width: 290px;
+		height: 290px;
+		border: 0px solid red;
+		background: #fcfcfc;
+	}
+
+	#city>div:nth-child(5) {
+		width: 290px;
+		height: 290px;
+		border: 0px solid red;
+		background: #fcfcfc;
+	}
+
+	#city>div:nth-child(6) {
+		width: 290px;
+		height: 290px;
+		border: 0px solid red;
+		background: #fcfcfc;
+	}
+
+	#city>div:nth-child(7) {
+		width: 290px;
+		height: 290px;
+		border: 0px solid red;
+		background: #fcfcfc;
+	}
+
+	#city>div:last-child {
+		width: 290px;
+		height: 290px;
+		border: 0px solid red;
+		background: #fcfcfc;
+	}
+
+	.city-p1 {
+		font-size: 18px;
+		font-weight: bold;
+		padding: 36px 0 10px;
+		text-align: center;
+	}
+
+	.city-p2 {
+		margin-bottom: 16px;
+		font-size: 14px;
+		text-align: center;
+	}
+
+	.city-span1 {
+		display: inline-block;
+		width: 80px;
+		height: 22px;
+		border: 1px solid #fd3555;
+		color: #fd3555;
+		border-radius: 12px;
+		text-align: center;
+		line-height: 22px;
+	}
+
+	.city-p3 {
+		text-align: center;
+	}
+
+	.city-p3>img:nth-child(2) {
+		margin: 0 5px;
+	}
+
+	/* 印制工艺 */
+	#printed {
+		width: 100%;
+		background: #f4efeb;
+		min-width: 1200px;
+		padding: 40px 0;
+	}
+
+	#printed>div:first-child {
+		width: 1190px;
+		height: 550px;
+		margin: 0 auto;
+		border: 0px solid red;
+	}
+
+	#printed>div:first-child>p:first-child {
+		text-align: center;
+		font-weight: bold;
+		font-size: 18px;
+		margin-bottom: 30px;
+	}
+
+	#printed>div:first-child>p:nth-child(2) {
+		text-align: center;
+	}
+
+	#printed>div:first-child>p:nth-child(3) {
+		text-align: center;
+		font-size: bold;
+		padding-bottom: 12px;
+	}
+
+	#printed>div:first-child>p:nth-child(4) {
+		margin: 0 auto;
+		width: 730px;
+		line-height: 24px;
+	}
+
+	.round {
+		text-align: center;
+		margin: 30px 0 0 0;
+	}
+
+	.round>span:first-child {
+		width: 8px;
+		height: 8px;
+		display: inline-block;
+		border-radius: 100%;
+		background: #fff;
+		cursor: pointer;
+		margin: 0 4px;
+		border: 1px solid #fd3555;
+	}
+
+	.round>span:nth-child(2) {
+		width: 8px;
+		height: 8px;
+		display: inline-block;
+		border-radius: 100%;
+		background: #fff;
+		cursor: pointer;
+		margin: 0 4px;
+		border: 1px solid #fd3555;
+	}
+
+	.round>span:nth-child(3) {
+		width: 8px;
+		height: 8px;
+		display: inline-block;
+		border-radius: 100%;
+		background: #fff;
+		cursor: pointer;
+		margin: 0 4px;
+		border: 1px solid #fd3555;
+	}
+
+	.round>span:nth-child(4) {
+		width: 8px;
+		height: 8px;
+		display: inline-block;
+		border-radius: 100%;
+		background: #fff;
+		cursor: pointer;
+		margin: 0 4px;
+		border: 1px solid #fd3555;
+	}
+
+	.round>span:nth-child(5) {
+		width: 8px;
+		height: 8px;
+		display: inline-block;
+		border-radius: 100%;
+		background: #fff;
+		cursor: pointer;
+		margin: 0 4px;
+		border: 1px solid #fd3555;
+	}
+
+	/* 合作伙伴 */
+	.coop {
+		width: 1190px;
+		height: 321px;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		border: 0px solid red;
+		padding: 40px 0 20px 0;
+	}
+
+	.coop>div:first-child {
+		width: 1190px;
+		height: 21.6px;
+		border: 0px solid red;
+	}
+
+	.coop>div:first-child>p:first-child {
+		text-align: center;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+
+	/* 多快好省 */
+	#more-f {
+		width: 100%;
+		background: #f5f5f5;
+		min-width: 1200px;
+	}
+
+	.more {
+		width: 1190px;
+		height: 70px;
+		padding: 65px 0;
+		border: 0px solid red;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.more div {
+		float: left;
+
+	}
+
+	.more-span1 {
+		display: block;
+		width: 66px;
+		height: 66px;
+		text-align: center;
+		line-height: 66px;
+		border: 2px solid #fd3555;
+		color: #fd3555;
+		margin-right: 10px;
+		font-size: 32px;
+		border-radius: 35px;
+		float: left;
+	}
+
+	.more-span2 {
+		font-size: 20px;
+		font-weight: bold;
+		float: left;
+		line-height: 70px;
+	}
+
+	/* 底部 */
+	.layout_bottom {
+		height: 241px;
+		border: 0px solid red;
+		min-width: 1200px;
+	}
+
+	.footer {
+		height: 241px;
+		background: #2e2b2b;
+
+		color: #fff;
+		border-top: 2px solid #fd3555;
+	}
+
+	.wrap {
+		width: 1190px;
+		margin: 0 auto;
+		position: relative;
+		border: 0px solid green;
+	}
+
+	.left {
+		float: left;
+	}
+
+	.f-logo {
+		display: block;
+		margin: 40px 0 30px;
+	}
+
+	img {
+		border: none;
+	}
+
+	.f-nav {
+		line-height: 20px;
+	}
+
+	.f-nav-item:first-child {
+		padding-left: 0;
+	}
+
+	.f-nav-item {
+		display: inline-block;
+		color: #fff;
+		padding: 0 10px;
+	}
+
+	.f-nav a {
+		text-decoration: none;
+	}
+
+	.footer .address {
+		margin: 22px 0 0 0px;
+	}
+
+	.footer .icp {
+		color: rgba(255, 255, 255, .3);
+		text-decoration: none;
+	}
+
+	.footer .middle {
+		width: 320px;
+		margin-top: 52px;
+		margin-left: 180px;
+	}
+
+	.footer .middle .m-ttlte {
+		font-size: 16px;
+		font-weight: bold;
+		margin-bottom: 12px;
+	}
+
+	.footer .middle .m-content {
+		width: 330px;
+		height: 100px;
+		border: 0px solid red;
+	}
+
+	/* 伪类 */
+	.footer .middle .m-contenr a:hover {
+		background: url(./image/qq_1.png) center no-repeat;
+	}
+
+	.footer .middle .c-img {
+		width: 98px;
+		height: 98px;
+		float: left;
+		margin-right: 10px;
+		background: url(./image/qq.png) center no-repeat;
+		border: 1px solid #fff;
+	}
+
+	.footer .middle .mail {
+		float: left;
+		margin: 62px 0px 2px 0px;
+	}
+
+	.footer .middle .hot-line {
+		float: left;
+	}
+
+	.footer .small {
+		width: 100px;
+		text-align: center;
+		margin-left: 130px;
+		margin-top: 52px;
+	}
+
+	.footer .small .s-title {
+		font-size: 16px;
+		font-weight: bold;
+		margin-bottom: 12px;
+	}
+
+	.footer .small img {
+		width: 100px;
+		height: 100px;
+	}
+
+	/*鼠标移入商品边框效果*/
+	.new-goods ul li:hover {
+		border: 1px solid red;
+	}
+
+	#selected>div:nth-child(3)>div:hover {
+		border: 1px solid red;
+	}
+
+	/*登陆弹窗*/
+	#login {
+		width: 400px;
+		height: 360px;
+		border: 0px solid red;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		margin: auto;
+		background-color: #fff;
+		display: none;
+		z-index: 2;
+	}
+
+	.login-head {
+		height: 36px;
+		border: 0px solid red;
+		background: #f2f2f2;
+		color: #999;
+		text-indent: 10px;
+		line-height: 36px;
+	}
+
+	.login-close {
+		position: absolute;
+		right: 10px;
+		top: 0px;
+		font-size: 24px;
+		color: #999;
+		cursor: pointer;
+	}
+
+	.get-head {
+		font-size: 18px;
+		text-align: center;
+		font-weight: bold;
+		margin-top: 20px;
+	}
+
+	.phone {
+		width: 318px;
+		height: 38px;
+		border: 1px solid #333;
+		margin: 0 auto 10px;
+		position: relative;
+		text-align: left;
+		margin-top: 20px;
+	}
+
+	.phone input {
+		float: right;
+		width: 264px;
+		height: 100%;
+		padding: 0 10px;
+		border: none;
+		outline: none;
+	}
+
+	#icon-phone {
+		background-position: -12px 12px;
+	}
+
+	.icon-login-phone {
+		display: inline-block;
+		width: 32px;
+		height: 38px;
+		background: url("./image/icon.png")no-repeat;
+	}
+
+	.icon-login-pwd {
+		display: inline-block;
+		width: 32px;
+		height: 38px;
+		background: url("./image/icon.png")-34px 12px no-repeat;
+	}
+
+	.get>p:nth-child(4)>span:first-child {
+		margin-left: 41px;
+		color: #333333;
+		font-size: 14px;
+	}
+
+	.get>p:nth-child(4)>span:last-child>a {
+		text-decoration: none;
+		color: #333333;
+		font-size: 14px;
+		margin-left: 183px;
+	}
+
+	.get>p:nth-child(5)>a {
+		display: block;
+		width: 320px;
+		height: 48px;
+		line-height: 48px;
+		text-align: center;
+		background: #fd3555;
+		color: white;
+		text-decoration: none;
+		margin-top: 20px;
+		margin-left: 40px;
+	}
+
+	.get>p:last-child {
+		margin-top: 10px;
+		text-align: center;
+	}
+
+	.get>p:last-child>a {
+		text-decoration: none;
+		color: #333333;
+		font-size: 14px;
+	}
+
+	/* 遮罩层样式 */
+	.cover {
+		display: none;
+		width: 100%;
+		height: 5390px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		background-color: #000;
+		opacity: 0.3;
+	}
+</style>
+
+<body onload="goodlist()">
+
+	<!-- 登陆弹窗 -->
+	<div id="login">
+		<div class="login-head"></div>
+		<span class="login-close">×</span>
+		<div class="get">
+			<p class="get-head">登录</p>
+			<p class="phone">
+				<i class="icon-login-phone" id="icon-phone"></i>
+				<input type="text" placeholder="请输入手机号" id="loginPhone">
+				<span id="loginPhone_span"></span>
+			</p>
+			<p class="phone">
+				<i class="icon-login-pwd"></i>
+				<input type="password" placeholder="请输入密码" id="loginPwd">
+				<span id="loginPwd_span"></span>
+			</p>
+			<p><span><input type="checkbox">记住密码</span><span><a href="">忘记密码？</a></span></p>
+			<p><a onclick="login1()">登录</a></p>
+			<p><a href="reg.html">还没有账号？去注册</a></p>
+		</div>
+	</div>
+
+	<script>
+		function login1() {
+			var $phone1 = loginPhone.value;
+			var $pwd1 = loginPwd.value;
+			//console.log($phone1, $pwd1);
+			if ($phone1 == "") {
+				//alert("用户名不能为空");
+				loginPhone_span.innerHTML = "用户名不能为空";
+				return;
+			}
+			if ($pwd1 == "") {
+				//alert("密码不能为空");
+				loginPwd_span.innerHTML = "密码不能为空";
+				return;
+			}
+
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function () {
+				//console.log(xhr.readyState);
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var result = xhr.responseText;
+					//console.log(result);
+
+
+					if (result == '0') {
+						alert('登陆失败');
+					} else {
+						alert('登录成功');
+						var arr = JSON.parse(result);
+						//console.log(arr);
+						localStorage.setItem("uid", arr[0].Uid);
+						localStorage.setItem("name", arr[0].Name);
+						var n = localStorage.getItem("name");
+						login_a.innerHTML = `欢迎${n}`;
+						login_a.onclick = function () {
+
+						}
+
+						login_div.style.display = "none"
+						cover.style.display = "none";
+						reg_a.innerHTML = "退出";
+						reg_a.onclick = function () {
+							localStorage.removeItem("name");
+							reg_a.setAttribute("href","index.html");
+							login_a.innerHTML = "登陆";
+							reg_a.innerHTML = "注册";
+						}
+
+						//记住密码
+						var password=document.querySelector(".get>p:nth-child(4)>span>input");
+						if(password.checked==true){
+							var txt=loginPhone.value;
+							var pwd=loginPwd.value;
+							console.log(txt,pwd);
+							localStorage.setItem("phone",txt);
+							localStorage.setItem("pwd",pwd);
+						}
+					}
+				}
+			}
+			xhr.open("get", "/login/v1/login/" + $phone1 + "&" + $pwd1, true)
+			xhr.send();
+		}
+	</script>
+
+	<!-- 头部	 -->
+	<div class="head">
+		<div class="top">
+			<div class="top-left">
+				<a class="home" target="_blank" href="#">众潮定制</a>
+				<span>|&nbsp;欢迎来到众潮定制商城</span>
+			</div>
+			<div class="top-right">
+				<span class="top-right-span">
+					<a id="js_login">登录</a>
+					<a href="reg.html" id="js_reg">注册</a>
+					<a id="js_order">我的订单</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<!-- logo	 -->
+	<div class="bottom">
+		<div class="bottom-logo">
+			<img src="image/logo.png" width="200px" height="70px">
+		</div>
+	</div>
+	<!-- 搜索框	 -->
+	<div class="input-cart">
+		<!-- 	输入框	 -->
+		<div>
+			<input type="text" placeholder="夏季T恤热卖中">
+		</div>
+		<!-- 	搜索按钮	 -->
+		<div class="search" id="search_button">
+			<img src="./image/search.png" alt="">
+		</div>
+		<!-- 	购物车按钮	 -->
+		<div>
+			<a href="cart.html">
+				<img src="./image/cart.png" alt="">
+			</a>
+		</div>
+	</div>
+	<script>
+		$("#search_button").click(function(){
+			var $input=$(this).prev().children().val();
+			sessionStorage.setItem("search", $input);
+			location.href="http://127.0.0.1:8080/search.html";
+		})
+	</script>
+
+	<!-- 导航栏	 -->
+	<div id="nav">
+		<div class="nav">
+			<div>
+				<a href="" class="all-class">所有分类</a>
+			</div>
+			<div class="nav-class">
+				<ul>
+					<li><a href="index.html">首页</a></li>
+					<li><a href="">精选</a></li>
+					<li><a href="">新品</a></li>
+					<li><a href="">特价</a></li>
+				</ul>
+			</div>
+			<div class="nav-right">
+				<span>
+					<img src="./image/icon_1.png" alt="">
+					<a href="">城市合伙人加盟</a>
+				</span>
+				<span>
+					<img src="./image/icon_2.png" alt="">
+					<a href="">商城小程序</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<!-- 所有分类	 -->
+	<div id="banner-f">
+		<div id="banner">
+			<div class="banner-left">
+				<ul>
+					<li>服装</li>
+					<li>摄影</li>
+					<li>图文</li>
+				</ul>
+			</div>
+			<!-- 轮播图 -->
+			<div id="banner-right">
+				<ul id="banner-right-ul" style="width: 5130px;margin-left: 0px;">
+					<li>
+						<a href="">
+							<img src="./image/luobo_1.jpg" alt="">
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="./image/luobo_2.jpg" alt="">
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="./image/luobo_3.jpg" alt="">
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="./image/luobo_4.jpg" alt="">
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="./image/luobo_1.jpg" alt="">
+						</a>
+					</li>
+				</ul>
+				<ul id="ul-idxs">
+					<!--虽然li个数比实际图片张数多1，但小圆点的个数不必多1-->
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		<!-- 轮播图 -->
+			<script>
+				var i=0;
+				var liwidth=1026;
+				var lunbo_time=1000;
+				var licount=4;
+				var ulImgs=document.getElementById("banner-right-ul");
+				var ulIdxs=document.getElementById("ul-idxs");
+				var lis=ulIdxs.children;
+
+				function moveTo(to){
+					if(to==undefined){
+						to=i+1;
+					}
+					if(i==0){
+						if(to>i){
+							ulImgs.className="transition";
+						}else{
+							ulImgs.className="";
+							ulImgs.style.marginLeft=-liwidth*licount+"px";
+							setTimeout(function(){
+								moveTo(licount-1)
+							},100);
+							return;
+						}	
+					}
+					i=to;
+					ulImgs.style.marginLeft=-i*liwidth+"px";
+
+					for(var li of lis){
+						li.className=""
+					}
+					if(i==licount){
+						i=0;
+						setTimeout(() => {
+							ulImgs.className="";
+							ulImgs.style.marginLeft=0;
+						}, lunbo_time);
+					}
+					lis[i].className="active";
+				}
+			</script>
+			<script>
+				var interval=3000;
+				var timer=setInterval(function(){
+					moveTo()
+				},3000);
+				var banner = document.getElementById("banner-right");
+					banner.onmouseover = function () {
+						clearInterval(timer);
+					}
+					banner.onmouseout = function () {
+						timer = setInterval(function () {
+							moveTo()
+						}, 3000);
+					}
+			</script>
+			<script>
+				var ulIdxs=document.getElementById("ul-idxs");
+				var canClick=true;
+				ulIdxs.onclick = function (e) {
+						if (canClick) {
+							var li = e.target;
+							if (li.nodeName == "LI") {
+								if (li.className !== "active") {
+									for (var i = 0; i < lis.length; i++) {
+										if (lis[i] == li) {
+											break;
+										}
+									}
+									moveTo(i);
+									setTimeout(function () {
+										canClick = true;
+									}, lunbo_time);
+								}
+							}
+						}
+					}
+			</script>
+		</div>
+	</div>
+	<!-- 清除浮动 -->
+	<div id="clear"></div>
+	<!-- 本季新品	 -->
+	<div id="new-f">
+		<div id="new">
+			<div class="new-head">
+				<span class="new-head-left">本季新品&nbsp;NEW</span>
+				<span class="new-head-right"><a href="">更多新品></a></span>
+			</div>
+			<div class="new-goods">
+				<ul id="benjixinpin_js">
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script>
+		function goodlist() {
+			var xhr = new XMLHttpRequest();
+			var zhonglei=document.getElementsByClassName("new-head-left")[0].innerHTML.slice(0,4);
+			console.log(zhonglei);
+
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var result = xhr.responseText;
+					//console.log(result);
+					var arr = JSON.parse(result);
+					//console.log(arr);
+					//alert(arr);
+					var strHTML = "";
+					for (var i = 0; i < 4; i++) {
+						strHTML += `
+						<li class="goods-1">
+							<a href="goods.html?id=${arr[i].Gid}">
+								<img src="${arr[i].img}" alt="">
+							</a>
+							<p class="p1">${(arr[i].Price).toFixed(2)}</p>
+							<p class="p2">${arr[i].Title}</p>
+						</li>
+					`;
+					}
+					benjixinpin_js.innerHTML = strHTML;
+				}
+			}
+			xhr.open('get', '/goodslist/v1/goodslist/'+zhonglei, true)
+			xhr.send();
+            
+			goodlist2();
+			goodlist3();
+
+			var n = localStorage.getItem("name");
+			//console.log(n);
+			if (n != null) {
+				login_a.innerHTML = `欢迎${n}`;
+				reg_a.innerHTML = "退出";
+				reg_a.onclick = function () {
+					localStorage.removeItem("name");
+					reg_a.removeAttribute("href");
+					location.href="index.html";
+					login_a.innerHTML = "登录";
+					reg_a.innerHTML = "注册";
+					login_a.onclick = function () {
+						login_div.style.display = "block"
+						//console.log(cover);
+						cover.style.display = "block";
+					}
+		   		}
+			}
+
+			js_order.onclick=function(){
+				var n = localStorage.getItem("name");
+				if (n != null) {	
+				   location.href="order.html";
+			    } else{
+				   alert("请登录");  
+			    }
+            
+			}
+		
+			//记住密码
+			var phone=localStorage.getItem("phone");
+			var pwd=localStorage.getItem("pwd");
+			var password=document.querySelector(".get>p:nth-child(4)>span>input");
+			if(phone!=null){
+				loginPhone.value=phone;
+				loginPwd.value=pwd;
+				password.checked=true;
+			}
+			//console.log(password.checked);
+			if(password.checked==true){
+				password.onclick=function(){
+					localStorage.clear();
+				}
+			}
+		}
+	</script>
+	<!-- 特价促销	 -->
+	<div id="special-f">
+		<div id="special">
+			<div class="new-head">
+				<span class="new-head-left">特价促销&nbsp;SALE</span>
+				<span class="new-head-right"><a href="">更多特价></a></span>
+			</div>
+			<div class="special-left">
+				<div class="special-left-1">
+					<a href="">
+						<img src="./image/special-1.jpg" alt="">
+					</a>
+				</div>
+				<div>
+					<a href="">
+						<img src="./image/special-1.jpg" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="special-center">
+				<a href="">
+					<img src="./image/special-2.jpg" alt="">
+				</a>
+			</div>
+			<div class="special-right">
+				<div class="special-right-1">
+					<a href="">
+						<img src="./image/special-1.jpg" alt="">
+					</a>
+				</div>
+				<div>
+					<a href="">
+						<img src="./image/special-1.jpg" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 服装精选 -->
+	<div id="selected-f">
+		<div id="selected">
+			<div class="new-head">
+				<span class="new-head-left">服装精选&nbsp;SELECTED</span>
+				<span class="new-head-right"><a href="">更多精选></a></span>
+			</div>
+			<div>
+				<img src="./image/selected-1.jpg" alt="">
+			</div>
+			<div id="fuzhuangjingxuan_js">
+				
+			</div>
+		</div>
+	</div>
+	<!-- 服装精选 -->
+	<script>
+		function goodlist2() {
+			var xhr = new XMLHttpRequest();
+			var zhonglei=document.getElementsByClassName("new-head-left")[2].innerHTML.slice(0,4);
+			console.log(zhonglei);
+
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var result = xhr.responseText;
+					//console.log(result);
+					var arr = JSON.parse(result);
+					console.log(arr);
+					//alert(arr);
+					var strHTML2 = "";
+					for (var i = 0; i < 6; i++) {
+						strHTML2 += `
+						<div>
+							<a href="goods.html?id=${arr[i].Gid}">
+								<img src="${arr[i].img}" alt="" width="248px" height="248px">
+							
+								<p class="selected-p1">${arr[i].Title}</p>
+								<p class="selected-p2">${(arr[i].Price).toFixed(2)}</p>
+							</a>
+						</div>
+					`;
+					}
+					fuzhuangjingxuan_js.innerHTML = strHTML2;
+				}
+			}
+			xhr.open('get', '/goodslist/v1/goodslist/'+zhonglei, true)
+			xhr.send();
+		}
+	</script>
+	<!-- 礼品精选 -->
+	<div id="lipin-f" style="background:#f5f5f5">
+		<div id="selected">
+			<div class="new-head">
+				<span class="new-head-left">礼品精选&nbsp;SELECTED</span>
+				<span class="new-head-right"><a href="">更多精选></a></span>
+			</div>
+			<div>
+				<img src="./image/lipin.png" alt="">
+			</div>
+			<div id="lipinjingxuan_js">
+				
+			</div>
+		</div>
+	</div>
+	<!-- 礼品精选 -->
+	<script>
+		function goodlist3() {
+			var xhr = new XMLHttpRequest();
+			var zhonglei=document.getElementsByClassName("new-head-left")[3].innerHTML.slice(0,4);
+			console.log(zhonglei);
+
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var result = xhr.responseText;
+					//console.log(result);
+					var arr = JSON.parse(result);
+					console.log(arr);
+					//alert(arr);
+					var strHTML3 = "";
+					for (var i = 0; i < 6; i++) {
+						strHTML3 += `
+						<div>
+							<a href="goods.html?id=${arr[i].Gid}">
+								<img src="${arr[i].img}" alt="" width="248px" height="248px">
+								<p class="selected-p1">${arr[i].Title}</p>
+								<p class="selected-p2">${(arr[i].Price).toFixed(2)}</p>
+							</a>
+						</div>
+					`;
+					}
+					lipinjingxuan_js.innerHTML = strHTML3;
+				}
+			}
+			xhr.open('get', '/goodslist/v1/goodslist/'+zhonglei, true)
+			xhr.send();
+		}
+	</script>
+
+	<!-- 七城分站 -->
+	<div id="city-f">
+		<div id="city">
+			<div>
+				<span class="new-head-left">七城分站</span>
+			</div>
+			<div>
+				<p class="city-p1">武汉站</p>
+				<p class="city-p2">
+					<span class="city-span1">400款产品</span>
+					<span class="city-span1">3天出货</span>
+				</p>
+				<p class="city-p3">
+					<img src="./image/station_1.png" alt="">
+					<img src="./image/station_1.png" alt="">
+					<img src="./image/station_1.png" alt="">
+				</p>
+			</div>
+			<div>
+				<p class="city-p1">南京站</p>
+				<p class="city-p2">
+					<span class="city-span1">20款产品</span>
+					<span class="city-span1">3天出货</span>
+				</p>
+				<p class="city-p3">
+					<img src="./image/station_1.png" alt="">
+				</p>
+			</div>
+			<div>
+				<p class="city-p1">南京站</p>
+				<p class="city-p2">
+					<span class="city-span1">20款产品</span>
+					<span class="city-span1">3天出货</span>
+				</p>
+				<p class="city-p3">
+					<img src="./image/station_1.png" alt="">
+				</p>
+			</div>
+			<div>
+				<p class="city-p1">南京站</p>
+				<p class="city-p2">
+					<span class="city-span1">20款产品</span>
+					<span class="city-span1">3天出货</span>
+				</p>
+				<p class="city-p3">
+					<img src="./image/station_1.png" alt="">
+				</p>
+			</div>
+			<div>
+				<p class="city-p1">南京站</p>
+				<p class="city-p2">
+					<span class="city-span1">20款产品</span>
+					<span class="city-span1">3天出货</span>
+				</p>
+				<p class="city-p3">
+					<img src="./image/station_1.png" alt="">
+				</p>
+			</div>
+			<div>
+				<p class="city-p1">南京站</p>
+				<p class="city-p2">
+					<span class="city-span1">20款产品</span>
+					<span class="city-span1">3天出货</span>
+				</p>
+				<p class="city-p3">
+					<img src="./image/station_1.png" alt="">
+				</p>
+			</div>
+			<div>
+				<p class="city-p1">南京站</p>
+				<p class="city-p2">
+					<span class="city-span1">20款产品</span>
+					<span class="city-span1">3天出货</span>
+				</p>
+				<p class="city-p3">
+					<img src="./image/station_1.png" alt="">
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- 印制工艺 -->
+	<div id="printed">
+		<div>
+			<p>印制工艺</p>
+			<p>
+				<img src="./image/print_4.png" alt="">
+			</p>
+			<p>镭射</p>
+			<p>镭射加工，又名激光加工，利用激光束与物质相互作用的特性对材料(包括金属与非金属)进行切割、焊接、表面处理、打孔、微加工以及做为光源。印刷出来的效果表面看上去有幻彩的感觉。
+			</p>
+			<p class="round">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</p>
+		</div>
+	</div>
+	<!-- 合作伙伴 -->
+	<div id="coop-f">
+		<div class="coop">
+			<div>
+				<p>合作伙伴</p>
+			</div>
+			<div>
+				<img src="./image/partner_1.png" alt="">
+			</div>
+			<div>
+				<img src="./image/partner_1.png" alt="">
+			</div>
+			<div>
+				<img src="./image/partner_1.png" alt="">
+			</div>
+			<div>
+				<img src="./image/partner_1.png" alt="">
+			</div>
+			<div>
+				<img src="./image/partner_1.png" alt="">
+			</div>
+			<div>
+				<img src="./image/partner_1.png" alt="">
+			</div>
+			<div>
+				<img src="./image/partner_1.png" alt="">
+			</div>
+			<div>
+				<img src="./image/partner_1.png" alt="">
+			</div>
+		</div>
+	</div>
+	<!-- 多快好省 -->
+	<div id="more-f">
+		<div class="more">
+			<div>
+				<span class="more-span1">
+					多
+				</span>
+				<span class="more-span2">
+					供应协同&nbsp;品类多多
+				</span>
+			</div>
+			<div>
+				<span class="more-span1">
+					快
+				</span>
+				<span class="more-span2">
+					全网协同&nbsp;急速多多
+				</span>
+			</div>
+			<div>
+				<span class="more-span1">
+					好
+				</span>
+				<span class="more-span2">
+					层层质检&nbsp;品类保证
+				</span>
+			</div>
+			<div>
+				<span class="more-span1">
+					省
+				</span>
+				<span class="more-span2">
+					高性价比&nbsp;省心省力
+				</span>
+			</div>
+		</div>
+	</div>
+	<!-- 底部 -->
+	<div class="layout_bottom">
+		<div class="footer">
+			<div class="wrap clearfix">
+				<div class="left">
+					<a href="" class="f-logo">
+						<img src="image/f_logo.png">
+					</a>
+					<div class="f-nav">
+						<a href="" class="f-nav-item">
+							关于我们
+						</a>|
+						<a href="" class="f-nav-item">
+							新手指引
+						</a>|
+						<a href="" class="f-nav-item">
+							行业新闻
+						</a>|
+						<a href="" class="f-nav-item">
+							帮助中心
+						</a>|
+						<a href="" class="f-nav-item">
+							用户注册
+						</a>
+					</div>
+					<p class="address">湖南省长沙市雨花区上河国际酒店A栋20层2201</p>
+					<a href="" class="icp">
+						京ICP备9999999号-1
+					</a>
+				</div>
+
+				<div class="middle left">
+					<p class="m-ttlte">
+						联系方式
+					</p>
+					<div class="m-content clearfix">
+						<a href="http://wpa.qq.com/msgrd?v=3&uin=1448019981&site=qq&menu=yes" class="c-img"></a>
+						<span>反馈邮箱：1448019981@qq.com</span><br>
+						<span>客服热线：</span><br>
+						<span>15207394594</span>
+					</div>
+				</div>
+
+				<div class="left small">
+					<p class="s-title">商城小程序</p>
+					<img src="./image/weixin.jpg" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 遮罩层 -->
+	<div class="cover"></div>
+	
+	<script>
+		//点击登陆显示登录框
+		//登陆按钮
+		var login_a = document.getElementById("js_login");
+		//注册按钮
+		var reg_a = document.getElementById("js_reg");
+		//console.log(login_a);
+		//登陆弹框
+		var login_div = document.getElementById("login");
+		//遮罩层
+		var cover = document.getElementsByClassName("cover")[0];
+
+		//点击登陆显示
+		login_a.onclick = function () {
+			login_div.style.display = "block"
+			//console.log(cover);
+			cover.style.display = "block";
+		}
+
+		//点击x关闭登陆框
+		var loginClose = document.getElementsByClassName("login-close")[0];
+		//console.log(loginClose);
+		loginClose.onclick = function () {
+			cover.style.display = "none";
+			login_div.style.display = "none";
+		}
+
+		
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+set names utf8;
+
+drop database if exists zc;
+
+create database zc charset = utf8;
+
+use zc;
+
+/* 用户表 */
+create table zc_user(	
+	Uid int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	UserName VARCHAR(20),  /* 用户名 */
+	UserPwd VARCHAR(20),	/* 用户密码 */
+	UserPhone VARCHAR(11),	/* 用户手机号 */
+	Name VARCHAR(20),	/* 真实姓名 */
+	Img VARCHAR(128),	/* 头像图片 */
+	Sex VARCHAR(2),		/* 性别 */
+	Birthday Date		/* 生日 */
+);
+insert into zc_user values(1,null,123456,15207394594,"雷翔",null,null,null);
+
+/* 用户收货地址表 */
+create table zc_address(
+	Aid int NOT NULL PRIMARY KEY AUTO_INCREMENT, /* 收货地址ID */
+	UserId int,								/* 用户ID */
+	foreign key(UserId) references zc_user(Uid), /* 关联用户表用户ID */
+	Consignee VARCHAR(16),		/* 收货人 */
+	Province VARCHAR(16),			/* 省 */
+	City VARCHAR(16),					/* 市 */
+	County VARCHAR(16),				/* 县 */
+	Address VARCHAR(128),			/* 详细地址 */
+	Phone VARCHAR(11),				/* 手机号 */
+	FixedPhone VARCHAR(16),		/* 固定电话 */
+	ZipCode CHAR(6),					/* 邮编 */
+	Note VARCHAR(128)					/* 备注 */
+);
+
+/* 商品种类表 */
+create table zc_items(
+	Iid int NOT NULL PRIMARY KEY AUTO_INCREMENT, /* 商品种类ID */
+	Iname VARCHAR(16)		/* 商品种类名称 */
+);
+insert into zc_items(Iid,Iname) values(1,"本季新品");
+insert into zc_items(Iid,Iname) values(2,"特价促销");
+insert into zc_items(Iid,Iname) values(3,"服装精选");
+insert into zc_items(Iid,Iname) values(4,"礼品精选");
+
+/* 商品表 */
+create table zc_goods(
+	Gid int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	Items_Id INT,
+	foreign key(Items_Id) references zc_items(Iid),
+	img VARCHAR(128),
+	Title VARCHAR(128),
+	Price DECIMAL(10,2),
+	Introduction VARCHAR(256),
+	Color VARCHAR(64),
+	Size VARCHAR(64),
+	Details VARCHAR(64)
+);
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(1,1,"./image/new-1.jpg","测试商品1",333);
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(2,1,"./image/new-1.jpg","测试商品2",44);
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(3,1,"./image/new-1.jpg","测试商品3",33);
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(4,1,"./image/new-1.jpg","测试商品1",9);
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(5,1,"./image/new-1.jpg","测试商品2",111);
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(6,1,"./image/new-1.jpg","测试商品3",222);
+
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(7,3,"./image/new-1.jpg","测试商品1",333);
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(8,3,"./image/new-1.jpg","测试商品2",44);
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(9,3,"./image/new-1.jpg","测试商品3",33);
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(10,3,"./image/new-1.jpg","测试商品1",9);
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(11,3,"./image/new-1.jpg","测试商品2",111);
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(12,3,"./image/new-1.jpg","测试商品3",222);
+
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(null,4,"./image/new-1.jpg","测试商品1",333);
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(null,4,"./image/new-1.jpg","测试商品2",44);
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(null,4,"./image/new-1.jpg","测试商品3",33);
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(null,4,"./image/new-1.jpg","测试商品1",9);
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(null,4,"./image/new-1.jpg","测试商品2",111);
+insert into zc_goods (Gid,Items_Id,img,Title,Price) values(null,4,"./image/new-1.jpg","测试商品3",222);
+
+/* 订单表 */
+create table zc_order(
+Oid int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+User_id INT,
+Goods_id INT,
+Address VARCHAR(64),
+Count INT,
+Price DECIMAL(10,2),
+PayTime DATETIME,
+DeliverTime DATETIME,
+ReceivedTime DATETIME
+);
+/*insert into zc_order(Oid,User_id,Goods_id,Address,Count,Price,PayTime,DeliverTime,ReceivedTime) 
+values(null,1,1,"湖南邵阳",1,99.00,2019/9/9,2019/9/9,2019/9/9);*/
+
+/* 购物车表 */
+create table zc_cart(
+cart_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,  /*购物车id*/
+good_img VARCHAR(64),															/*商品图片*/
+good_title VARCHAR(64),										      	/*商品名称*/
+good_spe VARCHAR(64),							            		/*商品规格*/
+good_price DECIMAL(10,2),                         /*商品单价*/
+good_count int,                                   /*商品数量*/
+good_beizhu VARCHAR(128),                         /*促销信息*/
+user_id int,																			/*用户id*/
+foreign key(user_id) references zc_user(Uid)
+);
+insert into zc_cart values(1,"./image/new-1.jpg","测试商品1","红色",99,1,"测试一下",1);
+insert into zc_cart values(1,"./image/new-1.jpg","测试商品2","红色",999,1,"测试一下",1);
+/*  */
+
+/*  */
+

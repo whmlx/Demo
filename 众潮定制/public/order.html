@@ -1,0 +1,3326 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	.none {
+		display: none;
+	}
+
+	.clear {
+		clear: both;
+	}
+
+	/*头部*/
+	.head {
+		height: 36px;
+		background: #f2f2f2;
+		line-height: 36px;
+		min-width: 1200px;
+	}
+
+	.top {
+		width: 1190px;
+		border: 0px solid red;
+		height: 36px;
+		margin: 0 auto;
+	}
+
+	.top-left {
+		float: left;
+	}
+
+	.top-left a {
+		color: #333;
+		text-decoration: none;
+	}
+
+	.home {
+		height: 16px;
+		line-height: 16px;
+		background: url(./image/home.png) left center no-repeat;
+		padding-left: 22px;
+	}
+
+	.top-left-right {
+		float: right;
+	}
+
+	.top-right {
+		float: right;
+	}
+
+	.top-right-span a {
+		color: #333;
+		text-decoration: none;
+		padding-left: 20px;
+	}
+
+	.bottom {
+		margin-bottom: 22px;
+	}
+
+	.bottom-logo {
+		text-align: center;
+		margin-top: 32px;
+		margin-bottom: 22px;
+	}
+
+	.bottom-search {
+		text-align: center;
+	}
+
+	/*搜索框*/
+	.input-cart {
+		width: 370px;
+		height: 22px;
+		border: 0px solid red;
+		margin: 0 auto;
+	}
+
+	.input-cart input {
+		width: 300px;
+		height: 22px;
+		border: none;
+		border-bottom: 1px solid #e6e6e6;
+		outline: none;
+	}
+
+	.input-cart div {
+		float: left;
+	}
+
+	.search {
+		margin: 0 10px;
+	}
+
+	/*导航栏*/
+	#nav {
+		margin-top: 30px;
+		border-bottom: 2px solid red;
+		min-width: 1200px;
+	}
+
+	.nav {
+		width: 1190px;
+		height: 40px;
+		margin: 0 auto;
+	}
+
+	.all-class {
+		display: block;
+		width: 160px;
+		height: 40px;
+		color: #fff;
+		font-size: 16px;
+		background: url("./image/menu.png") 32px center no-repeat;
+		background-color: #fd3555;
+		text-decoration: none;
+		line-height: 40px;
+		text-indent: 60px;
+		float: left;
+	}
+
+	.nav-class ul li {
+		float: left;
+		list-style: none;
+	}
+
+	.nav-class ul li a {
+		text-decoration: none;
+		margin-left: 60px;
+		color: #333;
+		font-size: 18px;
+		line-height: 40px;
+	}
+
+	.nav-right {
+		float: right;
+		width: 268px;
+		height: 39px;
+	}
+
+	.nav-right span {
+		line-height: 40px;
+	}
+
+	.nav-right span a {
+		text-decoration: none;
+		color: #333;
+		font-size: 18px;
+	}
+
+	/*order*/
+	#order-f {
+		width: 100%;
+		background: #f5f5f5;
+	}
+
+	#order {
+		width: 1190px;
+		height: 785px;
+		margin: 0 auto;
+		border: 0px solid red;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		display: flex;
+		padding: 20px 0;
+		position: relative;
+	}
+
+	#order>div:first-child {
+		width: 168px;
+		height: 728px;
+		border: 0px solid red;
+		padding-bottom: 15px;
+		background: white;
+	}
+
+	.members {
+		width: 168px;
+		height: 55px;
+		text-align: center;
+		line-height: 55px;
+		position: relative;
+		border-bottom: 2px solid red;
+		color: red;
+		font-size: 14px;
+	}
+
+	.members-icon {
+		display: inline-block;
+		width: 22px;
+		height: 16px;
+		border: 0px solid red;
+		background: url("./image/memIcon.png");
+		position: absolute;
+		top: 19px;
+		left: 30px;
+	}
+
+	/*我的订单*/
+	#order>div:nth-child(2) {
+		width: 974px;
+		height: 702px;
+		border: 0px solid red;
+		padding: 20px;
+		background: white;
+		z-index: 1;
+		/* display:block; */
+	}
+
+	#order ul {
+		padding-left: 40px;
+	}
+
+	#order ul li {
+		list-style: none;
+		height: 28px;
+	}
+
+	#order ul li a {
+		text-decoration: none;
+		font-size: 12px;
+		color: #666666;
+	}
+
+	.order-li {
+		line-height: 45px;
+		height: 45px;
+		font-size: 14px;
+		color: #333333;
+		margin-bottom: 20px;
+	}
+
+	#order-nav {
+		width: 974px;
+		height: 34px;
+		border-bottom: 1px solid #f5f5f5;
+	}
+
+	#order-nav>ul {
+		padding: 0 !important;
+	}
+
+	#order-nav ul li {
+		float: left;
+		line-height: 34px;
+		padding: 0 20px;
+		height: 35px;
+	}
+
+	#order-nav ul>li:first-child {
+		color: #e40011;
+		/* border-bottom: 0px solid #e44001; */
+	}
+	#order-nav ul>li>a{
+		font-size:16px;
+	}
+	/*无订单时的我的订单*/
+	#no-order {
+		width: 974px;
+		height: 204px;
+		border: 0px solid red;
+		padding: 80px 0;
+		text-align: center;
+	}
+
+	#no-order>p:last-child {
+		margin-top: 20px;
+	}
+
+	#no-order>p:last-child>a {
+		text-decoration: none;
+		color: #0099cc;
+	}
+
+	/*有订单时我的订单*/
+	#have-order {
+		width: 974px;
+		height: 267px;
+		border: 0px solid red;
+	}
+
+	/*第一个ul*/
+	#have-order>ul:first-child {
+		width: 974px;
+		height: 42px;
+		border: 1px solid #e8e8e8;
+		padding: 0;
+		background: #f9f9f9;
+	}
+
+	#have-order>ul:first-child>li {
+		float: left;
+		line-height: 42px;
+		text-align: center;
+		color: #515151;
+		font-size: 12px;
+	}
+
+	#have-order>ul:first-child>li:first-child {
+		width: 500px;
+		height: 100%;
+	}
+
+	.have-order-li {
+		width: 115px;
+		height: 100%;
+	}
+
+	#have-order>ul:first-child>li:last-child {
+		width: 129px;
+		height: 100%;
+	}
+
+	/*第二个ul*/
+	#have-order>div>ul:nth-child(2n-1) {
+		width: 954px;
+		height: 30px;
+		border: 1px solid #e8e8e8;
+		padding: 0;
+		background: #f9f9f9;
+		margin-top: 10px;
+		line-height: 30px;
+		padding: 0 0 0 20px;
+		font-size: 12px;
+		color: #555555;
+	}
+
+	#have-order>div>ul:nth-child(2n-1)>li>span:nth-child(2) {
+		margin-right: 100px;
+	}
+
+	/*第三个ul*/
+	#have-order>div>ul:nth-child(2n) {
+		height: 100px;
+		width: 974px;
+		padding: 0px 0;
+		border: 1px solid #e8e8e8;
+	}
+
+	#have-order>div>ul:nth-child(2n)>li:first-child>a{
+		width: 500px;
+		height: 100%;
+		display: inline-block;
+	}
+
+	#have-order>div>ul:nth-child(2n)>li:last-child {
+		width: 127px;
+		height: 100%;
+	}
+
+	#have-order>div>ul:nth-child(2n)>li {
+		float: left;
+		border-left: 1px solid #e8e8e8;
+		color: #515151;
+		font-size: 12px;
+	}
+
+	.have-order-ul3-li {
+		width: 114px;
+		height: 100% !important;
+	}
+
+	#have-order>div>ul:nth-child(2n)>li:first-child>a>img {
+		margin: 10px 0 10px 20px;
+		float: left;
+	}
+
+	#have-order>div>ul:nth-child(2n)>li:first-child>a>p {
+		float: left;
+		margin: 10px 0 0 20px;
+	}
+
+	#have-order>div>ul:nth-child(2n)>li:nth-child(2) {
+		text-align: center;
+	}
+
+	#have-order>div>ul:nth-child(2n)>li:nth-child(2)>p {
+		margin-top: 10px;
+	}
+
+	#have-order>div>ul:nth-child(2n)>li:nth-child(3) {
+		text-align: center;
+	}
+
+	#have-order>div>ul:nth-child(2n)>li:nth-child(3)>p {
+		margin-top: 10px;
+		font-size: 14px;
+		color: #e40011;
+	}
+
+	#have-order>div>ul:nth-child(2n)>li:nth-child(4) {
+		text-align: center;
+	}
+
+	#have-order>div>ul:nth-child(2n)>li:nth-child(4)>p {
+		margin-top: 10px;
+	}
+
+	#have-order>div>ul:nth-child(2n)>li:last-child {
+		text-align: center;
+	}
+
+	#have-order>div>ul:nth-child(2n)>li:last-child>p {
+		margin-top: 10px;
+	}
+
+	#have-order>div>ul:nth-child(2n)>li:last-child>p:first-child {
+		width: 80px;
+		height: 28px;
+		border: 1px solid #e40011;
+		line-height: 28px;
+		margin: 10px auto;
+	}
+
+	/* 多快好省 */
+	#more-f {
+		width: 100%;
+		background: #f5f5f5;
+		min-width: 1200px;
+	}
+
+	.more {
+		width: 1190px;
+		height: 70px;
+		padding: 65px 0;
+		border: 0px solid red;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.more div {
+		float: left;
+
+	}
+
+	.more-span1 {
+		display: block;
+		width: 66px;
+		height: 66px;
+		text-align: center;
+		line-height: 66px;
+		border: 2px solid #fd3555;
+		color: #fd3555;
+		margin-right: 10px;
+		font-size: 32px;
+		border-radius: 35px;
+		float: left;
+	}
+
+	.more-span2 {
+		font-size: 20px;
+		font-weight: bold;
+		float: left;
+		line-height: 70px;
+	}
+
+	/* 底部 */
+	.layout_bottom {
+		height: 241px;
+		border: 0px solid red;
+		min-width: 1200px;
+	}
+
+	.footer {
+		height: 241px;
+		background: #2e2b2b;
+
+		color: #fff;
+		border-top: 2px solid #fd3555;
+	}
+
+	.wrap {
+		width: 1190px;
+		margin: 0 auto;
+		position: relative;
+		border: 0px solid green;
+	}
+
+	.left {
+		float: left;
+	}
+
+	.f-logo {
+		display: block;
+		margin: 40px 0 30px;
+	}
+
+	img {
+		border: none;
+	}
+
+	.f-nav {
+		line-height: 20px;
+	}
+
+	.f-nav-item:first-child {
+		padding-left: 0;
+	}
+
+	.f-nav-item {
+		display: inline-block;
+		color: #fff;
+		padding: 0 10px;
+	}
+
+	.f-nav a {
+		text-decoration: none;
+	}
+
+	.footer .address {
+		margin: 22px 0 0 0px;
+	}
+
+	.footer .icp {
+		color: rgba(255, 255, 255, .3);
+		text-decoration: none;
+	}
+
+	.footer .middle {
+		width: 320px;
+		margin-top: 52px;
+		margin-left: 180px;
+	}
+
+	.footer .middle .m-ttlte {
+		font-size: 16px;
+		font-weight: bold;
+		margin-bottom: 12px;
+	}
+
+	.footer .middle .m-content {
+		width: 330px;
+		height: 100px;
+		border: 0px solid red;
+	}
+
+	/* 伪类 */
+	.footer .middle .m-contenr a:hover {
+		background: url(./image/qq_1.png) center no-repeat;
+	}
+
+	.footer .middle .c-img {
+		width: 98px;
+		height: 98px;
+		float: left;
+		margin-right: 10px;
+		background: url(./image/qq.png) center no-repeat;
+		border: 1px solid #fff;
+	}
+
+	.footer .middle .mail {
+		float: left;
+		margin: 62px 0px 2px 0px;
+	}
+
+	.footer .middle .hot-line {
+		float: left;
+	}
+
+	.footer .small {
+		width: 100px;
+		text-align: center;
+		margin-left: 130px;
+		margin-top: 52px;
+	}
+
+	.footer .small .s-title {
+		font-size: 16px;
+		font-weight: bold;
+		margin-bottom: 12px;
+	}
+
+	.footer .small img {
+		width: 100px;
+		height: 100px;
+	}
+
+	/*消费记录*/
+	#consumption {
+		width: 974px;
+		height: 702px;
+		padding: 20px;
+		background: #fff;
+		border: 1px solid #e7e7e7;
+		position: absolute;
+		left: 174px;
+	}
+
+	#consumption>div:first-child {
+		width: 56px;
+		height: 32px;
+		padding: 0 20px;
+		font-size: 14px;
+		font-weight: bold;
+		border-bottom: 1px solid #e40011;
+		line-height: 32px;
+		color: #e40011;
+	}
+
+	#consumption>div:nth-child(2) {
+		width: 934px;
+		padding: 20px;
+		background: #f5f5f5;
+	}
+
+	#consumption>div:nth-child(2)>input {
+		margin: 0 5px;
+		width: 153px;
+		height: 28px;
+		/* 1px solid #e5e5e5; */
+		outline: none;
+	}
+
+	#consumption>div:nth-child(2)>a {
+		display: inline-block;
+		background: #e40011;
+		margin-left: 10px;
+		padding: 0 15px;
+		height: 30px;
+		line-height: 30px;
+		text-decoration: none;
+		color: white;
+		border-radius: 5px;
+	}
+
+	#consumption>div:nth-child(3) {
+		width: 974px;
+		height: 102px;
+		padding: 50px 0;
+		text-align: center;
+		font-size: 12px;
+		color: #666666;
+	}
+
+	#consumption>div:nth-child(3)>p {
+		margin-top: 20px;
+	}
+
+	/*收货地址*/
+	#address {
+		width: 1010px;
+		height: 702px;
+		border: 0px solid red;
+		background: white;
+		position: absolute;
+		left: 174px;
+	}
+
+	#address>div:first-child {
+		width: 974px;
+		height: 55px;
+		padding: 0 20px;
+		border-bottom: 1px solid #e7e7e7;
+
+	}
+
+	#address>div:first-child>div:first-child {
+		width: 104px;
+		height: 54px;
+		border: 0px solid red;
+		line-height: 54px;
+		float: left;
+	}
+
+	#address>div:first-child>div:last-child {
+		float: right;
+		width: 430px;
+		border: 0px solid red;
+		line-height: 54px;
+	}
+
+	.address-span1 {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		background: url('./image/memIcon.png')-235px -38px;
+		vertical-align: middle;
+		margin-right: 10px;
+	}
+
+	.address-span2 {
+		font-size: 12px;
+		color: #999999;
+
+	}
+
+	.address-red {
+		color: #e40011;
+	}
+
+	.address-right {
+		float: right;
+	}
+
+	.insert-address {
+		display: inline-block;
+		background: #e40011;
+		color: white;
+		padding: 0 15px;
+		height: 30px;
+		text-decoration: none;
+		margin-top: 10px;
+		line-height: 30px;
+		margin-left: 20px;
+	}
+
+	#address>div:last-child {
+		width: 979px;
+		height: 326px;
+		margin: 40px 0 0 35px;
+		border: 0px solid red;
+	}
+
+	.address-h4 {
+		color: red;
+		border-bottom: 2px solid red;
+		display: blcok;
+		width: 84px;
+		font-size: 14px;
+	}
+
+	#address>div:last-child>dl {
+		display: block;
+		width: 100%;
+		height: 30px;
+		margin-top: 20px;
+	}
+
+	#address>div:last-child>dl>dt {
+		width: 100px;
+		margin-left: 10px;
+		font-size: 14px;
+		color: #666666;
+		float: left;
+		height: 30px;
+		line-height: 30px;
+	}
+
+	#address>div:last-child>dl>dd {
+		float: left;
+		margin-left: 10px;
+	}
+
+	.span-red {
+		color: red;
+	}
+
+	.address-name {
+		width: 270px;
+		height: 28px;
+		border: 1px solid #e5e5e5;
+		background: #fff;
+		border-radius: 2px;
+		outline: none;
+	}
+
+	.form-control,
+	.address-felx1,
+	.address-felx2 {
+		width: 110px;
+		height: 28px;
+		border: 1px solid #e5e5e5;
+		background: #fff;
+		border-radius: 2px;
+		outline: none;
+		padding: 0;
+	}
+
+	.address-felx1 {
+		width: 80px;
+	}
+
+	.address-felx2 {
+		width: 185px;
+	}
+
+	.form-group {
+		float: left;
+	}
+
+	.save-address {
+		background: #e40011;
+		color: white;
+		padding: 8px 15px;
+		border-radius: 2px;
+		text-decoration: none;
+	}
+	
+	#address>table{
+		text-align: center;
+		border:1px solid aliceblue;
+		margin:10px 0 0 30px;
+	}
+	#address>table>tbody>tr>th:first-child{
+		padding:5px 30px;
+	}
+	#address>table>tbody>tr>th:nth-child(2){
+		padding:5px 150px;
+	}
+	#address>table>tbody>tr>th:nth-child(3){
+		padding:5px 50px;
+	}
+	#address>table>tbody>tr>th:nth-child(4){
+		padding:5px 50px;
+	}
+	#address>table>tbody>tr>th:last-child{
+		padding:5px 30px;
+	}
+
+	/*我的积分*/
+	#my-integral {
+		position: absolute;
+		left: 174px;
+		height: 702px;
+	}
+
+	#my-integral>div:first-child {
+		width: 1014px;
+		height: 109px;
+		/* padding:20px; */
+		border: 0px solid red;
+		background: white;
+
+	}
+
+	.my-integral-p1,
+	.integral-record {
+		display: block;
+		margin-bottom: 20px;
+		font-size: 16px;
+		color: #515151;
+		font-weight: bold;
+	}
+
+	.my-integral-p1 {
+		margin-left: 20px;
+		margin-top: 20px;
+	}
+
+	.integral-left,
+	.integral-right {
+		width: 100px;
+		height: 52px;
+		float: left;
+	}
+
+	/* .integral-left{
+		margin:
+	} */
+	.integral-border {
+		border-right: 1px solid #515151;
+	}
+
+	.my-integral-p2 {
+		font-size: 12px;
+		color: #515151;
+		text-align: center;
+	}
+
+	.my-integral-left-p,
+	.my-integral-right-p {
+		font-size: 26px;
+		text-align: center;
+	}
+
+	.my-integral-left-p {
+		color: #e40011
+	}
+
+	#my-integral>div:last-child {
+		width: 974px;
+		height: 332px;
+		padding: 20px;
+		border: 0px solid red;
+		background: white;
+		/* margin-top:10px; */
+	}
+
+	.integral-img {
+		text-align: center;
+		margin-top: 100px;
+	}
+
+	.integral-href {
+		text-align: center;
+		font-size: 12px;
+		color: #666666;
+		margin-top: 20px;
+	}
+
+	.integral-href a {
+		color: #e40011;
+		text-decoration: none;
+	}
+
+	/*晒单、评价*/
+	#evaluation {
+		width: 974px;
+		height: 235px;
+		background: white;
+		padding: 20px;
+		position: absolute;
+		left: 174px;
+	}
+
+	#evaluation>div:first-child {
+		width: 974px;
+		height: 33px;
+		border-bottom: 1px solid #f5f5f5;
+	}
+
+	#evaluation>div:first-child>a {
+		display: inline-block;
+		font-size: 14px;
+		color: #e40011;
+		width: 42px;
+		height: 32px;
+		padding: 0 20px;
+		text-decoration: none;
+	}
+
+	#evaluation>div:first-child>a:hover {
+		border-bottom: 1px solid red;
+	}
+
+	#evaluation>div:last-child {
+		width: 974px;
+		height: 201px;
+		padding: 50px 0;
+		text-align: center;
+	}
+
+	#evaluation>div:last-child>p:last-child {
+		margin-top: 20px;
+		color: #666666;
+		font-size: 12px;
+	}
+
+	#evaluation>div:last-child>p:last-child>a {
+		text-decoration: none;
+		color: red;
+	}
+
+	/*我的收藏*/
+	#collection {
+		width: 974px;
+		height: 310px;
+		background: white;
+		padding: 20px;
+		position: absolute;
+		left: 174px;
+	}
+
+	#collection>div:first-child {
+		width: 974px;
+		height: 33px;
+		border-bottom: 1px solid #f5f5f5;
+	}
+
+	#collection>div:first-child>a {
+		display: block;
+		width: 56px;
+		height: 32px;
+		color: #e40011;
+		font-weight: bold;
+		font-size: 14px;
+		border-bottom: 1px solid #e40011;
+		line-height: 32px;
+		padding: 0 20px;
+		text-decoration: none;
+	}
+
+	#collection>div:nth-child(2) {
+		width: 974px;
+		height: 30px;
+		padding: 20px 0;
+		border: 0px solid red;
+	}
+
+	.del,
+	.quanxuan {
+		text-decoration: none;
+		color: #666666;
+		font-size: 12px;
+	}
+
+	.del {
+		margin-left: 20px;
+	}
+
+	.collection-left {
+		float: left;
+	}
+
+	.collection-right {
+		float: right;
+	}
+
+	.collection-right a {
+		text-decoration: none;
+		font-size: 12px;
+		color: #666666;
+	}
+
+	#collection>div:last-child {
+		width: 974px;
+		height: 106px;
+		padding: 50px 0;
+		border: 0px solid red;
+		text-align: center;
+	}
+
+	#collection>div:last-child>p:last-child {
+		font-size: 12px;
+		color: #666666;
+		margin-top: 20px;
+	}
+
+	/*账户信息*/
+	#information {
+		width: 1014px;
+		height: 594px;
+		padding-bottom: 100px;
+		border: 0px solid red;
+		background: white;
+		position: absolute;
+		left: 174px;
+	}
+
+	#information>div:first-child {
+		width: 974px;
+		height: 54px;
+		padding: 0 20px;
+		border-bottom: 1px solid #e7e7e7;
+		line-height: 54px;
+	}
+
+	#information>div:first-child>span:first-child {
+		width: 30px;
+		height: 30px;
+		display: inline-block;
+		border: 0px solid red;
+		background: url("./image/memIcon.png")-135px -246px no-repeat;
+		vertical-align: middle;
+	}
+
+	#information>div:last-child>div:first-child {
+		width: 140px;
+		height: 176px;
+		border: 0px solid red;
+		float: left;
+		margin-left: 150px;
+		margin-top: 50px;
+	}
+
+	#information>div:last-child>div:nth-child(2) {
+		width: 515px;
+		height: 240px;
+		border: 0px solid red;
+		float: left;
+		margin-top: 50px;
+	}
+
+	#information>div:last-child>div:first-child>p:first-child>img {
+		width: 140px;
+		border-radius: 50%;
+	}
+
+	#information>div:last-child>div:first-child>p:last-child {
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	#information>div:last-child>div:first-child>p:last-child>a {
+		text-decoration: none;
+		font-size: 12px;
+		color: #515151;
+	}
+
+	.information-left {
+		display: inline-block;
+		width: 100px;
+		border: 0px solid red;
+		text-align: right;
+		margin: 0 0 30px 10px;
+		color: #666666;
+		font-size: 14px;
+		margin-right: 10px;
+	}
+
+	.information-input {
+		width: 270px;
+		height: 28px;
+		outline: none;
+		border: 1px solid #e5e5e5;
+		border-radius: 2px;
+		padding-left: 10px;
+	}
+
+	.information-font {
+		font-size: 14px;
+		color: #515151;
+	}
+
+	#information>div:last-child>div:last-child {
+		width: 515px;
+		height: 195px;
+		border: 0px solid red;
+		margin-left: 300px;
+		margin-top: 25px;
+	}
+
+	.address-select {
+		color: #666666;
+		font-size: 14px;
+		line-height: 28px;
+		margin-left: 44px;
+		margin-right: 10px;
+	}
+
+	.xiangxidizhi {
+		margin-left: 110px;
+		margin-top: 5px;
+	}
+
+	.baocunxinxi-f {
+		margin-left: 110px;
+		margin-top: 30px;
+	}
+
+	.baocunxinxi {
+		display: block;
+		background: #e40011;
+		color: white;
+		width: 90px;
+		height: 30px;
+		line-height: 30px;
+		text-decoration: none;
+		text-align: center;
+	}
+
+	/*账户安全*/
+	#security {
+		width: 1014px;
+		height: 594px;
+		padding-bottom: 100px;
+		border: 0px solid red;
+		background: white;
+		position: absolute;
+		left: 174px;
+	}
+
+	#security>div:first-child {
+		width: 974px;
+		height: 54px;
+		padding: 0 20px;
+		border-bottom: 1px solid #e7e7e7;
+		line-height: 54px;
+	}
+
+	#security>div:first-child>span:first-child {
+		width: 30px;
+		height: 30px;
+		display: inline-block;
+		border: 0px solid red;
+		background: url("./image/memIcon.png")-170px -246px no-repeat;
+		vertical-align: middle;
+	}
+
+	#security>div:nth-child(2) {
+		width: 1014px;
+		height: 90px;
+		border: 0px solid red;
+		padding: 40px 0;
+	}
+
+	#security>div:nth-child(2)>img {
+		margin-left: 70px;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		float: left;
+	}
+
+	#security>div:nth-child(2)>div {
+		float: left;
+		margin-left: 20px;
+	}
+
+	#security>div:nth-child(2)>div>p {
+		margin-bottom: 15px;
+	}
+
+	.security-span1 {
+		font-size: 14px;
+		color: #515151;
+	}
+
+	.security-span1-width {
+		display: inline-block;
+		width: 80px;
+	}
+
+	.security-red1 {
+		font-size: 18px;
+		color: #e40011
+	}
+
+	.security-red2 {
+		font-size: 12px;
+		color: #e40011;
+	}
+
+	.security-icon {
+		display: inline-block;
+		width: 12px;
+		height: 14px;
+		background: url("./image/memIcon.png")-158px 2px;
+	}
+
+	/*进度条	*/
+	.progress {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		height: 1rem;
+		overflow: hidden;
+		font-size: 0.75rem;
+		background-color: #e9ecef;
+		border-radius: 0.25rem;
+	}
+
+	.progress-red {
+		width: 33%;
+		background-color: #bd2130;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-box-pack: center;
+		color: #fff;
+		text-align: center;
+		background-color: #007bff;
+		transition: width 0.6s ease;
+	}
+
+	.security-li {
+		width: 893px;
+		height: 40px !important;
+		margin-left: 80px;
+		padding: 30px 0px;
+		border: 0px solid red;
+	}
+
+	.security-li>span {
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		border: 0px solid red;
+		border-radius: 50%;
+		background-color: #f7993e;
+		background-image: url("./image/memIcon.png");
+		background-position: -34px -276px;
+		margin-right: 20px;
+		float: left;
+	}
+
+	.security-li>p {
+		float: left;
+		font-size: 12px;
+		color: #666666;
+		width: 700px;
+	}
+
+	.security-li>p>span {
+		display: block;
+		color: #333;
+		font-size: 16px;
+	}
+
+	.security-li a {
+		display: inline-block;
+		width: 70px;
+		height: 28px;
+		line-height: 28px;
+		background: #fff;
+		border-radius: 2px;
+		border: 1px solid #dcdcdc;
+		text-align: center;
+		margin-top: 5px;
+	}
+
+	.security-button-red {
+		background: #e40011 !important;
+		color: white !important;
+	}
+
+	.security-li-icon1 {
+		background: url("./image/memIcon.png");
+		background-position: -102px -276px !important;
+	}
+
+	.security-li-icon2 {
+		background: url("./image/memIcon.png");
+		background-position: -135px -276px !important;
+	}
+
+	/* 我的购物车 */
+	/* 有订单时 */
+	#no-cart-f {
+		width: 1014px;
+		height: 594px;
+		background: white;
+		padding: 30px 0;
+		position: absolute;
+		padding-bottom: 100px;
+		border: 0px solid red;
+		left: 174px;
+	}
+
+	#no-cart {
+		width: 1014px;
+		height: 557px;
+		margin: 0 auto;
+		border: 0px solid red;
+		background: white;
+	}
+
+	.no-cart-d1,
+	.no-cart-d2 {
+		width: 1014px;
+		height: 61px;
+		border-bottom: 1px solid #e0e0e0;
+	}
+
+	/*全选框  */
+	.no-cart-d1>span:first-child {
+		width: 69px;
+		height: 61px;
+		position: relative;
+		display: block;
+		border: 0px solid red;
+	}
+
+	.qx {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		top: 23px;
+		left: 20px;
+		background: red;
+		text-align: center;
+	}
+
+	.qx_span {
+		position: absolute;
+		left: 41px;
+		text-align: center;
+	}
+
+	.no-cart-d1>span {
+		float: left;
+		display: inline-block;
+		border: 0px solid red;
+		text-align: center;
+		line-height: 61px;
+		color: #515151;
+		font-size: 14px;
+		width: 98px;
+	}
+
+	.no-cart-d1>span:nth-child(2) {
+		width: 388px;
+		height: 61px;
+	}
+
+	.no-cart-d1-span {
+		width: 98px;
+		height: 61px;
+	}
+
+	.no-cart-d1>span:nth-child(5) {
+		width: 98px;
+		height: 61px;
+	}
+
+	.no-cart-d1>span:nth-child(4),
+	.no-cart-d2>span:nth-child(4) {
+		width: 70px;
+	}
+
+	.no-cart-d1>span:nth-child(6),
+	.no-cart-d2>span:nth-child(6) {
+		width: 140px;
+	}
+
+	.no-cart-d1>span:nth-child(7),
+	.no-cart-d2>span:nth-child(7) {
+		width: 100px;
+	}
+
+	.no-cart-d1>span:nth-child(8),
+	.no-cart-d2>span:nth-child(8) {
+		width: 50px;
+	}
+
+	.no-cart-d2 {
+		height: 124px;
+	}
+
+	.no-cart-d2>span {
+		float: left;
+		display: inline-block;
+		border: 0px solid red;
+		text-align: center;
+		height: 124px;
+		line-height: 124px;
+		color: #515151;
+		font-size: 14px;
+	}
+
+	/* .no-cart-d2>span:not(:nth-child(2)){
+			line-height:124px;
+		} */
+	.no-cart-d2>span:first-child {
+		position: relative;
+		width: 69px;
+	}
+
+	.no-cart-d2>span:first-child>input {
+		position: absolute;
+		top: 50px;
+	}
+
+	.no-cart-d2>span:nth-child(2) {
+
+		width: 388px;
+	}
+
+	.no-cart-d2>span:nth-child(2)>a:first-child {
+		height: 68px;
+		padding: 28px 0 28px 0;
+		display: inline-block;
+		width: 388px;
+		border: 0px solid red;
+
+	}
+
+	.no-cart-d2>span:nth-child(2)>a:last-child {
+		line-height: 68px;
+	}
+
+	.no-cart-d2>span:nth-child(2)>a:first-child>img {
+		display: inline-block;
+		/* position:absolute;
+			top:27px;
+			left:54px; */
+		width: 68px;
+		vertical-align: middle;
+	}
+
+	#no-cart>div:nth-child(3) {
+		width: 214px;
+		height: 40px;
+		border-bottom: 1px solid #e0e0e0;
+		line-height: 40px;
+		padding-left: 800px;
+	}
+
+	/* 无订单时 */
+	#cart-f {
+		width: 100%;
+		background: #f5f5f5;
+		padding: 30px 0;
+		display: none;
+	}
+
+	#cart {
+		width: 1014px;
+		height: 257px;
+		margin: 0 auto;
+		border: 0px solid red;
+		background: white;
+
+	}
+
+	.cart-icon {
+		display: inline-block;
+		background: url('image/icons.png');
+		width: 54px;
+		height: 54px;
+		border: 0px solid red;
+		background-position: -269px -32px;
+		padding-left: 20px;
+	}
+
+	#cart>div:first-child {
+		height: 57px;
+		padding: 100px 0;
+		text-align: center;
+	}
+
+	#cart>div>span:nth-child(2) {
+		width: 196px;
+		height: 57px;
+		display: inline-block;
+
+		color: #727272;
+		font-size: 14px;
+
+	}
+
+	#cart>div>span:nth-child(2)>a {
+		display: inline-block;
+		width: 45px;
+		height: 26px;
+		text-decoration: none;
+		border: 2px solid #d1d1d1;
+		border-radius: 17px;
+		font-size: 14px;
+		padding: 0 30px;
+		text-align: center;
+		line-height: 26px;
+		margin: 15px 0 0 0;
+	}
+
+	.no-cart-d2>span:nth-child(5)>button {
+		width: 22px;
+		height: 24px;
+	}
+
+	.no-cart-d2>span:nth-child(5)>button>span {
+		font-size: 17px;
+	}
+
+	#add_del_count{
+		border:none;
+		width:30px;
+		text-align: center;
+	}
+
+	/* 待付款 */
+	#daifukuan{
+		position: absolute;
+		left: 196px;
+		top:76px;
+		width: 977px;
+		height: 688px;
+		border:0px solid red;
+		background: white;
+	}
+	#daifukuan>ul:first-child {
+		width: 974px;
+		height: 42px;
+		border: 1px solid #e8e8e8;
+		padding: 0;
+		background: #f9f9f9;
+	}
+
+	#daifukuan>ul:first-child>li {
+		float: left;
+		line-height: 42px;
+		text-align: center;
+		color: #515151;
+		font-size: 12px;
+	}
+
+	#daifukuan>ul:first-child>li:first-child {
+		width: 500px;
+		height: 100%;
+	}
+
+	#daifukuan>ul:first-child>li:last-child {
+		width: 129px;
+		height: 100%;
+	}
+	#daifukuan>div>ul:nth-child(2n-1) {
+		width: 954px;
+		height: 30px;
+		border: 1px solid #e8e8e8;
+		padding: 0;
+		background: #f9f9f9;
+		margin-top: 10px;
+		line-height: 30px;
+		padding: 0 0 0 20px;
+		font-size: 12px;
+		color: #555555;
+	}
+
+	#daifukuan>div>ul:nth-child(2n-1)>li>span:nth-child(2) {
+		margin-right: 100px;
+	}
+	#daifukuan>div>ul:nth-child(2n) {
+		height: 100px;
+		width: 974px;
+		padding: 0px 0;
+		border: 1px solid #e8e8e8;
+	}
+
+	#daifukuan>div>ul:nth-child(2n)>li:first-child>a{
+		width: 500px;
+		height: 100%;
+		display: inline-block;
+	}
+
+	#daifukuan>div>ul:nth-child(2n)>li:last-child {
+		width: 127px;
+		height: 100%;
+	}
+
+	#daifukuan>div>ul:nth-child(2n)>li {
+		float: left;
+		border-left: 1px solid #e8e8e8;
+		color: #515151;
+		font-size: 12px;
+	}
+
+	#daifukuan>div>ul:nth-child(2n)>li:first-child>a>img {
+		margin: 10px 0 10px 20px;
+		float: left;
+	}
+
+	#daifukuan>div>ul:nth-child(2n)>li:first-child>a>p {
+		float: left;
+		margin: 10px 0 0 20px;
+	}
+
+	#daifukuan>div>ul:nth-child(2n)>li:nth-child(2) {
+		text-align: center;
+	}
+
+	#daifukuan>div>ul:nth-child(2n)>li:nth-child(2)>p {
+		margin-top: 10px;
+	}
+
+	#daifukuan>div>ul:nth-child(2n)>li:nth-child(3) {
+		text-align: center;
+	}
+
+	#daifukuan>div>ul:nth-child(2n)>li:nth-child(3)>p {
+		margin-top: 10px;
+		font-size: 14px;
+		color: #e40011;
+	}
+
+	#daifukuan>div>ul:nth-child(2n)>li:nth-child(4) {
+		text-align: center;
+	}
+
+	#daifukuan>div>ul:nth-child(2n)>li:nth-child(4)>p {
+		margin-top: 10px;
+	}
+
+	#daifukuan>div>ul:nth-child(2n)>li:last-child {
+		text-align: center;
+	}
+
+	#daifukuan>div>ul:nth-child(2n)>li:last-child>p {
+		margin-top: 10px;
+	}
+
+	#daifukuan>div>ul:nth-child(2n)>li:last-child>p:first-child {
+		width: 80px;
+		height: 28px;
+		border: 1px solid #e40011;
+		line-height: 28px;
+		margin: 10px auto;
+	}
+	.active{
+		border-bottom: 1px solid #e44001;
+	}
+
+	/* 待收货 */
+	#daishouhuo{
+        position: absolute;
+        left: 196px;
+        top:76px;
+        width: 977px;
+        height: 688px;
+        border:0px solid red;
+        background: white;
+    }
+    #daishouhuo>ul:first-child {
+        width: 974px;
+        height: 42px;
+        border: 1px solid #e8e8e8;
+        padding: 0;
+        background: #f9f9f9;
+    }
+
+    #daishouhuo>ul:first-child>li {
+        float: left;
+        line-height: 42px;
+        text-align: center;
+        color: #515151;
+        font-size: 12px;
+    }
+
+    #daishouhuo>ul:first-child>li:first-child {
+        width: 500px;
+        height: 100%;
+    }
+
+    #daishouhuo>ul:first-child>li:last-child {
+        width: 129px;
+        height: 100%;
+    }
+    #daishouhuo>div>ul:nth-child(2n-1) {
+        width: 954px;
+        height: 30px;
+        border: 1px solid #e8e8e8;
+        padding: 0;
+        background: #f9f9f9;
+        margin-top: 10px;
+        line-height: 30px;
+        padding: 0 0 0 20px;
+        font-size: 12px;
+        color: #555555;
+    }
+
+    #daishouhuo>div>ul:nth-child(2n-1)>li>span:nth-child(2) {
+        margin-right: 100px;
+    }
+    #daishouhuo>div>ul:nth-child(2n) {
+        height: 100px;
+        width: 974px;
+        padding: 0px 0;
+        border: 1px solid #e8e8e8;
+    }
+
+    #daishouhuo>div>ul:nth-child(2n)>li:first-child>a{
+        width: 500px;
+        height: 100%;
+        display: inline-block;
+    }
+
+    #daishouhuo>div>ul:nth-child(2n)>li:last-child {
+        width: 127px;
+        height: 100%;
+    }
+
+    #daishouhuo>div>ul:nth-child(2n)>li {
+        float: left;
+        border-left: 1px solid #e8e8e8;
+        color: #515151;
+        font-size: 12px;
+    }
+
+    #daishouhuo>div>ul:nth-child(2n)>li:first-child>a>img {
+        margin: 10px 0 10px 20px;
+        float: left;
+    }
+
+    #daishouhuo>div>ul:nth-child(2n)>li:first-child>a>p {
+        float: left;
+        margin: 10px 0 0 20px;
+    }
+
+    #daishouhuo>div>ul:nth-child(2n)>li:nth-child(2) {
+        text-align: center;
+    }
+
+    #daishouhuo>div>ul:nth-child(2n)>li:nth-child(2)>p {
+        margin-top: 10px;
+    }
+
+    #daishouhuo>div>ul:nth-child(2n)>li:nth-child(3) {
+        text-align: center;
+    }
+
+    #daishouhuo>div>ul:nth-child(2n)>li:nth-child(3)>p {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #e40011;
+    }
+
+    #daishouhuo>div>ul:nth-child(2n)>li:nth-child(4) {
+        text-align: center;
+    }
+
+    #daishouhuo>div>ul:nth-child(2n)>li:nth-child(4)>p {
+        margin-top: 10px;
+    }
+
+    #daishouhuo>div>ul:nth-child(2n)>li:last-child {
+        text-align: center;
+    }
+
+    #daishouhuo>div>ul:nth-child(2n)>li:last-child>p {
+        margin-top: 10px;
+    }
+
+    #daishouhuo>div>ul:nth-child(2n)>li:last-child>p:first-child {
+        width: 80px;
+        height: 28px;
+        border: 1px solid #e40011;
+        line-height: 28px;
+        margin: 10px auto;
+    }
+
+	/* 待评价 */
+	#daipingjia{
+        position: absolute;
+        left: 196px;
+        top:76px;
+        width: 977px;
+        height: 688px;
+        border:0px solid red;
+        background: white;
+    }
+    #daipingjia>ul:first-child {
+        width: 974px;
+        height: 42px;
+        border: 1px solid #e8e8e8;
+        padding: 0;
+        background: #f9f9f9;
+    }
+
+    #daipingjia>ul:first-child>li {
+        float: left;
+        line-height: 42px;
+        text-align: center;
+        color: #515151;
+        font-size: 12px;
+    }
+
+    #daipingjia>ul:first-child>li:first-child {
+        width: 500px;
+        height: 100%;
+    }
+
+    #daipingjia>ul:first-child>li:last-child {
+        width: 129px;
+        height: 100%;
+    }
+    #daipingjia>div>ul:nth-child(2n-1) {
+        width: 954px;
+        height: 30px;
+        border: 1px solid #e8e8e8;
+        padding: 0;
+        background: #f9f9f9;
+        margin-top: 10px;
+        line-height: 30px;
+        padding: 0 0 0 20px;
+        font-size: 12px;
+        color: #555555;
+    }
+
+    #daipingjia>div>ul:nth-child(2n-1)>li>span:nth-child(2) {
+        margin-right: 100px;
+    }
+    #daipingjia>div>ul:nth-child(2n) {
+        height: 100px;
+        width: 974px;
+        padding: 0px 0;
+        border: 1px solid #e8e8e8;
+    }
+
+    #daipingjia>div>ul:nth-child(2n)>li:first-child>a{
+        width: 500px;
+        height: 100%;
+        display: inline-block;
+    }
+
+    #daipingjia>div>ul:nth-child(2n)>li:last-child {
+        width: 127px;
+        height: 100%;
+    }
+
+    #daipingjia>div>ul:nth-child(2n)>li {
+        float: left;
+        border-left: 1px solid #e8e8e8;
+        color: #515151;
+        font-size: 12px;
+    }
+
+    #daipingjia>div>ul:nth-child(2n)>li:first-child>a>img {
+        margin: 10px 0 10px 20px;
+        float: left;
+    }
+
+    #daipingjia>div>ul:nth-child(2n)>li:first-child>a>p {
+        float: left;
+        margin: 10px 0 0 20px;
+    }
+
+    #daipingjia>div>ul:nth-child(2n)>li:nth-child(2) {
+        text-align: center;
+    }
+
+    #daipingjia>div>ul:nth-child(2n)>li:nth-child(2)>p {
+        margin-top: 10px;
+    }
+
+    #daipingjia>div>ul:nth-child(2n)>li:nth-child(3) {
+        text-align: center;
+    }
+
+    #daipingjia>div>ul:nth-child(2n)>li:nth-child(3)>p {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #e40011;
+    }
+
+    #daipingjia>div>ul:nth-child(2n)>li:nth-child(4) {
+        text-align: center;
+    }
+
+    #daipingjia>div>ul:nth-child(2n)>li:nth-child(4)>p {
+        margin-top: 10px;
+    }
+
+    #daipingjia>div>ul:nth-child(2n)>li:last-child {
+        text-align: center;
+    }
+
+    #daipingjia>div>ul:nth-child(2n)>li:last-child>p {
+        margin-top: 10px;
+    }
+
+    #daipingjia>div>ul:nth-child(2n)>li:last-child>p:first-child {
+        width: 80px;
+        height: 28px;
+        border: 1px solid #e40011;
+        line-height: 28px;
+        margin: 10px auto;
+    }
+	/* 已完成 */
+	#yiwancheng{
+        position: absolute;
+        left: 196px;
+        top:76px;
+        width: 977px;
+        height: 688px;
+        border:0px solid red;
+        background: white;
+    }
+    #yiwancheng>ul:first-child {
+        width: 974px;
+        height: 42px;
+        border: 1px solid #e8e8e8;
+        padding: 0;
+        background: #f9f9f9;
+    }
+
+    #yiwancheng>ul:first-child>li {
+        float: left;
+        line-height: 42px;
+        text-align: center;
+        color: #515151;
+        font-size: 12px;
+    }
+
+    #yiwancheng>ul:first-child>li:first-child {
+        width: 500px;
+        height: 100%;
+    }
+
+    #yiwancheng>ul:first-child>li:last-child {
+        width: 129px;
+        height: 100%;
+    }
+    #yiwancheng>div>ul:nth-child(2n-1) {
+        width: 954px;
+        height: 30px;
+        border: 1px solid #e8e8e8;
+        padding: 0;
+        background: #f9f9f9;
+        margin-top: 10px;
+        line-height: 30px;
+        padding: 0 0 0 20px;
+        font-size: 12px;
+        color: #555555;
+    }
+
+    #yiwancheng>div>ul:nth-child(2n-1)>li>span:nth-child(2) {
+        margin-right: 100px;
+    }
+    #yiwancheng>div>ul:nth-child(2n) {
+        height: 100px;
+        width: 974px;
+        padding: 0px 0;
+        border: 1px solid #e8e8e8;
+    }
+
+    #yiwancheng>div>ul:nth-child(2n)>li:first-child>a{
+        width: 500px;
+        height: 100%;
+        display: inline-block;
+    }
+
+    #yiwancheng>div>ul:nth-child(2n)>li:last-child {
+        width: 127px;
+        height: 100%;
+    }
+
+    #yiwancheng>div>ul:nth-child(2n)>li {
+        float: left;
+        border-left: 1px solid #e8e8e8;
+        color: #515151;
+        font-size: 12px;
+    }
+
+    #yiwancheng>div>ul:nth-child(2n)>li:first-child>a>img {
+        margin: 10px 0 10px 20px;
+        float: left;
+    }
+
+    #yiwancheng>div>ul:nth-child(2n)>li:first-child>a>p {
+        float: left;
+        margin: 10px 0 0 20px;
+    }
+
+    #yiwancheng>div>ul:nth-child(2n)>li:nth-child(2) {
+        text-align: center;
+    }
+
+    #yiwancheng>div>ul:nth-child(2n)>li:nth-child(2)>p {
+        margin-top: 10px;
+    }
+
+    #yiwancheng>div>ul:nth-child(2n)>li:nth-child(3) {
+        text-align: center;
+    }
+
+    #yiwancheng>div>ul:nth-child(2n)>li:nth-child(3)>p {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #e40011;
+    }
+
+    #yiwancheng>div>ul:nth-child(2n)>li:nth-child(4) {
+        text-align: center;
+    }
+
+    #yiwancheng>div>ul:nth-child(2n)>li:nth-child(4)>p {
+        margin-top: 10px;
+    }
+
+    #yiwancheng>div>ul:nth-child(2n)>li:last-child {
+        text-align: center;
+    }
+
+    #yiwancheng>div>ul:nth-child(2n)>li:last-child>p {
+        margin-top: 10px;
+    }
+
+    #yiwancheng>div>ul:nth-child(2n)>li:last-child>p:first-child {
+        width: 80px;
+        height: 28px;
+        border: 1px solid #e40011;
+        line-height: 28px;
+        margin: 10px auto;
+    }
+
+	.address{
+        margin: 20px 0;
+
+        overflow: hidden;
+        list-style: none;
+    }
+    .address li{
+        float: left !important;
+        position: relative !important;
+        width: 248px !important;
+        height: 150px !important;
+        padding: 0 15px !important;
+        margin-right: 10px !important;
+        margin-bottom: 10px !important;
+        border-left: 1px solid #d9d9d9 !important;
+        border-right: 1px solid #d9d9d9 !important;
+        cursor: pointer !important;
+    }
+    .address_top{
+        height: 34px;
+        line-height: 34px;
+        overflow: hidden;
+    }
+    .pl{
+        float:left;
+    }
+    .address-mid{
+        border-top: 1px dashed #e1e1e1;
+        border-bottom: 1px dashed #e1e1e1;
+        height: 50px;
+        line-height: 25px;
+        font-size: 12px;
+        padding: 5px 0;
+    }
+    .mt10{
+        margin-top:10px;
+        font-size:12px;
+    }
+    .mt10>p{
+        float:left;
+    }
+    .r{
+        float:right;
+    }
+    .ml10{
+        margin-right: 10px;
+        color:#50b4ea;
+    }
+    .default-icon{
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -0;
+        z-index: 1;
+        width: 36px;
+        height: 29px;
+        background: url(./image/icons.png) -196px -162px no-repeat;
+    }
+    .top{
+        top:0;
+    }
+    .deco-line{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: url(./image/adress_deco.png) 0 0 no-repeat;
+        background-size: cover;
+    }
+    .bottom{
+        bottom:-22px;
+    }
+
+	#quxiadan{
+		display:block;
+		width:100px;
+		height:41px;
+		float:right;
+		background:red;
+		color:white;
+		text-align:center;
+	}
+</style>
+
+<body onload="loading()">
+	<!-- 头部	 -->
+	<div class="head">
+		<div class="top">
+			<div class="top-left">
+				<a class="home" target="_blank" href="#">众潮定制</a>
+				<span>|&nbsp;欢迎来到众潮定制商城</span>
+			</div>
+			<div class="top-right">
+				<span class="top-right-span">
+					<a id="login_a">登录</a>
+					<a id="reg_a">注册</a>
+					<a href="" id="js_order">我的订单</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<!-- logo	 -->
+	<div class="bottom">
+		<div class="bottom-logo">
+			<img src="image/logo.png" width="200px" height="70px">
+		</div>
+	</div>
+	<!-- 搜索框	 -->
+	<div class="input-cart">
+		<!-- 	输入框	 -->
+		<div>
+			<input type="text" placeholder="夏季T恤热卖中">
+		</div>
+		<!-- 	搜索按钮	 -->
+		<div class="search">
+			<img src="./image/search.png" alt="">
+		</div>
+		<!-- 	购物车按钮	 -->
+		<div>
+			<a href="cart.html">
+				<img src="./image/cart.png" alt="">
+			</a>
+		</div>
+	</div>
+	<!-- 导航栏	 -->
+	<div id="nav">
+		<div class="nav">
+			<div>
+				<a href="" class="all-class">所有分类</a>
+			</div>
+			<div class="nav-class">
+				<ul>
+					<li><a href="index.html">首页</a></li>
+					<li><a href="">精选</a></li>
+					<li><a href="">新品</a></li>
+					<li><a href="">特价</a></li>
+				</ul>
+			</div>
+			<div class="nav-right">
+				<span>
+					<img src="./image/icon_1.png" alt="">
+					<a href="">城市合伙人加盟</a>
+				</span>
+				<span>
+					<img src="./image/icon_2.png" alt="">
+					<a href="">商城小程序</a>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- order -->
+	<div id="order-f">
+		<div id="order">
+			<div>
+				<div class="members"><span class="members-icon"></span>会员中心</div>
+				<ul>
+					<li class="order-li">
+						<h3>订单中心</h3>
+					</li>
+					<li><a data-click="tab" data-id="content1" href="javascript:;">我的订单</a></li>
+					<li><a data-click="tab" data-id="content2" href="javascript:;">消费记录</a></li>
+					<li id="shouhuodizhi"><a data-click="tab" data-id="content3" href="javascript:;">收货地址</a></li>
+					<li class="order-li">
+						<h3>客户中心</h3>
+					</li>
+					<li id="my_cart1"><a data-click="tab" data-id="content4" href="javascript:;" id="">我的购物车</a></li>
+					<li><a data-click="tab" data-id="content5" href="javascript:;">我的积分</a></li>
+					<li><a data-click="tab" data-id="content6" href="javascript:;">晒单/评论</a></li>
+					<li><a data-click="tab" data-id="content7" href="javascript:;">我的收藏</a></li>
+					<li class="order-li">
+						<h3>账户管理</h3>
+					</li>
+					<li><a data-click="tab" data-id="content8" href="javascript:;">账户信息</a></li>
+					<li><a data-click="tab" data-id="content9" href="javascript:;">账户安全</a></li>
+				</ul>
+			</div>
+			<!-- 我的订单 -->
+			<div id="order-show" class="content1">
+				<div id="order-nav">
+					
+				</div>
+				<div id="no-order" style="display:none">
+					<p><img src="./image/noOrder.jpg" alt=""></p>
+					<p>当前没有订单哦，快去<a href="index.html">抢购</a>吧</p>
+				</div>
+				<!--有订单时的我的订单-->
+				<div id="have-order" class="content1">
+					<ul>
+						<li>订单商品</li>
+						<li class="have-order-li">收货人</li>
+						<li class="have-order-li">订单金额</li>
+						<li class="have-order-li">订单状态</li>
+						<li>操作</li>
+					</ul>
+					<div id="dingdan">
+						
+					</div>
+				</div>
+			</div>
+
+			<!-- 待付款 -->
+			<div id="daifukuan" class="content10">
+				<ul>
+					<li>订单商品</li>
+					<li class="have-order-li">收货人</li>
+					<li class="have-order-li">订单金额</li>
+					<li class="have-order-li">订单状态</li>
+					<li>操作</li>
+				</ul>
+				<div id="daifukuandingdan">
+					
+				</div>
+			</div>
+
+			<!-- 待收货 -->
+			<div id="daishouhuo" class="content11">
+					<ul>
+						<li>订单商品</li>
+						<li class="have-order-li">收货人</li>
+						<li class="have-order-li">订单金额</li>
+						<li class="have-order-li">订单状态</li>
+						<li>操作</li>
+					</ul>
+					<div id="daishouhuodingdan">
+						
+					</div>
+			</div>
+
+			<!-- 待评价 -->
+			<div id="daipingjia" class="content12">
+				<ul>
+					<li>订单商品</li>
+					<li class="have-order-li">收货人</li>
+					<li class="have-order-li">订单金额</li>
+					<li class="have-order-li">订单状态</li>
+					<li>操作</li>
+				</ul>
+				<div id="daipingjiadingdan">
+			
+				</div>
+			</div>
+
+			<!-- 已完成 -->
+			<div id="yiwancheng" class="content13">
+					<ul>
+						<li>订单商品</li>
+						<li class="have-order-li">收货人</li>
+						<li class="have-order-li">订单金额</li>
+						<li class="have-order-li">订单状态</li>
+						<li>操作</li>
+					</ul>
+					<div id="yiwanchengdingdan">
+						
+					</div>
+				</div>
+
+			<!-- 消费记录 -->
+			<div id="consumption" class="content2">
+				<div>
+					消费记录
+				</div>
+				<div>
+					下单时间<input type="text">-<input type="text"><a href="">查询</a>
+				</div>
+				<div>
+					<img src="./image/noExpense.jpg" alt="">
+					<p>暂无消费记录</p>
+				</div>
+			</div>
+			<!-- 收货地址 -->
+			<div id="address" class="content3">
+				<div>
+					<div>
+						<span class="address-span1"></span>收货地址
+					</div>
+					<p class="address-right">
+						<span class="address-span2">您已经创建了<span class="address-red">0</span>个收货地址，最多可创建<span
+								class="address-red">10</span>个</span>
+						<a href="" class="insert-address">新增收货地址</a>
+					</p>
+				</div>
+				
+				<ul class="address" id="shouhuodizhi_table">
+					
+				</ul>
+
+				<div>
+					<p>
+						<h4 class="address-h4">新增收货地址</h4>
+					</p>
+					<dl>
+						<dt>
+							<span class="span-red">*</span>
+							<span>收货人姓名:</span>
+						</dt>
+						<dd>
+							<input type="text" class="address-name" placeholder="请输入收货人姓名" id="uname">
+						</dd>
+					</dl>
+					<dl>
+						<dt>
+							<span class="span-red">*</span>
+							<span>所在地:</span>
+						</dt>
+						<dd>
+							<form class="form-inline">
+								<div data-toggle="distpicker">
+									<div class="form-group">
+										<select class="form-control" id="province"></select>
+									</div>
+									<div class="form-group">
+										<select class="form-control" id="city"></select>
+									</div>
+									<div class="form-group">
+										<select class="form-control" id="district"></select>
+									</div>
+								</div>
+							</form>
+						</dd>
+					</dl>
+					<dl>
+						<dt>
+						</dt>
+						<dd>
+							<input type="text" class="address-name" placeholder="请输入详细地址" id="xiangxidizhi">
+						</dd>
+					</dl>
+					<dl>
+						<dt>
+							<span class="span-red">*</span>
+							<span>手机号码:</span>
+						</dt>
+						<dd>
+							<input type="text" class="address-name" placeholder="请输入手机号码" id="iphone">
+						</dd>
+					</dl>
+
+					<dl>
+						<dt></dt>
+						<dd><a id="baocunshouhuodizhi" href="javascript:;" class="save-address" >保存收货地址</a></dd>
+					</dl>
+				</div>
+			</div>
+
+			<!-- 我的购物车 -->
+			<div id="no-cart-f" class="content4">
+				<div id="no-cart">
+					<div class="no-cart-d1">
+						<span>
+							<label class="checkbox" id="privilege_id" style="cursor: pointer;">
+								<input type="checkbox" name="privilege_id" id="privilege_id" class="qx"><span
+									class="qx_span">全选</span>
+						</span>
+						<span>商品</span>
+						<span class="no-cart-d1-span">规格</span>
+						<span class="no-cart-d1-span">单价</span>
+						<span class="no-cart-d1-span">数量</span>
+						<span>促销信息</span>
+						<span class="no-cart-d1-span">小计</span>
+						<span class="no-cart-d1-span">操作</span>
+					</div>
+					<div id="cart_goods">
+
+					</div>
+					<div><span>总计：</span><span id="zongji">0</span><a href="javascript:;" id="quxiadan">去下单</a></div>
+				</div>
+			</div>
+
+
+			<!-- 我的积分 -->
+			<div id="my-integral" class="content5">
+				<div>
+					<p class="my-integral-p1">我的积分</p>
+					<div class="integral-left integral-border">
+						<p class="my-integral-p2">可用积分</p>
+						<p class="my-integral-left-p">0</p>
+					</div>
+					<div class="integral-right">
+						<p class="my-integral-p2">已兑换积分</p>
+						<p class="my-integral-right-p">0</p>
+					</div>
+				</div>
+				<div>
+					<div>
+						<p class="integral-record">积分记录</p>
+					</div>
+					<div>
+						<p class="integral-img"><img src="./image/noPoints.jpg" alt=""></p>
+						<p class="integral-href">暂无积分，快去<a href="index.html">购物攒积分</a>吧</p>
+					</div>
+				</div>
+			</div>
+
+			<!--晒单/评论-->
+			<div id="evaluation" class="content6">
+				<div>
+					<a href="">待评价</a>
+					<a href="">已评价</a>
+				</div>
+				<div>
+					<p><img src="./image/noComment.jpg" alt=""></p>
+					<p>暂无待评价订单，先去<a href="index.html">抢购</a>吧</p>
+				</div>
+			</div>
+
+			<!--我的收藏-->
+			<div id="collection" class="content7">
+				<div>
+					<a href="">商品收藏</a>
+				</div>
+				<div>
+					<div class="collection-left">
+						<label class="checkbox">
+							<input type="checkbox"><span class="quanxuan">全选</span>
+						</label>
+						<a href="" class="del">批量删除</a>
+					</div>
+					<div class="collection-right">
+						<a href="">收藏时间</a>
+						<a href="">价格</a>
+					</div>
+				</div>
+				<div>
+					<p><img src="./image/noCollect.jpg" alt=""></p>
+					<p>赞无收藏任何商品</p>
+				</div>
+			</div>
+			<!--账户信息-->
+			<div id="information" class="content8">
+				<div>
+					<span></span>
+					账户信息
+				</div>
+				<div>
+					<div>
+						<p><img src="./image/def_head.jpg" alt=""></p>
+						<p><a href="">更换头像</a></p>
+					</div>
+					<div>
+						<p>
+							<span class="information-left">昵称：</span>
+							<span><input type="text" class="information-input" placeholder="请输入昵称"></span>
+						</p>
+						<p>
+							<span class="information-left">手机号：</span>
+							<span class="information-font">15207394594</span>
+						</p>
+						<p>
+							<span class="information-left">电子邮箱：</span>
+							<span><input type="text" class="information-input" placeholder="请输入电子邮箱"></span>
+						</p>
+						<p>
+							<span class="information-left">真实姓名：</span>
+							<span class="information-font">雷翔</span>
+						</p>
+						<p>
+							<span class="information-left">性别：</span>
+							<span><input type="radio" name="sex">男&nbsp;<input type="radio" name="sex">女</span>
+						</p>
+					</div>
+					<div class="clear"></div>
+					<div>
+						<div style="float:left" class="address-select">所在地：</div>
+						<div style="float:left">
+							<form class="form-inline">
+								<div data-toggle="distpicker">
+									<div class="form-group">
+										<select class="form-control" id="province1"></select>
+									</div>
+									<div class="form-group">
+										<select class="form-control" id="city1"></select>
+									</div>
+									<div class="form-group">
+										<select class="form-control" id="district1"></select>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div>
+							<input type="text" class="xiangxidizhi information-input" placeholder="请输入详细地址">
+						</div>
+						<div class="baocunxinxi-f">
+							<a href="" class="baocunxinxi">保存信息</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--账户安全-->
+			<div id="security" class="content9">
+				<div>
+					<span></span>
+					账户安全
+				</div>
+				<div>
+					<img src="./image/def_head.jpg" alt="">
+					<div>
+						<p>
+							<span class="security-span1 security-span1-width">登录名：</span>
+							<span class="security-span1">w</span>
+						</p>
+						<p>
+							<span class="security-span1 security-span1-width">安全级别：</span>
+							<span class="security-red1">初级</span>
+							<span class="security-icon"></span>
+							<span class="progress">
+								<span class="progress-red"></span>
+							</span>
+						</p>
+						<p>
+							<span class="security-red2">建议您启动全部安全设置，以保障账户及资金的安全</span>
+						</p>
+					</div>
+				</div>
+				<div>
+					<ul>
+						<li class="security-li">
+							<span></span>
+							<p>
+								<span>登录密码</span>
+								互联网账号存在被盗风险，建议您定期更改密码以保护账户安全。
+							</p>
+							<a href="">
+								修改
+							</a>
+						</li>
+						<li class="security-li">
+							<span class="security-li-icon1"></span>
+							<p>
+								<span>手机验证</span>
+								验证后，可用于快速找回登录密码，接收账户余额变动提醒。
+							</p>
+							<a href="" class="security-button-red">
+								立即验证
+							</a>
+						</li>
+						<li class="security-li">
+							<span class="security-li-icon2"></span>
+							<p>
+								<span>支付密码</span>
+								启用交易密码后，在使用账户中余额时，需输入交易密码。
+							</p>
+							<a href="" class="security-button-red">
+								立即设置
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		function sum(x){
+			console.log(x);
+			var n=x.value;
+			console.log(x.value);
+			var a2=x.parentNode.parentNode.children[3].innerHTML.slice(1);
+			//console.log(a2);
+			var a3=x.parentNode.parentNode.children[6];
+			console.log(a3);
+			var a4=n*a2;
+			a3.innerHTML=`￥${a4.toFixed(2)}`;
+			var a5s=x.parentNode.parentNode.parentNode.children;
+			console.log(a5s);
+			var total=0;
+			for(var a5 of a5s){
+				console.log(a5.children[0].children[0]);
+				if(a5.children[0].children[0].checked==true){
+					var a6=parseInt(a5.children[6].innerHTML.slice(1));
+					console.log(a6);
+					total+=a6;
+				}
+			}
+			console.log(total);
+			console.log(x.parentNode.parentNode.children[0].children[0]);
+			if(x.parentNode.parentNode.children[0].children[0].checked==true){
+				var zongji=document.getElementById("zongji");
+				console.log(zongji);
+				zongji.innerHTML=total;	
+			}
+			var $cart_id = x.parentNode.parentNode.children[8].innerHTML;
+			//console.log(n);
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var result = xhr.responseText;
+				}
+			}
+			xhr.open("put", "/upd/v1/upd", true);
+			var formdata = "cart_id=" + $cart_id + "&n=" + n;
+			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			xhr.send(formdata);
+		}
+	</script>
+
+
+	<script>
+		function loading() {
+			var n1 = localStorage.getItem("name");
+			// var n2 = localStorage.getItem("loginPhone");
+			if (n1 != null) {
+				login_a.innerHTML = `欢迎${n1}`;
+				reg_a.innerHTML = "退出";
+				reg_a.onclick = function () {
+					localStorage.removeItem("name");
+					location.href = "index.html";
+					login_a.innerHTML = "登陆";
+					reg_a.innerHTML = "注册";
+				}
+			}
+			dingdan();
+		}
+	</script>
+	<!-- 页面之间的跳转 -->
+	<script>
+		var btns = document.querySelectorAll("[data-click=tab]");
+		//console.log(btns);
+
+		(function dibl() {
+			var zIndex = 1;
+			for (var btn of btns) {
+				btn.onclick = function () {
+					var id = this.getAttribute("data-id");
+					var div = document.getElementsByClassName(id)[0];
+					//console.log(div);
+					div.style.zIndex = ++zIndex;
+				}
+			}
+		})();
+	</script>
+	<!-- 多快好省 -->
+	<div id="more-f">
+		<div class="more">
+			<div>
+				<span class="more-span1">
+					多
+				</span>
+				<span class="more-span2">
+					供应协同&nbsp;品类多多
+				</span>
+			</div>
+			<div>
+				<span class="more-span1">
+					快
+				</span>
+				<span class="more-span2">
+					全网协同&nbsp;急速多多
+				</span>
+			</div>
+			<div>
+				<span class="more-span1">
+					好
+				</span>
+				<span class="more-span2">
+					层层质检&nbsp;品类保证
+				</span>
+			</div>
+			<div>
+				<span class="more-span1">
+					省
+				</span>
+				<span class="more-span2">
+					高性价比&nbsp;省心省力
+				</span>
+			</div>
+		</div>
+	</div>
+	<!-- 底部 -->
+	<div class="layout_bottom">
+		<div class="footer">
+			<div class="wrap clearfix">
+				<div class="left">
+					<a href="" class="f-logo">
+						<img src="image/f_logo.png">
+					</a>
+					<div class="f-nav">
+						<a href="" class="f-nav-item">
+							关于我们
+						</a>|
+						<a href="" class="f-nav-item">
+							新手指引
+						</a>|
+						<a href="" class="f-nav-item">
+							行业新闻
+						</a>|
+						<a href="" class="f-nav-item">
+							帮助中心
+						</a>|
+						<a href="" class="f-nav-item">
+							用户注册
+						</a>
+					</div>
+					<p class="address">湖南省长沙市雨花区上河国际酒店A栋20层2201</p>
+					<a href="" class="icp">
+						京ICP备9999999号-1
+					</a>
+				</div>
+
+				<div class="middle left">
+					<p class="m-ttlte">
+						联系方式
+					</p>
+					<div class="m-content clearfix">
+						<a href="http://wpa.qq.com/msgrd?v=3&uin=1448019981&site=qq&menu=yes" class="c-img"></a>
+						<span>反馈邮箱：1448019981@qq.com</span><br>
+						<span>客服热线：</span><br>
+						<span>15207394594</span>
+					</div>
+				</div>
+
+				<div class="left small">
+					<p class="s-title">商城小程序</p>
+					<img src="./image/weixin.jpg" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/distpicker.data.js"></script>
+	<script src="./js/distpicker.js"></script>
+	<script src="./js/main.js"></script>
+	
+	<!-- 获取购物车信息 -->
+	<script>
+		var mycart=document.getElementById("my_cart1");
+		//console.log(mycart);
+		mycart.onclick=function(){
+			var xhr = new XMLHttpRequest();
+			var n = localStorage.getItem("name");
+
+			//console.log(n);
+
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var result = xhr.responseText;
+					//console.log(result);
+					var arr = JSON.parse(result);
+					//console.log(arr);
+
+					var strHTML = "";
+					if (arr == "") {
+						strHTML += `
+						<div id="cart">
+							<div>
+								<span class="cart-icon"></span>
+								<span>
+									购物车暂无商品，赶快选购吧！<br>
+									<a href="index.html">逛逛看</a>
+								</span>
+							</div>
+						</div>
+						`
+						var zongji = document.querySelector("#no-cart>div:nth-child(3)")
+						console.log(zongji);
+						zongji.style.display = "none";
+					} else {
+						//alert(arr);
+						for (var i = 0; i < arr.length; i++) {
+							strHTML += `
+							<div class="no-cart-d2">
+								<span>
+									<input type="checkbox" class="qx">
+								</span>
+								<span>
+									<a href="goods.html?id=${arr[i].good_id}"><img src="${arr[i].good_img}" alt="" >
+										${arr[i].good_title}
+									</a>
+								</span>
+								<span class="no-cart-d1-span">${arr[i].good_spe}</span>
+								<span class="no-cart-d1-span">￥${arr[i].good_price.toFixed(2)}</span>
+								<span class="no-cart-d1-span">
+									<button>-</button>
+									<input id="add_del_count" value="${arr[i].good_count}" onchange="sum(this)">
+									<button>+</button>
+								</span>
+								<span>--</span>
+								<span class="no-cart-d1-span">￥${(arr[i].good_price * arr[i].good_count).toFixed(2)}</span>
+								<span class="no-cart-d1-span"><a href="javascript:;" id="del_good">X</a></span>
+								<p style="display:none" id="cart_id">${arr[i].cart_id}</p>
+							</div>
+							
+						`;
+						}
+					}
+					cart_goods.innerHTML = strHTML;
+
+					quxiadan.onclick = function () {
+						var xuanze=document.querySelectorAll(".no-cart-d2>span>.qx");
+						console.log(xuanze);
+						var arr_gouwucheid=[];
+						var arr_danjia=[]
+						for(var i=0;i<xuanze.length;i++){
+							console.log(xuanze[i].checked==true);
+							if(xuanze[i].checked==true){
+								var gouwucheid=xuanze[i].parentNode.parentNode.children[8];
+								arr_gouwucheid.push(gouwucheid.innerHTML);
+
+								var danjia=xuanze[i].parentNode.parentNode.children[3].innerHTML.split("￥")[1];
+								arr_danjia.push(danjia);
+							}
+						}
+						localStorage.setItem("gouwucheid",arr_gouwucheid);
+
+						
+						localStorage.setItem("danjia",arr_danjia);
+						location.href="dingdan.html";
+						localStorage.removeItem("shangpinid");
+						localStorage.removeItem("sum");
+						localStorage.removeItem("guige");
+					}
+					
+					var cheAll = document.getElementsByName("privilege_id")[0];
+					//console.log(cheAll);
+					cheAll.onclick = function () {
+						var chbs = document.querySelectorAll(".no-cart-d2>span:first-child>input");
+						//console.log(chbs);
+						for (var chb of chbs) {
+							chb.checked = this.checked;
+						}
+
+						var total1=0;
+						var zongjis=document.querySelectorAll(".no-cart-d2>span:nth-child(7)");
+						for(var z of zongjis){
+							total1+=parseFloat(z.innerHTML.slice(1));
+						}
+						var zongji_1=document.getElementById("zongji");
+						zongji_1.innerHTML=total1.toFixed(2);
+
+						if(this.checked==false){
+							zongji_1.innerHTML="0.00";
+						}
+					}
+					
+					//购物车全选加减效果
+					var cart_btns = document.getElementsByTagName("button");
+					//console.log(cart_btns);
+					for (var btn of cart_btns) {
+						//console.log(btn);
+						btn.onclick = function () {
+							var span = this.parentNode;
+							//console.log(span);
+							var sum = span.children[1];
+							var n = parseInt(sum.value);
+							if (this.innerHTML == "+") {
+								n++;
+								
+								var $cart_id=this.parentNode.parentNode.children[8].innerHTML;
+								console.log(n);								
+								var xhr=new XMLHttpRequest();
+								xhr.onreadystatechange=function(){
+									if(xhr.readyState==4 && xhr.status==200){
+										var result=xhr.responseText;
+									}
+								}
+								xhr.open("put","/upd/v1/upd",true);
+								var formdata="cart_id="+$cart_id+"&n="+n;
+								xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+								xhr.send(formdata);
+								
+								
+								var xiaoji = this.parentNode.parentNode.children[3];
+								console.log(xiaoji);
+								//console.log(parseFloat(xiaoji.innerHTML.slice(1)));
+								var zongji = document.getElementById("zongji");
+								console.log(zongji);
+								var zongji_num = parseFloat(zongji.innerHTML);
+								zongji_num+=parseFloat(xiaoji.innerHTML.slice(1));
+								var zongji_chb_f=this.parentNode.parentNode.children[0];
+								var zongji_chb=zongji_chb_f.querySelector("input");
+								console.log(zongji_chb);
+								if(zongji_chb.checked==true){
+									zongji.innerHTML=zongji_num.toFixed(2);
+								}
+								
+							} else if (n > 1) {
+								n--;
+
+								var $cart_id=this.parentNode.parentNode.children[8].innerHTML;
+								console.log(n);								
+								var xhr=new XMLHttpRequest();
+								xhr.onreadystatechange=function(){
+									if(xhr.readyState==4 && xhr.status==200){
+										var result=xhr.responseText;
+										
+									}
+								}
+								xhr.open("put","/upd/v1/upd",true);
+								var formdata="cart_id="+$cart_id+"&n="+n;
+								xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+								xhr.send(formdata);
+
+								var xiaoji = this.parentNode.parentNode.children[3];
+								console.log(xiaoji);
+								//console.log(parseFloat(xiaoji.innerHTML.slice(1)));
+								var zongji = document.getElementById("zongji");
+								console.log(zongji);
+								var zongji_num = parseFloat(zongji.innerHTML);
+								zongji_num-=parseFloat(xiaoji.innerHTML.slice(1));
+								var zongji_chb_f=this.parentNode.parentNode.children[0];
+								var zongji_chb=zongji_chb_f.querySelector("input");
+								console.log(zongji_chb);
+								if(zongji_chb.checked==true){
+									zongji.innerHTML=zongji_num.toFixed(2);
+								}
+							}
+							sum.value = n;
+
+							var danjia = span.previousElementSibling.innerHTML.slice(1);
+
+							var count = n * danjia;
+							span.nextElementSibling.nextElementSibling.innerHTML = `￥${count.toFixed(2)}`;
+
+						}
+					}
+					var chbs = document.querySelectorAll(".no-cart-d2>span:first-child>input");
+					//console.log(chbs);
+					for (var chb of chbs) {
+						//console.log(chb);
+						chb.onclick = function () {
+							var cheAll = document.getElementsByName("privilege_id")[0];
+							if (this.checked == false) {
+								cheAll.checked = false;
+							} else {
+								var unchecked = document.querySelector(".no-cart-d2>span:first-child>input:not(:checked)");
+								cheAll.checked = unchecked == null;
+							}
+							if (this.checked == true) {
+								var xiaoji = this.parentNode.parentNode.children[6];
+								//console.log(xiaoji);
+								var zongji = document.getElementById("zongji");
+								var zongji_num = parseFloat(zongji.innerHTML);
+								//console.log(zongji);
+								//console.log(parseFloat(xiaoji.innerHTML.slice(1)));
+								//console.log(zongji_num);
+								zongji_num+=parseFloat(xiaoji.innerHTML.slice(1));
+								zongji.innerHTML=zongji_num.toFixed(2);
+							}else if(this.checked==false){
+								// zongji_num-=parseFloat(xiaoji.innerHTML.slice(1));
+								var xiaoji = this.parentNode.parentNode.children[6];
+								//console.log(parseFloat(xiaoji.innerHTML.slice(1)));
+								var zongji = document.getElementById("zongji");
+								var zongji_num = parseFloat(zongji.innerHTML);
+								zongji_num-=parseFloat(xiaoji.innerHTML.slice(1));
+								zongji.innerHTML=zongji_num.toFixed(2);
+							}
+						}
+					}
+				
+					var del_goods=document.querySelectorAll("#del_good");
+					//console.log(del_goods);
+					for(var del_good of del_goods){
+						//console.log(del_good);
+						del_good.onclick=function(){
+							//alert(1);
+							var $cart_id=this.parentNode.nextElementSibling.innerHTML;
+							//alert(cart_id);
+
+							var xhr=new XMLHttpRequest();
+							xhr.onreadystatechange=function(){
+								console.log(xhr.readyState);
+								if(xhr.readyState==4 && xhr.status==200){
+									var result=xhr.responseText;
+									console.log(result);
+									if(result=='1'){
+										alert('删除成功');
+										loading();
+									}else{
+										alert('删除失败');
+									}
+								}
+							}
+							xhr.open('delete',"/del_cart/v1/del_cart/"+$cart_id,true);
+							xhr.send();
+						}
+					}
+				}
+			}
+			xhr.open('get', '/cart/v1/cartlist/' + n, true)
+			xhr.send();
+		}
+		
+	</script>
+	<!-- 获取订单信息 -->
+	<script>
+		function dingdan() {
+			var n = localStorage.getItem("uid");
+			var xhr = new XMLHttpRequest();
+
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var result = xhr.responseText;
+					//console.log(result);
+					var arr = JSON.parse(result);
+					//console.log(arr);
+					var n1=0,n2=0,n3=0,n4=0;//n1已完成  n2待收货  n3待付款  n4待评价
+					for(var i=0;i<arr.length;i++){
+						//console.log(arr[i].state==1);
+						if(arr[i].state==1){
+							n1++;
+						}else if(arr[i].state==2){
+							n2++;
+						}else if(arr[i].state==3){
+							n3++;
+						}else if(arr[i].state==4){
+							n4++;
+						}
+					}
+					//console.log(n1);
+					var strHTML1="";
+					strHTML1+=`
+						<ul id="ul_tiaozhuan">
+							<li class="active"><a class="click" data-click="tab" data-id="content1" href="javascript:;">全部订单(${arr.length})</a></li>
+							<li><a class="click" data-click="tab" data-id="content10" href="javascript:;">待付款(${n3})</a></li>
+							<li><a class="click" data-click="tab" data-id="content11" href="javascript:;">待收货(${n2})</a></li>
+							<li><a class="click" data-click="tab" data-id="content12" href="javascript:;">待评价(${n4})</a></li>
+							<li><a class="click" data-click="tab" data-id="content13" href="javascript:;">已完成(${n1})</a></li>
+						</ul>
+					`;
+					var orderNav=document.getElementById("order-nav");
+					orderNav.innerHTML=strHTML1;
+
+					$("#ul_tiaozhuan").on("click",".click",function(){
+						console.log($(this));
+						$(this).parent().addClass("active").siblings().removeClass("active");
+					})
+
+					ul_tiao();
+
+					var strHTML="";
+					for(var i=0;i<arr.length;i++){
+						var date=new Date(arr[i].PayTime)
+						strHTML+=`
+						<ul>
+							<li>
+								<span>订单号：</span><span>${arr[i].Oid}</span>
+								<span>${date.toLocaleString()}</span>
+							</li>
+						</ul>
+						<ul>
+							<li class="clear">
+								<a href="goods.html?id=${arr[i].good_id}">
+								<img src="${arr[i].good_img}" alt="" style="width:68px;">
+								<p>${arr[i].good_title}</p>
+								</a>
+							</li>
+							<li class="have-order-ul3-li">
+								<p>${arr[i].Uname}</p>
+							</li>
+							<li class="have-order-ul3-li">
+								<p>￥${arr[i].Price}</p>
+							</li>
+							<li class="have-order-ul3-li">
+								<p>${arr[i].state==1?"已完成":arr[i].state==2?"已付款":"未付款"}</p>
+								<p><a href="javascript:;" style="color:#0099cc">订单详情</a></p>
+							</li>
+							<li>
+								<p><a href="javascript:;" style="color:#e40011">${arr[i].state==1?"已完成":arr[i].state==2?"已付款":"立即付款"}</a></p>
+								<p><a href="javascript:;">${arr[i].state==1?"已完成":"取消订单"}</a></p>
+							</li>
+						</ul>
+					`;
+					}
+					var dingdan=document.getElementById("dingdan");
+					//console.log(dingdan);
+					dingdan.innerHTML=strHTML;
+
+					var btns = document.querySelectorAll("[data-click=tab]");
+					//console.log(btns);
+					(function dibl() {
+						var zIndex = 1;
+						for (var btn of btns) {
+							btn.onclick = function () {
+								var id = this.getAttribute("data-id");
+								var div = document.getElementsByClassName(id)[0];
+								//console.log(div);
+								div.style.zIndex = ++zIndex;
+							}
+						}
+					})();
+				}
+				
+			}
+			xhr.open('get', '/dingdan/v1/dingdan/' + n, true)
+			xhr.send();
+		}
+	</script>
+	<!-- 订单信息分类-->
+	<script>
+		function ul_tiao() {
+			var ul_tiao = document.getElementById("ul_tiaozhuan");
+			//console.log(ul_tiao);
+			var $n = localStorage.getItem("uid");
+			ul_tiao.onclick = function (e) {
+				var $a=0;
+				if (e.target.nodeName == "A") {
+					//console.log(e.target.innerHTML.slice(0,3));
+					if(e.target.innerHTML.slice(0,3)=="待付款"){
+						var $a=3;
+					}else if(e.target.innerHTML.slice(0,3)=="待收货"){
+						var $a=2;
+					}else if(e.target.innerHTML.slice(0,3)=="待评价"){
+						var $a=4
+					}else if(e.target.innerHTML.slice(0,3)=="已完成"){
+						var $a=1;
+					}
+					var xhr=new XMLHttpRequest();
+
+					xhr.onreadystatechange = function () {
+						if (xhr.readyState == 4 && xhr.status == 200) {
+							var result = xhr.responseText;
+							var arr = JSON.parse(result);
+							console.log(arr.length==0);
+
+							var strHTML="";
+							for(var i=0;i<arr.length;i++){
+								var date=new Date(arr[i].PayTime)
+								strHTML+=`
+									<ul>
+										<li>
+											<span>订单号：</span><span>${arr[i].Oid}</span>
+											<span>${date.toLocaleString()}</span>
+										</li>
+									</ul>
+									<ul>
+										<li class="clear">
+											<a href="goods.html?id=${arr[i].good_id}">
+											<img src="${arr[i].good_img}" alt="" style="width:68px;">
+											<p>${arr[i].good_title}</p>
+											</a>
+										</li>
+										<li class="have-order-ul3-li">
+											<p>${arr[i].Uname}</p>
+										</li>
+										<li class="have-order-ul3-li">
+											<p>￥${arr[i].Price}</p>
+										</li>
+										<li class="have-order-ul3-li">
+											<p>${arr[i].state==1?"已完成":arr[i].state==2?"已付款":"未付款"}</p>
+											<p><a href="javascript:;" style="color:#0099cc">订单详情</a></p>
+										</li>
+										<li>
+											<p><a href="javascript:;" style="color:#e40011">${arr[i].state==1?"已完成":arr[i].state==2?"已付款":"立即付款"}</a></p>
+											<p><a href="javascript:;">${arr[i].state==1?"已完成":"取消订单"}</a></p>
+										</li>
+									</ul>
+									`;
+							}
+							if(arr.length==0){
+								return;
+							}else if(arr[0].state==3){
+								daifukuandingdan.innerHTML=strHTML;
+							}else if(arr[0].state==2){
+								daishouhuodingdan.innerHTML=strHTML;
+							}else if(arr[0].state==1){
+								yiwanchengdingdan.innerHTML=strHTML;
+							}else if(arr[0].state==4){
+								daipingjiadingdan.innerHTML=strHTML;
+							}
+						}
+							
+					}
+					xhr.open('get', '/dingdanfenlei/v1/dingdanfenlei'+$n+"&"+$a, true)
+					xhr.send();
+				}
+			}
+		}
+	</script>
+
+	<!-- 收货地址 -->
+	<script>
+		shouhuodizhi.onclick=function(){
+			dizhi();
+		}
+	</script>
+	<script>
+		baocunshouhuodizhi.onclick=function(){
+			var $uid=localStorage.getItem("uid");
+			var $uname=uname.value;
+			var $province=province.value;
+			var $city=city.value;
+			var $district=district.value;
+			var $xiangxidizhi=xiangxidizhi.value;
+			var $iphone=iphone.value;
+			
+			console.log($uid,$uname,$province,$city,$district,$xiangxidizhi,$iphone);
+			
+			var xhr=new XMLHttpRequest();
+
+			xhr.onreadystatechange=function(){
+				//console.log(xhr.readyState);
+				if(xhr.readyState==4 && xhr.status==200){
+					var result=xhr.responseText;
+					console.log(result);
+					if(result==1){
+						alert('保存成功');
+						dizhi()
+					}else{
+						alert('保存失败');
+					}
+				}
+			}
+
+			xhr.open("post","/tianjiashouhuodizhi/v1/baocunshouhuodizhi",true);
+			var formdata="uid="+$uid+"&uname="+$uname+"&province="+$province+"&city="+$city+"&district="+$district+"&xiangxidizhi="+$xiangxidizhi+"&iphone="+$iphone;
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			xhr.send(formdata);
+		}
+	</script>
+
+	<!-- 获取收货地址 -->
+	<script>
+		function dizhi(){
+			var $n = localStorage.getItem("uid");
+			var xhr=new XMLHttpRequest();
+
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4 && xhr.status==200){
+					var result=xhr.responseText;
+					
+					var arr=JSON.parse(result);
+					var strHTML="";
+					for(var i=0;i<arr.length;i++){
+						strHTML+=`
+							<li>
+								<div class="address_top">
+									<p class="pl">${arr[i].Consignee}</p>
+								</div>
+								<div class="address-mid">
+									${arr[i].Province}-${arr[i].City}-${arr[i].County}-${arr[i].Address}
+								</div>
+								<div class="mt10">
+									<p>${arr[i].Phone}</p>
+									<div class="r">
+										<a href="" class="ml10">修改</a>
+										<a href="" class="ml10">删除</a>
+									</div>
+								</div>
+								<div class="default-icon"></div>
+								<div class="deco-line top"></div>
+								<div class="deco-line bottom"></div>
+							</li>
+						`;
+					}
+					shouhuodizhi_table.innerHTML=strHTML;
+				}
+			}
+			xhr.open('get','/shouhuodizhi/v1/shouhuodizhi'+$n,true)
+			xhr.send();
+		}
+	</script>
+
+
+	<!-- 去下单 -->
+	<script>
+		
+	</script>
+</body>
+
+</html>

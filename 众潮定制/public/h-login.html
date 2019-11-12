@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+
+	body{
+		background:url("./h-image/login_bg1.jpg") no-repeat;
+		background-size:100% 100%; 
+		background-attachment:fixed;
+	}
+	#login-bg{
+		position: absolute;
+		top: 110px;
+		right: 60px;
+	}
+	.login-top{
+		margin-left: 110px;
+		margin-top: 60px;
+		width:300px;
+		height: 88px;
+	}
+	.login-top-d1,.login-top-d2{
+		float:left;
+	}
+	.login-top-d2{
+		line-height: 88px;
+		margin-left: 20px;
+	}
+
+	.login-bottom{
+		width:400px;
+		height: 400px;
+		margin-left:130px;
+		margin-top:36px;
+		padding:54px 88px;
+		background: white;
+		border-radius: 10px;
+	}
+	.login-bottom>div:first-child{
+		font-size: 24px;
+		color: #201b01;
+		margin-bottom: 40px;
+	}
+	.login-bottom>div:nth-child(2)>input,.login-bottom>div:nth-child(3)>input{
+		width: 320px;
+		height: 60px;
+		padding: 0 40px;
+		color: #989898;
+		font-size: 18px;
+		border-radius: 10px;
+		border: none;
+		background: #f7fbff;
+		outline: none;
+		margin-bottom: 40px;
+	}
+	.login-bottom>div:nth-child(4)>a{
+		display: block;
+		width: 364px;
+		height: 60px;
+		padding: 0 18px;
+		background: #ff9966;
+		color: #201b01;
+		font-size: 18px;
+		text-align: center;
+		line-height: 60px;
+		border-radius: 10px;
+	}
+	.pwd{
+		margin-top: 15px;
+	}
+	.pwd>span:last-child{
+		float: right;
+	}
+</style>
+<body>
+	<div id="login-bg">
+		<div class="login-top">
+			<div class="login-top-d1"><img src="./image/logo.png"alt="" 	width="128px" height="88px"/></div>
+			<div class="login-top-d2">
+				<h1>众潮定制</h1>
+			</div>
+		</div>
+		<div class="login-bottom">
+			<div>
+				用户登录
+			</div>
+			<div>
+				<input type="text" placeholder="请输入您的用户名"/>
+			</div>
+			<div>
+				<input type="password" placeholder="请输入您的账户密码"/>
+			</div>
+			<div>
+				<a href="">登录</a>
+			</div>
+			<div class="pwd">
+				<span><input type="checkbox"/>记住密码</span>
+				<span>找回密码</span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

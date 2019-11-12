@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	.block{
+		display:block;
+	}
+	.float-left{
+		float:left;
+	}
+	li{
+		list-style:none;
+	}
+	a{
+		text-decoration:none;
+	}
+/*头部*/
+	.head{
+			height:36px;
+			background:#f2f2f2;
+			line-height:36px;
+			min-width:1200px;
+		}
+		.top{
+			width:1190px;
+			border:0px solid red;
+			height:36px;
+			margin:0 auto;
+		}
+		.top-left{
+			float:left;
+		}
+		.top-left a{
+			color:#333;
+			text-decoration:none;	
+		}
+		.home{
+			height:16px;
+			line-height:16px;
+			background:url(./image/home.png) left center no-repeat;
+			padding-left:22px;
+		}
+		.top-left-right{
+			float:right;
+		}
+		.top-right{
+			float:right;
+		}
+		.top-right-span a{
+			color:#333;
+			text-decoration:none;
+			padding-left:20px;
+		}
+		
+		.bottom{
+			margin-bottom:22px;
+		}
+
+		.bottom-logo{
+			text-align:center;
+			margin-top:32px;
+			margin-bottom:22px;
+		}
+
+		.bottom-search{
+			text-align:center;
+		}
+/*搜索框*/
+	.input-cart{
+		width:370px;
+		height:22px;
+		border:0px solid red;
+		margin:0 auto;	
+		}
+
+	.input-cart input{
+		width:300px;
+		height:22px;
+		border:none;
+		border-bottom:1px solid #e6e6e6;
+		outline:none;
+		}
+
+	.input-cart div{
+		float:left;
+		}
+
+	.search{
+		margin:0 10px;
+		}
+/*导航栏*/
+		#nav{
+		margin-top:30px;
+		border-bottom:2px solid red;
+		min-width:1200px;
+	}
+	
+	.nav{
+		width:1190px;
+		height:40px;
+		margin:0 auto;
+	}
+
+	.all-class{
+		display:block;
+		width: 160px;
+		height:40px;
+		color: #fff;
+		font-size:16px;
+		background:url("./image/menu.png") 32px center no-repeat;
+		background-color: #fd3555;
+		text-decoration:none;	
+		line-height:40px;
+		text-indent:60px;
+		float:left;
+		}
+
+		.nav-class ul li{
+			float:left;
+			list-style:none;
+		}
+
+		.nav-class ul li a{
+			text-decoration:none;
+			margin-left:60px;
+			color:#333;
+			font-size:18px;
+			line-height:40px;
+		}
+
+		.nav-right{
+			float:right;
+			width:268px;
+			height:39px;
+		}
+
+		.nav-right span{
+			line-height:40px;
+		}
+
+		.nav-right span a{
+			text-decoration:none;
+			color:#333;
+			font-size:18px;
+		}
+
+/*cart无订单时*/
+	#cart-f{
+		width:100%;
+		background:#f5f5f5;
+		padding:30px 0;
+		display:none;
+	}
+	#cart{
+		width:1190px;
+		height:257px;
+		margin:0 auto;
+		border:1px solid red;
+		background:white;
+		
+	}
+	.cart-icon{
+		display:inline-block;
+		background:url('image/icons.png');
+		width:54px;
+		height:54px;
+		border:0px solid red;
+		background-position:-269px -32px;
+		padding-left:20px;
+	}
+	#cart>div:first-child{
+		height:57px;
+		padding:100px 0;
+		text-align:center;
+	}
+	#cart>div>span:nth-child(2){
+		width:196px;
+		height:57px;
+		display:inline-block;
+		
+		color:#727272;
+		font-size:14px;
+		
+	}
+	#cart>div>span:nth-child(2)>a{
+		display:inline-block;
+		width:45px;
+		height:26px;
+		text-decoration:none;
+		border:2px solid #d1d1d1;
+		border-radius:17px;
+		font-size:14px;
+		padding:0 30px;
+		text-align:center;
+		line-height:26px;
+		margin:15px 0 0 0;
+	}
+
+/* 多快好省 */
+	#more-f{
+		width:100%;
+		background:#f5f5f5;
+		min-width:1200px;
+	}
+	.more{
+		width:1190px;
+		height:70px;
+		padding:65px 0;
+		border:0px solid red;
+		margin:0 auto;
+		display:flex;
+		flex-wrap:wrap;
+		justify-content:space-between;
+	}
+	.more div{
+		float:left;
+
+	}
+	.more-span1{
+		display:block;
+		width:66px;
+		height:66px;
+		text-align:center;
+		line-height:66px;
+		border: 2px solid #fd3555;
+		color: #fd3555;
+		margin-right: 10px;
+		font-size: 32px;
+		border-radius: 35px;
+		float:left;
+	}
+	.more-span2{
+		font-size:20px;
+		font-weight:bold;
+		float:left;
+		line-height:70px;
+	}
+/* 底部 */
+	.layout_bottom{
+			height:241px;
+			border:0px solid red;
+			min-width:1200px;
+		}
+		.footer{
+			height:241px;
+			background:#2e2b2b;
+			
+			color:#fff;
+			border-top:2px solid #fd3555;
+		}
+		.wrap{
+			width:1190px;
+			margin:0 auto;
+			position:relative;
+			border:0px solid green;
+		}
+		.left{
+			float:left;
+		}
+		.f-logo{
+			display:block;
+			margin:40px 0 30px;
+		}
+		img{
+			border:none;
+		}
+		.f-nav{
+			line-height:20px;
+		}
+		.f-nav-item:first-child{
+			padding-left:0;
+		}
+		.f-nav-item{
+			display:inline-block;
+			color:#fff;
+			padding:0 10px;
+		}
+		.f-nav a{
+			text-decoration:none;	
+		}
+		.footer .address{
+			margin:22px 0 0 0px;
+		}
+		.footer .icp{
+			color:rgba(255,255,255,.3);
+			text-decoration:none;	
+		}
+
+		.footer .middle{
+			width:320px;
+			margin-top:52px;
+			margin-left:180px;
+		}
+		.footer .middle .m-ttlte{
+			font-size:16px;
+			font-weight:bold;
+			margin-bottom:12px;
+		}
+		.footer .middle .m-content{
+			width:330px;
+			height:100px;
+			border:0px solid red;
+		}
+		/* 伪类 */
+		.footer .middle .m-contenr a:hover{
+			background:url(./image/qq_1.png) center no-repeat;
+		}
+		.footer .middle .c-img{
+			width:98px;
+			height:98px;
+			float:left;
+			margin-right:10px;
+			background:url(./image/qq.png) center no-repeat;
+			border:1px solid #fff;
+		}
+		.footer .middle .mail{
+			float:left;
+			margin:62px 0px 2px 0px;
+		}
+		.footer .middle .hot-line{
+			float:left;
+		}
+		.footer .small{
+			width:100px;	
+			text-align:center;
+			margin-left:130px;
+			margin-top:52px;
+		}
+		.footer .small .s-title{
+			font-size:16px;
+			font-weight:bold;
+			margin-bottom:12px;
+		}
+		.footer .small img{
+			width:100px;
+			height:100px;
+		}
+
+/* 有订单时的购物车 */
+	#no-cart-f{
+		width:100%;
+		background:#f5f5f5;
+		padding:30px 0;
+	}
+	#no-cart{
+		width:1190px;
+		height:557px;
+		margin:0 auto;
+		border:1px solid red;
+		background:white;
+	}
+	.no-cart-d1{
+		width:1190px;
+		height:61px;
+		border-bottom:1px solid #e0e0e0;
+	}
+	/*全选框  */
+		.no-cart-d1>span:first-child{
+			width:80px;
+			height:61px;
+			position:relative;
+			display:block;
+			border:0px solid red;
+		}
+		.qx{
+			position:absolute;
+			width:16px;
+			height:16px;
+			top:23px;
+			left:20px;
+			background:red;
+			text-align:center;
+		}
+		.qx_span{
+			position:absolute;
+			left:41px;
+			text-align:center;
+		}
+	.no-cart-d1>span{
+		float:left;
+		display:inline-block;
+		border:0px solid red;
+		text-align:center;
+		line-height:61px;
+		color:#515151;
+		font-size:14px;
+	}
+	.no-cart-d1>span:nth-child(2){
+		width:475px;
+		height:61px;
+	}
+	.no-cart-d1-span{
+		width:120px;
+		height:61px;
+	}
+	.no-cart-d1>span:nth-child(5){
+		width:150px;
+		height:61px;
+	}
+	
+	.no-cart-d2{
+		height:124px;
+	}
+	.no-cart-d2>span:not(:nth-child(2)){
+		line-height:124px;
+	}
+	.no-cart-d2>span:first-child{
+		position:relative;
+	}
+	.no-cart-d2>span:first-child>input{
+		position:absolute;
+		top:50px;
+	}
+	.no-cart-d2>span:nth-child(2){
+		position:relative;
+	}
+	.no-cart-d2>span:nth-child(2)>img{
+		position:absolute;
+		top:27px;
+		left:54px;
+	}
+	.no-cart-d2>span:nth-child(2)>a{
+		display:block;
+		width:200px;
+		height:20px;
+		border:0px solid red;
+	}
+	.no-cart-d2-a1{
+		margin:15px 0 0 130px;
+		color:#515151;
+		font-size:16px;
+		
+	}
+	.no-cart-d2-a2{
+		margin:4px 0 0 105px;
+	}
+</style>
+<body>
+<!-- 头部	 -->
+	<div class="head">
+		<div class="top">
+			<div class="top-left">
+				<a class="home" target="_blank" href="#">众潮定制</a>
+				<span>|&nbsp;欢迎来到众潮定制商城</span>
+			</div>
+			<div class="top-right">
+				<span class="top-right-span">
+					<a href="" id="login_a">登录</a>
+					<a id="reg_a">注册</a>
+					<a href="">我的订单</a>
+				</span>
+			</div>
+		</div>
+	</div>
+<!-- logo	 -->
+	<div class="bottom">
+		<div class="bottom-logo">
+			<img src="image/logo.png" width="200px" height="70px">
+		</div>
+	</div>
+<!-- 搜索框	 -->
+	<div class="input-cart">
+		<!-- 	输入框	 -->
+		<div>
+			<input type="text" placeholder="夏季T恤热卖中">
+		</div>
+		<!-- 	搜索按钮	 -->
+		<div class="search">
+			<img src="./image/search.png" alt="">
+		</div>
+		<!-- 	购物车按钮	 -->
+		<div>
+			<img src="./image/cart.png" alt="">
+		</div>	
+	</div>
+<!-- 导航栏	 -->
+	<div id="nav">
+		<div class="nav">
+			<div>
+				<a href="" class="all-class">所有分类</a>
+			</div>
+			<div class="nav-class">
+				<ul>
+					<li><a href="index.html">首页</a></li>
+					<li><a href="" onclick="show()">精选</a></li>
+					<li><a href="">新品</a></li>
+					<li><a href="">特价</a></li>
+				</ul>
+			</div>
+			<div class="nav-right">
+				<span>
+				<img src="./image/icon_1.png" alt="">
+				<a href="">城市合伙人加盟</a>
+				</span>
+				<span>
+				<img src="./image/icon_2.png" alt="">
+				<a href="">商城小程序</a>
+				</span>
+			</div>
+		</div>
+	</div>
+
+<!-- cart无订单时 -->
+	<div id="cart-f">
+		<div id="cart">
+			<div>
+				<span class="cart-icon"></span>
+				<span>
+					购物车暂无商品，赶快选购吧！<br>
+					<a href="index.html">逛逛看</a>
+				</span>
+			</div>
+		</div>
+	</div>
+
+<!-- cart有订单时 -->
+	<div id="no-cart-f">
+		<div id="no-cart">
+			<div class="no-cart-d1">
+				<span>
+					<label class="checkbox" id="privilege_id" style="cursor: pointer;">
+					<input type="checkbox" name="privilege_id" id="privilege_id" class="qx"><span class="qx_span">全选</span>
+				</span>
+				<span>商品</span>
+				<span class="no-cart-d1-span">单价</span>
+				<span class="no-cart-d1-span">数量</span>
+				<span>促销信息</span>
+				<span class="no-cart-d1-span">小计</span>
+				<span class="no-cart-d1-span">操作</span>
+			</div>
+			
+			<div class="no-cart-d1 no-cart-d2">
+				<span>
+					<input type="checkbox" name="privilege_id" id="privilege_id" class="qx">
+				</span>
+				<span>
+					<img src="./image/cy_default.gif" alt="">
+					<a href="" class="no-cart-d2-a1">定制衬衫文化衫班服定制</a>
+					<a href="" class="no-cart-d2-a2">规格：L&nbsp;颜色：黑色</a>
+				</span>
+				<span class="no-cart-d1-span">￥16.00</span>
+				<span class="no-cart-d1-span">1</span>
+				<span>--</span>
+				<span class="no-cart-d1-span">￥16.00</span>
+				<span class="no-cart-d1-span"><a href="">X</a></span>
+			</div>
+		
+			<div class="no-cart-d1 no-cart-d2">
+				<span>
+					<input type="checkbox" name="privilege_id" id="privilege_id" class="qx">
+				</span>
+				<span>
+					<img src="./image/cy_default.gif" alt="">
+					<a href="" class="no-cart-d2-a1">定制衬衫文化衫班服定制</a>
+					<a href="" class="no-cart-d2-a2">规格：L&nbsp;颜色：黑色</a>
+				</span>
+				<span class="no-cart-d1-span">￥16.00</span>
+				<span class="no-cart-d1-span">1</span>
+				<span>--</span>
+				<span class="no-cart-d1-span">￥16.00</span>
+				<span class="no-cart-d1-span"><a href="">X</a></span>
+			</div>
+		
+			<div class="no-cart-d1 no-cart-d2">
+				<span>
+					<input type="checkbox" name="privilege_id" id="privilege_id" class="qx">
+				</span>
+				<span>
+					<img src="./image/cy_default.gif" alt="">
+					<a href="" class="no-cart-d2-a1">定制衬衫文化衫班服定制</a>
+					<a href="" class="no-cart-d2-a2">规格：L&nbsp;颜色：黑色</a>
+				</span>
+				<span class="no-cart-d1-span">￥16.00</span>
+				<span class="no-cart-d1-span">1</span>
+				<span>--</span>
+				<span class="no-cart-d1-span">￥16.00</span>
+				<span class="no-cart-d1-span"><a href="">X</a></span>
+			</div>
+		</div>
+	</div>
+
+
+<!-- 多快好省 -->
+	<div id="more-f">
+		<div class="more">
+			<div>
+				<span class="more-span1">
+					多
+				</span>
+				<span class="more-span2">
+					供应协同&nbsp;品类多多
+				</span>
+			</div>
+			<div>
+				<span class="more-span1">
+					快
+				</span>
+				<span class="more-span2">
+					全网协同&nbsp;急速多多
+				</span>
+			</div>
+			<div>
+				<span class="more-span1">
+					好
+				</span>
+				<span class="more-span2">
+					层层质检&nbsp;品类保证
+				</span>
+			</div>
+			<div>
+				<span class="more-span1">
+					省
+				</span>
+				<span class="more-span2">
+					高性价比&nbsp;省心省力
+				</span>
+			</div>
+		</div>
+	</div>
+<!-- 底部 -->
+	<div class="layout_bottom">
+		<div class="footer">
+			<div class="wrap clearfix">
+				<div class="left">
+					<a href="" class="f-logo">
+						<img src="image/f_logo.png">
+					</a>
+					<div class="f-nav">
+						<a href="" class="f-nav-item">
+							关于我们
+						</a>|
+						<a href="" class="f-nav-item">
+							新手指引
+						</a>|
+						<a href="" class="f-nav-item">
+							行业新闻
+						</a>|
+						<a href="" class="f-nav-item">
+							帮助中心
+						</a>|
+						<a href="" class="f-nav-item">
+							用户注册
+						</a>
+					</div>
+					<p class="address">湖南省长沙市雨花区上河国际酒店A栋20层2201</p>
+					<a href="" class="icp">
+					京ICP备9999999号-1
+					</a>
+				</div>
+
+				<div class="middle left">
+					<p class="m-ttlte">
+						联系方式
+					</p>
+					<div class="m-content clearfix">
+						<a href="http://wpa.qq.com/msgrd?v=3&uin=1448019981&site=qq&menu=yes" class="c-img"></a>
+						<span>反馈邮箱：1448019981@qq.com</span><br>
+						<span>客服热线：</span><br>
+						<span>15207394594</span>
+					</div>
+				</div>
+
+				<div class="left small">
+					<p class="s-title">商城小程序</p>
+					<img src="./image/weixin.jpg" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		var n = localStorage.getItem("name");
+		console.log(n);
+		if(n!=null){
+			login_a.innerHTML = `欢迎${n}`;
+			reg_a.innerHTML = "退出";
+
+			reg_a.onclick = function () {
+				localStorage.clear();
+				login_a.innerHTML = "登陆";
+				reg_a.innerHTML = "注册";
+				window.location("index.html",_self);
+			}
+		}
+	</script>
+
+
+</body>
+</html>

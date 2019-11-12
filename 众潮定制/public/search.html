@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #clear {
+            clear: both;
+        }
+
+        /*头部*/
+        .head {
+            height: 36px;
+            background: #f2f2f2;
+            line-height: 36px;
+            min-width: 1200px;
+        }
+
+        .top {
+            width: 1190px;
+            border: 0px solid red;
+            height: 36px;
+            margin: 0 auto;
+        }
+
+        .top-left {
+            float: left;
+        }
+
+        .top-left a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .home {
+            height: 16px;
+            line-height: 16px;
+            background: url(./image/home.png) left center no-repeat;
+            padding-left: 22px;
+        }
+
+        .top-left-right {
+            float: right;
+        }
+
+        .top-right {
+            float: right;
+        }
+
+        .top-right-span a {
+            color: #333;
+            text-decoration: none;
+            padding-left: 20px;
+        }
+
+        .bottom {
+            margin-bottom: 22px;
+        }
+
+        .bottom-logo {
+            text-align: center;
+            margin-top: 32px;
+            margin-bottom: 22px;
+        }
+
+        .bottom-search {
+            text-align: center;
+        }
+
+        /*搜索框*/
+        .input-cart {
+            width: 370px;
+            height: 22px;
+            border: 0px solid red;
+            margin: 0 auto;
+        }
+
+        .input-cart input {
+            width: 300px;
+            height: 22px;
+            border: none;
+            border-bottom: 1px solid #e6e6e6;
+            outline: none;
+        }
+
+        .input-cart div {
+            float: left;
+        }
+
+        .search {
+            margin: 0 10px;
+        }
+
+        /*导航栏*/
+        #nav {
+            margin-top: 30px;
+            border-bottom: 2px solid red;
+            min-width: 1200px;
+        }
+
+        .nav {
+            width: 1190px;
+            height: 40px;
+            margin: 0 auto;
+        }
+
+        .all-class {
+            display: block;
+            width: 160px;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+            background: url("./image/menu.png") 32px center no-repeat;
+            background-color: #fd3555;
+            text-decoration: none;
+            line-height: 40px;
+            text-indent: 60px;
+            float: left;
+        }
+
+        .nav-class ul li {
+            float: left;
+            list-style: none;
+        }
+
+        .nav-class ul li a {
+            text-decoration: none;
+            margin-left: 60px;
+            color: #333;
+            font-size: 18px;
+            line-height: 40px;
+        }
+
+        .nav-right {
+            float: right;
+            width: 268px;
+            height: 39px;
+        }
+
+        .nav-right span {
+            line-height: 40px;
+        }
+
+        .nav-right span a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+
+        #list {
+            width: 1190px;
+            height: 620px;
+            border: 0px solid red;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            display: flex;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+        #search_good{
+            flex-wrap: wrap;
+            justify-content: space-between;
+            display: flex;
+        }
+        #search_good>div {
+            width: 250px;
+            height: 300px;
+            border: 1px solid #f2f2f2;
+            background: #fff;
+        }
+
+        .selected-p1 {
+            font-size: 14px;
+            color: #333333;
+            text-align: center;
+        }
+
+        .selected-p2 {
+            font-size: 14px;
+            color: #333333;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<script src="js/jquery.min.js"></script>
+
+<body onload="list()">
+    <!-- 头部	 -->
+    <div class="head">
+        <div class="top">
+            <div class="top-left">
+                <a class="home" target="_blank" href="#">众潮定制</a>
+                <span>|&nbsp;欢迎来到众潮定制商城</span>
+            </div>
+            <div class="top-right">
+                <span class="top-right-span">
+                    <a id="js_login">登录</a>
+                    <a href="reg.html" id="js_reg">注册</a>
+                    <a id="js_order">我的订单</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- logo	 -->
+    <div class="bottom">
+        <div class="bottom-logo">
+            <img src="image/logo.png" width="200px" height="70px">
+        </div>
+    </div>
+    <!-- 搜索框	 -->
+    <div class="input-cart">
+        <!-- 	输入框	 -->
+        <div>
+            <input type="text" placeholder="夏季T恤热卖中">
+        </div>
+        <!-- 	搜索按钮	 -->
+        <div class="search" id="search_button">
+            <img src="./image/search.png" alt="">
+        </div>
+        <!-- 	购物车按钮	 -->
+        <div>
+            <a href="cart.html">
+                <img src="./image/cart.png" alt="">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        $("#search_button").click(function () {
+            var $input = $(this).prev().children().val();
+            var search=$input;
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var result = xhr.responseText;
+					//console.log(result);
+					var arr = JSON.parse(result);
+					console.log(arr);
+					//alert(arr);
+					var strHTML2 = "";
+					for (var i = 0; i < arr.length; i++) {
+						strHTML2 += `
+						<div>
+							<a href="goods.html?id=${arr[i].Gid}">
+								<img src="${arr[i].img}" alt="" width="248px" height="248px">
+								<p class="selected-p1">${arr[i].Title}</p>
+								<p class="selected-p2">${(arr[i].Price).toFixed(2)}</p>
+							</a>
+						</div>
+					`;
+					}
+					search_good.innerHTML = strHTML2;
+				}
+			}
+			xhr.open('get', '/search/v1/search/'+search, true)
+			xhr.send();
+        })
+    </script>
+    <!-- 导航栏	 -->
+    <div id="nav">
+        <div class="nav">
+            <div>
+                <a href="" class="all-class">所有分类</a>
+            </div>
+            <div class="nav-class">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="">精选</a></li>
+                    <li><a href="">新品</a></li>
+                    <li><a href="">特价</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <span>
+                    <img src="./image/icon_1.png" alt="">
+                    <a href="">城市合伙人加盟</a>
+                </span>
+                <span>
+                    <img src="./image/icon_2.png" alt="">
+                    <a href="">商城小程序</a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div id="list">
+        <div id="search_good">
+            <!-- <a href="#">
+                <img src="../image/new-1.jpg" alt="" width="248px" height="248px">
+                <p class="selected-p1">123</p>
+                <p class="selected-p2">123</p>
+            </a> -->
+        </div>
+    </div>
+    <script>
+        function list() {
+            var search = sessionStorage.getItem("search");
+            console.log(search);
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var result = xhr.responseText;
+					//console.log(result);
+					var arr = JSON.parse(result);
+					console.log(arr);
+					//alert(arr);
+					var strHTML2 = "";
+					for (var i = 0; i < arr.length; i++) {
+						strHTML2 += `
+						<div>
+							<a href="goods.html?id=${arr[i].Gid}">
+								<img src="${arr[i].img}" alt="" width="248px" height="248px">
+								<p class="selected-p1">${arr[i].Title}</p>
+								<p class="selected-p2">${(arr[i].Price).toFixed(2)}</p>
+							</a>
+						</div>
+					`;
+					}
+					search_good.innerHTML = strHTML2;
+				}
+			}
+			xhr.open('get', '/search/v1/search/'+search, true)
+			xhr.send();
+        }
+    </script>
+</body>
+
+</html>

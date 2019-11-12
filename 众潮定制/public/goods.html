@@ -1,0 +1,1223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.min.js"></script>
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	/*头部*/
+	.head {
+		height: 36px;
+		background: #f2f2f2;
+		line-height: 36px;
+		min-width: 1200px;
+	}
+
+	.top {
+		width: 1190px;
+		border: 0px solid red;
+		height: 36px;
+		margin: 0 auto;
+	}
+
+	.top-left {
+		float: left;
+	}
+
+	.top-left a {
+		color: #333;
+		text-decoration: none;
+	}
+
+	.home {
+		height: 16px;
+		line-height: 16px;
+		background: url(./image/home.png) left center no-repeat;
+		padding-left: 22px;
+	}
+
+	.top-left-right {
+		float: right;
+	}
+
+	.top-right {
+		float: right;
+	}
+
+	.top-right-span a {
+		color: #333;
+		text-decoration: none;
+		padding-left: 20px;
+	}
+
+	.bottom {
+		margin-bottom: 22px;
+	}
+
+	.bottom-logo {
+		text-align: center;
+		margin-top: 32px;
+		margin-bottom: 22px;
+	}
+
+	.bottom-search {
+		text-align: center;
+	}
+
+	/*搜索框*/
+	.input-cart {
+		width: 370px;
+		height: 22px;
+		border: 0px solid red;
+		margin: 0 auto;
+	}
+
+	.input-cart input {
+		width: 300px;
+		height: 22px;
+		border: none;
+		border-bottom: 1px solid #e6e6e6;
+		outline: none;
+	}
+
+	.input-cart div {
+		float: left;
+	}
+
+	.search {
+		margin: 0 10px;
+	}
+
+	/*导航栏*/
+	#nav {
+		margin-top: 30px;
+		border-bottom: 2px solid red;
+		min-width: 1200px;
+	}
+
+	.nav {
+		width: 1190px;
+		height: 40px;
+		margin: 0 auto;
+	}
+
+	.all-class {
+		display: block;
+		width: 160px;
+		height: 40px;
+		color: #fff;
+		font-size: 16px;
+		background: url("./image/menu.png") 32px center no-repeat;
+		background-color: #fd3555;
+		text-decoration: none;
+		line-height: 40px;
+		text-indent: 60px;
+		float: left;
+	}
+
+	.nav-class ul li {
+		float: left;
+		list-style: none;
+	}
+
+	.nav-class ul li a {
+		text-decoration: none;
+		margin-left: 60px;
+		color: #333;
+		font-size: 18px;
+		line-height: 40px;
+	}
+
+	.nav-right {
+		float: right;
+		width: 268px;
+		height: 39px;
+	}
+
+	.nav-right span {
+		line-height: 40px;
+	}
+
+	.nav-right span a {
+		text-decoration: none;
+		color: #333;
+		font-size: 18px;
+	}
+
+	/* top */
+	#goods {
+		width: 1190px;
+		height: 540px;
+		border: 0px solid red;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin: 0 auto;
+	}
+
+	#goods>div {
+		border: 0px solid red;
+	}
+
+	#goods>div:first-child {
+		width: 1190px;
+		height: 40px;
+		font-size: 14px;
+		color: #333333;
+		line-height: 40px;
+	}
+
+	#goods>div:nth-child(2) {
+		width: 388px;
+		height: 490px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	#goods>div:nth-child(2)>div:first-child {
+		width: 388px;
+		height: 388px;
+		border: 1px solid #e3e3e3;
+	}
+
+	#goods>div:nth-child(2)>div:last-child {
+		width: 388px;
+		height: 88px;
+		border: 0px solid red;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	#goods>div:nth-child(2)>div:last-child>div {
+		border: 1px solid #e3e3e3;
+	}
+
+	#goods>div:nth-child(2)>div:last-child>div:first-child {
+		width: 88px;
+		height: 88px;
+	}
+
+	#goods>div:nth-child(2)>div:last-child>div:nth-child(2) {
+		width: 88px;
+		height: 88px;
+	}
+
+	#goods>div:nth-child(2)>div:last-child>div:nth-child(3) {
+		width: 88px;
+		height: 88px;
+	}
+
+	#goods>div:nth-child(2)>div:last-child>div:last-child {
+		width: 88px;
+		height: 88px;
+	}
+
+	#goods>div:last-child {
+		width: 780px;
+		height: 490px;
+	}
+
+	.goods-span1 {
+		display: inline-block;
+		width: 44px;
+		height: 20px;
+		line-height: 20px;
+		text-align: center;
+		background: #fe781f;
+		color: #fff;
+		margin: 0 6px 6px 6px;
+	}
+
+	.goods-span2 {
+		display: inline-block;
+		width: 44px;
+		height: 20px;
+		line-height: 20px;
+		text-align: center;
+		background: #478cdd;
+		color: #fff;
+	}
+
+	#shangpinxiangqing {
+		width: 716px;
+		height: 212px;
+		padding: 20px 24px 20px 40px;
+		background: #f2f2f2;
+		border: 0px solid red;
+	}
+
+	.goods-color- {
+		color: #999999;
+		font-size: 14px;
+		padding-top: 16px;
+	}
+
+	.goods-size,.goods-color {
+		display: inline-block;
+		height: 22px;
+		font-size: 14px;
+		color: #333333;
+		border: 1px solid #f2f2f2;
+		background: #f2f2f2;
+		padding: 0 14px;
+		margin: 0 6px 10px 0;
+		line-height: 22px;
+		text-decoration: none;
+	}
+	.active{
+		background: red;
+	}
+
+	.remind {
+		color: #333333;
+		margin-top: 40px;
+	}
+
+	.goods-login,.goods-cart {
+		display: block;
+		width: 220px;
+		height: 50px;
+		color: #fff;
+		font-size: 16px;
+		background: #fd3555;
+		line-height: 50px;
+		text-align: center;
+		text-decoration: none;
+		margin-top: 10px;
+		float:left;
+	}
+	/* .goods-login{
+		display:none;
+	} */
+
+	.goods-div1 {
+		height: 46px;
+	}
+
+	.goods-div2 {
+		height: 36px;
+	}
+
+	.goods-span3 {
+		color: #999999;
+		font-size: 14px;
+		padding-right: 16px;
+	}
+
+	.goods-span4 {
+		color: #fd3555;
+		font-size: 18px;
+	}
+
+	/* bottom */
+	#details {
+		width: 1190px;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: 0 auto;
+	}
+
+	#details>div:first-child {
+		width: 200px;
+		border: 1px solid #e3e3e3;
+	}
+
+	#details>div:nth-child(2) {
+		width: 960px;
+		border: 0px solid red;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	#details>div:nth-child(2)>div:first-child {
+		width: 960px;
+		height: 40px;
+		border-bottom: 2px solid red;
+	}
+
+	#details>div:nth-child(2)>div:last-child {
+		width: 820px;
+		height: 10274px;
+		border: 0px solid red;
+		padding: 0 70px;
+	}
+
+	.details-left-p1 {
+		display: block;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		font-size: 16px;
+		color: #333333;
+		font-weight: bold;
+	}
+
+	.details-left-p2 {
+		color: #333333;
+		font-size: 14px;
+		text-align: center;
+	}
+
+	#details-left-bottom {
+		border-top: 1px solid #e6e6e6;
+		margin-top: 10px;
+	}
+
+	.details-left-p3 {
+		font-size: 14px;
+		color: #333333;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	#details-left-bottom img {
+		padding: 10px 20px;
+	}
+
+	#details-right-top {
+		background: #f2f2f2;
+		border-bottom: 1px solid red;
+	}
+
+	#details-right-top a {
+		display: inline-block;
+		width: 90px;
+		height: 40px;
+		text-align: center;
+		line-height: 40px;
+		font-size: 14px;
+		text-decoration: none;
+		color: #333333;
+	}
+
+	#details-img img {
+		width: 820px;
+		text-align: center;
+	}
+
+
+	/* 多快好省 */
+	#more-f {
+		width: 100%;
+		background: #f5f5f5;
+		min-width: 1200px;
+	}
+
+	.more {
+		width: 1190px;
+		height: 70px;
+		padding: 65px 0;
+		border: 0px solid red;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.more div {
+		float: left;
+
+	}
+
+	.more-span1 {
+		display: block;
+		width: 66px;
+		height: 66px;
+		text-align: center;
+		line-height: 66px;
+		border: 2px solid #fd3555;
+		color: #fd3555;
+		margin-right: 10px;
+		font-size: 32px;
+		border-radius: 35px;
+		float: left;
+	}
+
+	.more-span2 {
+		font-size: 20px;
+		font-weight: bold;
+		float: left;
+		line-height: 70px;
+	}
+
+	/* 底部 */
+	.layout_bottom {
+		height: 241px;
+		border: 0px solid red;
+		min-width: 1200px;
+	}
+
+	.footer {
+		height: 241px;
+		background: #2e2b2b;
+
+		color: #fff;
+		border-top: 2px solid #fd3555;
+	}
+
+	.wrap {
+		width: 1190px;
+		margin: 0 auto;
+		position: relative;
+		border: 0px solid green;
+	}
+
+	.left {
+		float: left;
+	}
+
+	.f-logo {
+		display: block;
+		margin: 40px 0 30px;
+	}
+
+	img {
+		border: none;
+	}
+
+	.f-nav {
+		line-height: 20px;
+	}
+
+	.f-nav-item:first-child {
+		padding-left: 0;
+	}
+
+	.f-nav-item {
+		display: inline-block;
+		color: #fff;
+		padding: 0 10px;
+	}
+
+	.f-nav a {
+		text-decoration: none;
+	}
+
+	.footer .address {
+		margin: 22px 0 0 0px;
+	}
+
+	.footer .icp {
+		color: rgba(255, 255, 255, .3);
+		text-decoration: none;
+	}
+
+	.footer .middle {
+		width: 320px;
+		margin-top: 52px;
+		margin-left: 180px;
+	}
+
+	.footer .middle .m-ttlte {
+		font-size: 16px;
+		font-weight: bold;
+		margin-bottom: 12px;
+	}
+
+	.footer .middle .m-content {
+		width: 330px;
+		height: 100px;
+		border: 0px solid red;
+	}
+
+	/* 伪类 */
+	.footer .middle .m-contenr a:hover {
+		background: url(./image/qq_1.png) center no-repeat;
+	}
+
+	.footer .middle .c-img {
+		width: 98px;
+		height: 98px;
+		float: left;
+		margin-right: 10px;
+		background: url(./image/qq.png) center no-repeat;
+		border: 1px solid #fff;
+	}
+
+	.footer .middle .mail {
+		float: left;
+		margin: 62px 0px 2px 0px;
+	}
+
+	.footer .middle .hot-line {
+		float: left;
+	}
+
+	.footer .small {
+		width: 100px;
+		text-align: center;
+		margin-left: 130px;
+		margin-top: 52px;
+	}
+
+	.footer .small .s-title {
+		font-size: 16px;
+		font-weight: bold;
+		margin-bottom: 12px;
+	}
+
+	.footer .small img {
+		width: 100px;
+		height: 100px;
+	}
+
+	/* .goods-color-:hover{
+		background: red;
+	} */
+	#size-color>div:first-child{
+		/* float:left; */
+		width:700px;
+	}
+	#size-color>div:nth-child(2){
+		/* float:left; */
+		
+		float:left;
+	}
+	#size-color>div:last-child{
+		/* float:left; */
+		float:left;
+	}
+	#size1{
+		height:34px;
+	}
+	#add_del_count{
+		border:none;
+		width:30px;
+		text-align: center;
+	}
+	#size1>button{
+		width:22px;
+		height:22px;
+	}
+</style>
+
+<body onload="goodlist()">
+	<!-- 头部	 -->
+	<div class="head">
+		<div class="top">
+			<div class="top-left">
+				<a class="home" target="_blank" href="#">众潮定制</a>
+				<span>|&nbsp;欢迎来到众潮定制商城</span>
+			</div>
+			<div class="top-right">
+				<span class="top-right-span">
+					<a id="js_login">登录</a>
+					<a href="reg.html" id="js_reg">注册</a>
+					<a id="js_order">我的订单</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<!-- logo	 -->
+	<div class="bottom">
+		<div class="bottom-logo">
+			<img src="image/logo.png" width="200px" height="70px">
+		</div>
+	</div>
+	<!-- 搜索框	 -->
+	<div class="input-cart">
+		<!-- 	输入框	 -->
+		<div>
+			<input type="text" placeholder="夏季T恤热卖中">
+		</div>
+		<!-- 	搜索按钮	 -->
+		<div class="search">
+			<img src="./image/search.png" alt="">
+		</div>
+		<!-- 	购物车按钮	 -->
+		<div>
+			<a href="cart.html">
+				<img src="./image/cart.png" alt="">
+			</a>
+		</div>
+	</div>
+	<!-- 导航栏	 -->
+	<div id="nav">
+		<div class="nav">
+			<div>
+				<a href="" class="all-class">所有分类</a>
+			</div>
+			<div class="nav-class">
+				<ul>
+					<li><a href="index.html">首页</a></li>
+					<li><a href="" onclick="show()">精选</a></li>
+					<li><a href="">新品</a></li>
+					<li><a href="">特价</a></li>
+				</ul>
+			</div>
+			<div class="nav-right">
+				<span>
+					<img src="./image/icon_1.png" alt="">
+					<a href="">城市合伙人加盟</a>
+				</span>
+				<span>
+					<img src="./image/icon_2.png" alt="">
+					<a href="">商城小程序</a>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- top -->
+	<div id="goods">
+
+	</div>
+	<script>
+		function goodlist() {
+			var $goods_id = location.search.split("=")[1];
+			//console.log($goods_id);
+
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function () {
+				//console.log(xhr.readyState);
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var result = xhr.responseText;
+					var arr = JSON.parse(result);
+					//console.log(arr);
+					var strHTML = "";
+					var daohang="";
+					if(`${arr[0].Items_Id}`==1){
+						daohang="本季新品";
+					}else if(`${arr[0].Items_Id}`==2){
+						daohang="特价促销";
+					}else if(`${arr[0].Items_Id}`==3){
+						daohang="服装精选";
+					}else if(`${arr[0].Items_Id}`==4){
+						daohang="礼品精选";
+					}
+					strHTML += `
+						<div><a href="index.html">首页</a>><a href="" id="daohanglianjie">${daohang}</a>>${arr[0].Title}</div>
+							<div>
+								<div id="good_img">
+									<img src="${arr[0].img}" alt="" width="100%" class="my-big">
+								</div>
+								<div id="small_img">
+
+								</div>
+							</div>
+							<div>
+								<p id="good_title">${arr[0].Title}<span class="goods-span1">精选</span><span class="goods-span2">新品</span></p>
+
+								<div id="shangpinxiangqing">
+									<div class="goods-div1">
+											<span class="goods-span3">价格</span>
+											<span class="goods-span4">${(arr[0].Price).toFixed(2)}</span>
+										</div>
+										<div class="goods-div2">
+											<span class="goods-span3">总销量</span>
+											<span class="goods-span4">4855</span>
+										</div>
+										<div class="goods-div2">
+											<span class="goods-span3">材质</span>
+											<span>尼龙400D</span>
+										</div>
+										<div class="goods-div2">
+											<span class="goods-span3">起订量</span>
+											<span>30</span>
+										</div>
+										<div class="goods-div2">
+											<span class="goods-span3">建议销售价</span>
+											<span>--</span>
+										</div>
+										<div class="goods-div2">
+											<span class="goods-span3">商品来源</span>
+											<span>众潮定制</span>
+										</div>
+								</div>
+								<div id="size-color">
+									<div>
+										<p class="goods-color-">颜色</p>
+										<div id="color">
+										</div>
+									</div>
+									<div>
+										<p class="goods-color-">尺寸</p>
+										<div id="size">
+										</div>
+									</div>
+									<div>
+										<p class="goods-color-">数量</p>
+										<div id="size1">
+											<button id="btn_del">-</button>
+											<input id="add_del_count" value="1">
+											<button id="btn_add">+</button>
+										</div>
+									</div>
+									<a href="javascript:;" class="goods-login">立即登陆</a>
+									<a href="javascript:;" class="goods-cart" id="addcart">加入购物车</a>
+									<a href="javascript:;" class="goods-cart" id="lijigoumai">立即购买</a>
+								</div>
+							</div>
+					`;
+
+					goods.innerHTML = strHTML;
+					
+                    small_big_img();
+					good_s_img();
+					sizecolor1();
+					sizecolor2();
+					lijigoumai()
+
+					btn_del.onclick=function(){
+						//alert(1);	
+						var input_count_del=document.getElementById("add_del_count");
+						var input_count_1=input_count_del.value;
+						if(input_count_1>1){
+							input_count_1--;
+							input_count_del.value=input_count_1;
+						}
+					}
+					btn_add.onclick=function(){
+						var input_count_add=document.getElementById("add_del_count");
+						var input_count_2=input_count_add.value;
+						input_count_2++;
+						input_count_add.value=input_count_2;
+					}
+
+					if(`${arr[0].Items_Id}`==1){
+						daohanglianjie.href="index.html#new-f";
+					}else if(`${arr[0].Items_Id}`==2){
+						daohanglianjie.href="index.html#special-f";
+					}else if(`${arr[0].Items_Id}`==3){
+						daohanglianjie.href="index.html#selected-f";
+					}else if(`${arr[0].Items_Id}`==4){
+						daohanglianjie.href="index.html#lipin-f";
+					}
+
+					
+					var goodsLogin=document.getElementsByClassName("goods-login")[0];
+					//console.log(goodsLogin);
+					var goodsCart1=document.getElementsByClassName("goods-cart")[0];
+					var goodsCart2=document.getElementsByClassName("goods-cart")[1];
+					//console.log(goodsCart);
+					var n = localStorage.getItem("name");
+					if(n!=null){
+						goodsLogin.style.display="none";
+					}else{
+						goodsCart1.style.display="none";
+						goodsCart2.style.display="none";
+					}
+
+					//加入购物车
+					addcart.onclick=function(){
+						//alert(1);
+						var $goodsprice=document.getElementsByClassName("goods-span4")[0].innerHTML;//价格
+						var $goods_id = location.search.split("=")[1];//id
+						//console.log($goods_id,$goodsprice);
+
+						var good_img_f=document.querySelector("#good_img>img");
+						var $good_img=good_img_f.getAttribute("src");//图片
+						//console.log(good_img);
+
+						var $good_title=document.getElementById("good_title").textContent.split("精")[0];//商品标题
+						//console.log(good_title);
+
+						var good_color_1s=document.querySelectorAll("div#color>a");
+						console.log(good_color_1s)
+
+						var $cart_count=document.getElementById("add_del_count").value;
+						console.log($cart_count);
+						
+						var good_color_arr=[];
+						for(var good_color_1 of good_color_1s){
+							//console.log(good_color_1);
+							var active1=good_color_1.getAttribute("class");
+							if(active1=="goods-size active"){
+								var good_color1=document.querySelector("div#color>a.active").innerHTML;//颜色
+								//console.log(good_color1);
+								good_color_arr.push(good_color1);
+								//break;
+							}
+						}
+						//console.log(good_color_arr.length);
+						
+
+						var good_color_2s=document.querySelectorAll("div#size>a");
+						//console.log(good_color_2s);
+						for(var good_color_2 of good_color_2s){
+							//console.log(good_color_2);
+							var active2=good_color_2.getAttribute("class");
+							//console.log(active2);
+							if(active2=="goods-color active"){
+								var good_color2=document.querySelector("div#size>a.active").innerHTML;//规格
+								good_color_arr.push(good_color2);
+							}
+						}
+						var $guige=good_color1+"|"+good_color2;
+						console.log($guige);
+
+						var $uid = localStorage.getItem("uid");
+						console.log($uid);
+						var xhr = new XMLHttpRequest();
+						//console.log(xhr);
+						xhr.onreadystatechange = function () {
+							console.log(xhr.readyState);
+							if (xhr.readyState == 4 && xhr.status == 200) {
+								var result = xhr.responseText;
+								console.log(result);
+								if (result == 1) {
+									alert('加入购物车成功');
+								} else {
+									alert('加入购物车失败');
+								}
+							}
+						}
+						xhr.open("post", "/add_cart/v1/add_cart", true);
+						var formdata = "good_img=" + $good_img + "&good_title=" + $good_title + "&guige=" + $guige + "&goodsprice=" + $goodsprice + "&goods_id=" + $goods_id + "&uid=" + $uid +"&cart_count=" +$cart_count;
+						xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+						
+						if(good_color_arr.length==2){
+							xhr.send(formdata);
+						}else{
+							alert("尺寸或颜色不能为空");
+						}
+					}
+				}
+			}
+			xhr.open("get", "/good/v1/good/" + $goods_id, true)
+			xhr.send();
+
+			
+			
+			
+
+			var n = localStorage.getItem("name");
+			var login_a = document.getElementById("js_login");
+			var reg_a = document.getElementById("js_reg");
+			//console.log(n);
+			
+			
+			if (n != null) {
+				login_a.innerHTML = `欢迎${n}`;
+				reg_a.innerHTML = "退出";
+				
+				reg_a.onclick = function () {
+					localStorage.removeItem("name");
+					reg_a.removeAttribute("href");
+					location.href="index.html";
+					login_a.innerHTML = "登录";
+					reg_a.innerHTML = "注册";
+					login_a.onclick = function () {
+						login_div.style.display = "block"
+						//console.log(cover);
+						cover.style.display = "block";
+					}
+		   		}
+			
+			//goodsLogin.style.display="none";
+			}
+
+			js_order.onclick=function(){
+				var n = localStorage.getItem("name");
+				if (n != null) {	
+				   location.href="order.html";
+			    } else{
+				   alert("请登录");  
+			    }
+			}
+
+		
+		}
+	</script>
+
+	<script>
+		function good_s_img(){
+			var $goods_id = location.search.split("=")[1];
+			//console.log($goods_id);
+			var xhr=new XMLHttpRequest();
+
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4 && xhr.status==200){
+					var result=xhr.responseText;
+					//console.log(result);
+					var arr=JSON.parse(result);
+					//console.log(arr[0].img.split(","));
+					var strHtml="";
+					if(result==1){
+						strHtml+=`
+						<div><img src="" alt="" width="100%"></div>
+						<div><img src="" alt="" width="100%"></div>
+						<div><img src="" alt="" width="100%"></div>
+						<div><img src="" alt="" width="100%"></div>
+					`;
+					}else{
+					strHtml+=`
+						<div><img src="${arr[0].img.split(",")[0]}" alt="" width="100%" class="my-small" data-target="${arr[0].img.split(",")[0]}"></div>
+						<div><img src="${arr[0].img.split(",")[1]}" alt="" width="100%" class="my-small" data-target="${arr[0].img.split(",")[1]}"></div>
+						<div><img src="${arr[0].img.split(",")[2]}" alt="" width="100%" class="my-small" data-target="${arr[0].img.split(",")[2]}"></div>
+						<div><img src="${arr[0].img.split(",")[3]}" alt="" width="100%" class="my-small" data-target="${arr[0].img.split(",")[3]}"></div>
+					`;
+				}
+					small_img.innerHTML=strHtml;
+				}
+			}
+			xhr.open('get','/good_s_img/v1/good_s_img/'+$goods_id,true)
+			xhr.send();
+		}
+	
+	</script>
+
+	<script>
+		function sizecolor1(){
+			var $goods_id = location.search.split("=")[1];
+			//console.log($goods_id);
+
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var result = xhr.responseText;
+					var arr = JSON.parse(result);
+					//console.log(arr[0].Color.split(","));
+					var strHTML="";
+					for(var i=0;i<arr[0].Color.split(",").length;i++){
+						strHTML += `
+							<a href="javascript:;"  class="goods-size">${arr[0].Color.split(",")[i]}</a>
+						`;
+					}
+					color.innerHTML=strHTML;
+					var chicuns=document.getElementsByClassName("goods-size");
+					//console.log(chicuns);
+					for(var chicun of chicuns){
+						//console.log(chicun);
+						chicun.onclick=function(){
+							// this.style.background="red";
+							$(this).addClass("active").siblings().removeClass("active");
+						}
+					}
+				}
+			}
+			xhr.open("get", "/good/v1/good/" + $goods_id, true)
+			xhr.send();
+		}
+	</script>
+	<script>
+		function sizecolor2(){
+			var $goods_id = location.search.split("=")[1];
+			//console.log($goods_id);
+
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var result = xhr.responseText;
+					var arr = JSON.parse(result);
+					//console.log(arr[0].Size.split(","));
+					var strHTML="";
+					for(var i=0;i<arr[0].Size.split(",").length;i++){
+						strHTML += `
+							<a href="javascript:;"  class="goods-color">${arr[0].Size.split(",")[i]}</a>
+						`;
+					}
+					size.innerHTML=strHTML;
+					var chicuns=document.getElementsByClassName("goods-color");
+					//console.log(chicuns);
+					for(var chicun of chicuns){
+						//console.log(chicun);
+						chicun.onclick=function(){
+							// this.style.background="red";
+							$(this).addClass("active").siblings().removeClass("active");
+						}
+					}
+				}
+			}
+			xhr.open("get", "/good/v1/good/" + $goods_id, true)
+			xhr.send();
+		}
+	</script>
+	<!-- bottom -->
+	<div id="details">
+		<div id="details-left">
+			<div>
+				<p class="details-left-p1">定制链礼品站</p>
+				<img src="./image/details-left-1.jpg" alt="" width="198px">
+				<p class="details-left-p2">平均指数：0.30</p>
+				<p class="details-left-p2">平均供货周期：2天</p>
+			</div>
+			<div id="details-left-bottom">
+				<p class="details-left-p1">推荐商品</p>
+				<img src="./image/details-left-2.jpg" alt="" width="160px">
+				<p class="details-left-p3">登陆查价</p>
+				<p class="details-left-p2">畅销款儿童双肩背包</p>
+
+				<img src="./image/details-left-2.jpg" alt="" width="160px">
+				<p class="details-left-p3">登陆查价</p>
+				<p class="details-left-p2">畅销款儿童双肩背包</p>
+
+				<img src="./image/details-left-2.jpg" alt="" width="160px">
+				<p class="details-left-p3">登陆查价</p>
+				<p class="details-left-p2">畅销款儿童双肩背包</p>
+
+				<img src="./image/details-left-2.jpg" alt="" width="160px">
+				<p class="details-left-p3">登陆查价</p>
+				<p class="details-left-p2">畅销款儿童双肩背包</p>
+
+				<img src="./image/details-left-2.jpg" alt="" width="160px">
+				<p class="details-left-p3">登陆查价</p>
+				<p class="details-left-p2">畅销款儿童双肩背包</p>
+
+				<img src="./image/details-left-2.jpg" alt="" width="160px">
+				<p class="details-left-p3">登陆查价</p>
+				<p class="details-left-p2">畅销款儿童双肩背包</p>
+			</div>
+		</div>
+		<div id="details-right">
+			<div id="details-right-top">
+				<a href="" style="background:#fd3555;color:white">商品详情</a>
+				<a href="">印花工艺</a>
+				<a href="">订购流程</a>
+				<a href="" style="width:140px;color:red">采购须知及售后说明</a>
+			</div>
+			<div id="details-img">
+				<img src="./image/details-1.jpg" alt="">
+				<img src="./image/details-2.jpg" alt="">
+				<img src="./image/details-3.jpg" alt="">
+				<img src="./image/details-4.jpg" alt="">
+				<img src="./image/details-5.jpg" alt="">
+				<img src="./image/details-6.jpg" alt="">
+				<img src="./image/details-7.jpg" alt="">
+				<img src="./image/details-8.jpg" alt="">
+				<img src="./image/details-9.jpg" alt="">
+				<img src="./image/details-10.jpg" alt="">
+				<img src="./image/details-11.jpg" alt="">
+				<img src="./image/details-12.jpg" alt="">
+				<img src="./image/details-13.jpg" alt="">
+				<img src="./image/details-14.jpg" alt="">
+			</div>
+		</div>
+	</div>
+
+	<!-- 底部 -->
+	<div class="layout_bottom">
+		<div class="footer">
+			<div class="wrap clearfix">
+				<div class="left">
+					<a href="" class="f-logo">
+						<img src="image/f_logo.png">
+					</a>
+					<div class="f-nav">
+						<a href="" class="f-nav-item">
+							关于我们
+						</a>|
+						<a href="" class="f-nav-item">
+							新手指引
+						</a>|
+						<a href="" class="f-nav-item">
+							行业新闻
+						</a>|
+						<a href="" class="f-nav-item">
+							帮助中心
+						</a>|
+						<a href="" class="f-nav-item">
+							用户注册
+						</a>
+					</div>
+					<p class="address">湖南省长沙市雨花区上河国际酒店A栋20层2201</p>
+					<a href="" class="icp">
+						京ICP备9999999号-1
+					</a>
+				</div>
+
+				<div class="middle left">
+					<p class="m-ttlte">
+						联系方式
+					</p>
+					<div class="m-content clearfix">
+						<a href="http://wpa.qq.com/msgrd?v=3&uin=1448019981&site=qq&menu=yes" class="c-img"></a>
+						<span>反馈邮箱：1448019981@qq.com</span><br>
+						<span>客服热线：</span><br>
+						<span>15207394594</span>
+					</div>
+				</div>
+
+				<div class="left small">
+					<p class="s-title">商城小程序</p>
+					<img src="./image/weixin.jpg" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 点击小图标显示大图标 -->
+	<script>
+		function small_big_img(){
+			var goods=document.querySelector("#goods");
+			//console.log(goods);
+			goods.onclick=function(e){
+				if(e.target.className=="my-small"){
+					//alert(1);
+					var myBig=document.getElementsByClassName("my-big")[0];
+					//console.log(myBig);
+					var small=e.target.getAttribute("data-target");
+					//console.log(small);
+					myBig.setAttribute("src",small);
+				}
+			}
+		}
+	</script>
+
+	<!-- 立即购买 -->
+	<script>
+		function lijigoumai() {
+			var lijigoumai = document.getElementById("lijigoumai");
+
+			lijigoumai.onclick = function () {
+				var good_color_1s = document.querySelectorAll("div#color>a");
+				console.log(good_color_1s)
+
+				var good_color_arr = [];
+				for (var good_color_1 of good_color_1s) {
+					//console.log(good_color_1);
+					var active1 = good_color_1.getAttribute("class");
+					if (active1 == "goods-size active") {
+						var good_color1 = document.querySelector("div#color>a.active").innerHTML;//颜色
+						//console.log(good_color1);
+						good_color_arr.push(good_color1);
+						//break;
+					}
+				}
+				//console.log(good_color_arr.length);
+
+				localStorage.removeItem("danjia");
+				localStorage.removeItem("gouwucheid");
+
+				var good_color_2s = document.querySelectorAll("div#size>a");
+				//console.log(good_color_2s);
+				for (var good_color_2 of good_color_2s) {
+					//console.log(good_color_2);
+					var active2 = good_color_2.getAttribute("class");
+					//console.log(active2);
+					if (active2 == "goods-color active") {
+						var good_color2 = document.querySelector("div#size>a.active").innerHTML;//规格
+						good_color_arr.push(good_color2);
+					}
+				}
+
+
+				var shangpinid=location.href.split("=")[1];
+				var sum=add_del_count.value;
+				if(good_color_arr.length==2){
+					localStorage.setItem("guige", good_color_arr);
+					localStorage.setItem("shangpinid", shangpinid);
+					localStorage.setItem("sum", sum);
+					location.href="dingdan.html";
+				}else{
+					alert("尺寸或颜色不能为空");
+				}
+				
+			}
+		}
+
+	</script>
+</body>
+
+</html>
