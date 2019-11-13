@@ -1,0 +1,89 @@
+<!--pages/home0/home0.wxml-->
+<!-- <text bindtap="add">添加数据</text> -->
+<view id="main">
+  <!-- 轮播图 -->
+  <view>
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" circular="true" style="height:400rpx;">
+      <swiper-item bindtap="lunbo_tiao" wx:for="{{lunbo}}" wx:key="index" bindtap="lunbo_tiaozhuan">
+        <image src="{{item.img}}" data-id="{{item._id}}" style="width:100%;height:100%"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 潮流T恤 -->
+  <view class="cl">
+    <text class="cl_txt1"></text>
+    <text class="cl_txt2">潮流T恤</text>
+  </view>
+
+  <view class="cl_list">
+    <movable-area style='width:auto'>
+      <movable-view animation scroll-x style='width:{{list1.length*300}}rpx' direction='horizontal' inertia='true' out-of-bounds>
+        <view class="cl_list_1">
+          <view class="cl_list_2" wx:for="{{list1}}" wx:key="index" data-id="{{item._id}}" bindtap="details">
+            <image src="{{item.img}}"  class="cl_list_img"></image>
+            <text class="cl_list_txt1">{{item.title}}</text>
+          </view>
+        </view>
+      </movable-view>
+    </movable-area>
+  </view>
+
+  <!-- 冬款卫衣 -->
+  <view class="cl">
+    <text class="cl_txt1"></text>
+    <text class="cl_txt2">冬款卫衣</text>
+  </view>
+
+  <view class="cl_list">
+    <movable-area style='width:auto'>
+      <movable-view animation scroll-x style='width:{{list2.length*300}}rpx' direction='horizontal' inertia='true' out-of-bounds>
+        <view class="cl_list_1">
+          <view class="cl_list_2" wx:for="{{list2}}" wx:key="index" data-id="{{item._id}}" bindtap="details">
+            <image src="{{item.img}}"  class="cl_list_img"></image>
+            <text class="cl_list_txt1">{{item.title}}</text>
+          </view>
+        </view>
+      </movable-view>
+    </movable-area>
+  </view>
+
+  <!-- 热销体系 -->
+  <view class="cl">
+    <text class="cl_txt1"></text>
+    <text class="cl_txt2">热销体系</text>
+  </view>
+
+  <view class="cl_list">
+    <movable-area style='width:auto'>
+      <movable-view animation scroll-x style='width:{{list3.length*300}}rpx' direction='horizontal' inertia='true' out-of-bounds>
+        <view class="cl_list_1">
+          <view class="cl_list_2" wx:for="{{list3}}" wx:key="index" data-id="{{item._id}}" bindtap="details">
+            <image src="{{item.img}}"  class="cl_list_img"></image>
+            <text class="cl_list_txt1">{{item.title}}</text>
+          </view>
+        </view>
+      </movable-view>
+    </movable-area>
+  </view>
+
+  <!-- 围裙围巾 -->
+  <view class="cl">
+    <text class="cl_txt1"></text>
+    <text class="cl_txt2">围裙围巾</text>
+  </view>
+
+  <view class="cl_list">
+    <movable-area style='width:auto'>
+      <movable-view animation scroll-x style='width:{{list4.length*300}}rpx' direction='horizontal' inertia='true' out-of-bounds>
+        <view class="cl_list_1">
+          <view class="cl_list_2" wx:for="{{list4}}" wx:key="index" data-id="{{item._id}}" bindtap="details">
+            <image src="{{item.img}}"  class="cl_list_img"></image>
+            <text class="cl_list_txt1">{{item.title}}</text>
+          </view>
+        </view>
+      </movable-view>
+    </movable-area>
+  </view>
+</view>
+

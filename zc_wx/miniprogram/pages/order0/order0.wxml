@@ -1,0 +1,20 @@
+<!--pages/order0/order0.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="全部">
+    <view>
+      <van-card wx:for="{{list}}" wx:key="index" num="{{item.sum}}" price="{{item.price}}" desc="有问题，联系客服" title="{{item.title}}" bindtap="details" data-id="{{item.good_id}}" thumb="{{item.img}}"/>
+    </view>
+  </van-tab>
+
+  <van-tab title="进行中">
+    <van-card wx:for="{{list}}" wx:key="index" wx:if="{{item.status==1}}" num="{{item.sum}}" price="{{item.price}}" desc="有问题，联系客服" title="{{item.title}}" thumb="{{item.img}}"/>
+  </van-tab>
+
+  <van-tab title="已完成">
+    <van-card wx:for="{{list}}" wx:key="index" wx:if="{{item.status==2}}" num="{{item.sum}}" price="{{item.price}}" desc="有问题，联系客服" title="{{item.title}}" thumb="{{item.img}}"/>
+  </van-tab>
+
+  <van-tab title="已取消">
+    <van-card wx:for="{{list}}" wx:key="index" wx:if="{{item.status==3}}" num="{{item.sum}}" price="{{item.price}}" desc="有问题，联系客服" title="{{item.title}}" thumb="{{item.img}}"/>
+  </van-tab>
+</van-tabs>

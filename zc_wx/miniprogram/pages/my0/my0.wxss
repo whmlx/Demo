@@ -1,0 +1,78 @@
+/* pages/my0/my0.wxss */
+.login{
+  height: 320rpx;
+  width: 100%;
+  background: #d12f3a;
+  border-bottom-left-radius: 45%;
+  border-bottom-right-radius: 45%;
+  padding-top: 40rpx;
+}
+.login_img{
+  display: block;
+  width:120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.login_txt{
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top:10rpx;
+}
+
+.order{
+  width: 90%;
+  background: white;
+  margin: -60rpx auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: 10rpx;
+}
+.order_top_img{
+  float:right;
+}
+.order_top{
+  padding: 20rpx 20rpx;
+  font-size: 28rpx;
+  color:#353535;
+  border-bottom: 1px solid #f2f2f2;
+}
+/* .order_top_img{
+  float: right;
+} */
+.order_bottom{
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 30rpx;
+}
+.order_bottom_txt{
+  font-size: 20rpx;
+  display: block;
+}
+
+.xq{
+  width: 90%;
+  background: white;
+  margin: 200rpx auto;
+  padding: 20rpx 0;
+  border-radius: 10rpx;
+}
+.address{
+  padding: 15rpx 30rpx;
+}
+.address_img{
+  width:32rpx;
+  height:32rpx;
+  
+}
+.address_txt1{
+  margin-left: 40rpx;
+  font-size: 28rpx;
+}
+.address_txt2{
+  float: right;
+  font-size: 28rpx;
+}

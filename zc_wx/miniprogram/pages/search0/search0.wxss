@@ -1,0 +1,62 @@
+/* pages/search0/search0.wxss */
+.d1{
+  height:20rpx;
+}
+.main{
+  display: flex;
+  justify-content: center;
+  background: white;
+}
+.img{
+  width:690rpx;
+  height: 384rpx;
+  border:2rpx solid #f1f1f1;
+  margin-top:20rpx;
+}
+.txt{
+  background: white;
+  display: flex;
+  justify-content: center;
+}
+.txt0{
+  width:690rpx;
+}
+.txt1{
+  display: block;
+  font-size: 14px;
+  margin-top:20rpx;
+}
+.txt2{
+  display: block;
+  font-size: 12px;
+  color: #888888;
+  margin-top:10rpx;
+}
+.txt00{
+  margin-top:10rpx;
+  margin-bottom: 40rpx;
+}
+.txt3{
+  font-size: 16px;
+  color: #eb3477;
+}
+.txt4{
+  text-decoration: line-through;
+  font-size: 12px;
+  color: #888888;
+}
+.txt5{
+  width: 160rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: #fff;
+  background-color: rgb(235, 52, 119);
+  border-radius: 12px;
+  font-size: 12px;
+  display: inline-block;
+  float:right;
+}
+.main_border{
+  border:1px solid #f2f2f2;
+}

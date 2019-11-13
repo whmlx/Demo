@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/login0/login0",
+    "pages/home0/home0",
+    "pages/details0/details0",
+    "pages/my0/my0",
+    "pages/order0/order0",
+    "pages/cart0/cart0",
+    "pages/class0/class0",
+    "pages/settlement0/settlement0",
+    "pages/search0/search0",
+    "pages/goodlist0/goodlist0"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "众潮定制商城",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#B3B5B7",
+    "selectedColor": "#ED5D29",
+    "list": [{
+      "pagePath": "pages/home0/home0",
+      "text": "首页",
+      "iconPath": "images/01.png",
+      "selectedIconPath": "images/01_active.png"
+    },
+    {
+      "pagePath": "pages/class0/class0",
+      "text": "分类",
+      "iconPath": "images/02.png",
+      "selectedIconPath": "images/02_active.png"
+    },
+    {
+      "pagePath": "pages/cart0/cart0",
+      "text": "购物车",
+      "iconPath": "images/03.png",
+      "selectedIconPath": "images/03_active.png"
+    },
+    {
+      "pagePath": "pages/my0/my0",
+      "text": "我的",
+      "iconPath": "images/04.png",
+      "selectedIconPath": "images/04_active.png"
+    }
+    ]
+  },
+  "usingComponents": {
+    "van-search": "../miniprogram_npm/vant-weapp/search/index"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

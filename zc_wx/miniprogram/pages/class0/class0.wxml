@@ -1,0 +1,14 @@
+<!--pages/class0/class0.wxml-->
+<view id="main">
+  <van-search placeholder="请输入搜索关键词" bind:focus="tiaozhuan" shape="round"/>
+
+  <view class="fl">
+    <navigator url="/pages/goodlist0/goodlist0?id={{item.id}}" class="nav" wx:for="{{list}}" wx:key="index">
+      <view class="nav_view" style="">
+        <text class="nav_view_txt">{{item.name}}</text>
+      </view>
+    </navigator>
+    <button open-type="contact" bindcontact="handleContact" style="background-image:url('http://img3.doubanio.com/view/photo/s_ratio_poster/public/p2572160709.jpg')" class="btn nav nav_view nav_view_txt">客服中心</button>
+  </view>
+</view>
+

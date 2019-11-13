@@ -1,0 +1,39 @@
+/* pages/class0/class0.wxss */
+#main{
+  padding:0 20rpx;
+}
+.fl{
+  margin-top:20rpx;
+  padding: 0 10rpx 20rpx 10rpx;
+  background: white;
+  border-radius: 8rpx;
+  display: flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+}
+.nav{
+  display: block;
+  width:330rpx;
+  height:160rpx;
+  margin-top:20rpx;
+}
+.nav_view{
+  width:330rpx;
+  height:160rpx;
+  border-radius: 8rpx;
+  opacity: 0.5;
+  background:url("http://img3.doubanio.com/view/photo/s_ratio_poster/public/p2572160709.jpg")no-repeat;
+  z-index: 10;
+}
+.nav_view_txt{
+  display: block;
+  width: 330rpx;
+  height: 160rpx;
+  text-align: center;
+  line-height: 160rpx;
+  color: white;
+}
+.btn{
+  font-size: 32rpx;
+  margin: 20rpx 0 0 0;
+}

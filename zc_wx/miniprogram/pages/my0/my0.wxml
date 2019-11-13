@@ -1,0 +1,53 @@
+<!--pages/my0/my0.wxml-->
+<view>
+  <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="login">
+  <view class="login_img">
+    <open-data type="userAvatarUrl"></open-data>
+    <!-- <image src="{{img}}" style="width:120rpx;height:120rpx;"></image> -->
+  </view>
+  <view>
+    <open-data type="userNickName" class="login_txt"></open-data>
+    <!-- <text class="login_txt" style="color:white;font-size:30rpx;">{{txt}}</text> -->
+  </view>
+  </button>
+  <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="login" bindtap="login">
+    <image class="login_img" src="{{name_img}}"></image>
+    <text class="login_txt">{{name}}</text>
+  </button> -->
+
+  <view class="order">
+    <view class="order_top" bindtap="status0">
+      <text class="order_top_txt">所有订单</text>
+      <text class="order_top_img">></text>
+    </view>
+    <view class="order_bottom">
+      <view bindtap="status1">
+        <image src="/images/jinhangzhong.png" style="width:60rpx;height:60rpx;" class="order_bottom_img"></image>
+        <text class="order_bottom_txt">进行中</text>
+      </view>
+      <view bindtap="status2">
+        <image src="/images/yiwancheng.png" style="width:60rpx;height:60rpx;" class="order_bottom_img"></image>
+        <text class="order_bottom_txt">已完成</text>
+      </view>
+      <view bindtap="status3">
+        <image src="/images/yiquxiao.png" style="width:60rpx;height:60rpx;" class="order_bottom_img"></image>
+        <text class="order_bottom_txt">已取消</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="xq">
+    <view class="address" bindtap="map">
+      <image src="/images/tubiao201.png" class="address_img"></image><text class="address_txt1">长沙市雨花区万家丽中路358号</text><text class="address_txt2">></text>
+    </view>
+    <view class="address" bindtap="phone">
+      <image src="/images/weibiaoti-.png" class="address_img"></image><text class="address_txt1">0731-888888</text><text class="address_txt2">></text>
+    </view>
+    <view class="address">
+      <image src="/images/shijian.png" class="address_img"></image><text class="address_txt1">7*12小时</text>
+    </view>
+    <view class="address">
+      <image src="/images/fangzi.png" class="address_img blo"></image><text class="address_txt1 xq_1">长沙众潮网络科技有限公司长沙众潮网络科技有限公司长沙众潮网络科技有限公司长沙众潮网络科技有限公司长沙众潮网络科技有限公司长沙众潮网络科技有限公司长沙众潮网络科技有限公司长沙众潮网络科技有限公司</text>
+    </view>
+  </view>
+</view>

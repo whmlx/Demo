@@ -1,0 +1,24 @@
+<!--pages/search0/search0.wxml-->
+<view id="main">
+  <van-search value="{{ value }}" mplaceholder="请输入搜索关键词" show-action bind:search="onSearch" bind:cancel="onCancel" shape="round" focus='{true}' bind:change="change"/>
+  <view class="d1"></view>
+  <view wx:for="{{lists}}" wx:key="index" data-id="{{item._id}}" bindtap="tiaozhuan">
+    <view class="main">
+      <view class="img">
+        <image src="{{item.img}}" style="width:690rpx;height: 384rpx;"></image>
+      </view>
+    </view>
+    <view class="txt">
+      <view class="txt0">
+        <text class="txt1">{{item.title}}</text>
+        <text class="txt2">价格为指导价格，具体价格请联系相应负责人</text>
+        <view class="txt00">
+          <text class="txt3">￥{{item.price}}</text>
+          <text class="txt4">￥{{item.old_price}}</text>
+          <text class="txt5">立即预约</text>
+        </view>
+      </view>
+    </view>
+    <view class="main_border"></view>
+  </view>
+</view>

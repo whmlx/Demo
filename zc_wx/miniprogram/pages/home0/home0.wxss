@@ -1,0 +1,56 @@
+/* pages/home0/home0.wxss */
+#main{
+  padding:0 20rpx;
+  background: #f5f5f5;
+}
+.cl{
+  height:60rpx;
+  margin: 20rpx 0px 10rpx 0;
+  /* border:1px solid red; */
+}
+.cl_txt1{
+  display: inline-block;
+  background-color: rgb(87, 190, 173);
+  width: 8rpx;
+  height: 40rpx;
+  border-radius: 8rpx;
+}
+.cl_txt2{
+  margin-left: 20rpx;
+  position:absolute;
+}
+.cl_list{
+  height: 340rpx;
+  /* border:1px solid red; */
+  background: white;
+  overflow: hidden;
+  border: 0px solid red;
+  border-radius: 8rpx;
+}
+.cl_list_1{
+  display: flex;
+  text-overflow:ellipsis;
+}
+.cl_list_2{
+  width:270rpx;
+  margin:20rpx 20rpx 0rpx 20rpx;
+  border:1px solid #f2f2f2;
+  border-radius: 20rpx 20rpx 20rpx 20rpx;
+}
+.cl_list_2+.cl_list_2{
+  margin-left: 0px;
+}
+.cl_list_img{
+  width:270rpx;
+  height: 198rpx;
+  border-radius: 20rpx 20rpx 0 0;
+}
+.cl_list_txt1{
+  display: block;
+  padding: 31rpx 0rpx 31rpx 20rpx;
+  font-size: 24rpx;
+  word-break:keep-all;           /* 不换行 */
+  white-space:nowrap;          /* 不换行 */
+  overflow:hidden;               /* 内容超出宽度时隐藏超出部分的内容 */
+  text-overflow:ellipsis;         
+}

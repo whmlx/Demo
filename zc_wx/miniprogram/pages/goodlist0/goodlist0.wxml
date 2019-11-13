@@ -1,0 +1,78 @@
+<!--pages/goodlist0/goodlist0.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="全部">
+    <view class="d1"></view>
+    <view wx:for="{{lists}}" wx:key="index" data-id="{{item._id}}" bindtap="tiaozhuan">
+      <view class="main">
+        <view class="img">
+          <image src="{{item.img}}" style="width:690rpx;height: 384rpx;"></image>
+        </view>
+      </view>
+      <view class="txt">
+        <view class="txt0">
+          <text class="txt1">{{item.title}}</text>
+          <text class="txt2">价格为指导价格，具体价格请联系相应负责人</text>
+          <view class="txt00">
+            <text class="txt3">￥{{item.price}}</text>
+            <text class="txt4">￥{{item.old_price}}</text>
+            <text class="txt5">立即预约</text>
+          </view>
+        </view>
+      </view>
+      <view class="main_border"></view>
+    </view>
+  </van-tab>
+
+  <van-tab title="圆领短袖">
+    <view wx:for="{{list}}" wx:key="index" data-id="{{item._id}}" bindtap="tiaozhuan">
+      <view class="main">
+        <view class="img">
+          <image src="{{item.img}}" style="width:690rpx;height: 384rpx;"></image>
+        </view>
+      </view>
+      <view class="txt">
+        <view class="txt0">
+          <text class="txt1">{{item.title}}</text>
+          <text class="txt2">价格为指导价格，具体价格请联系相应负责人</text>
+          <view class="txt00">
+            <text class="txt3">￥{{item.price}}</text>
+            <text class="txt4">￥{{item.old_price}}</text>
+            <text class="txt5">立即预约</text>
+          </view>
+        </view>
+      </view>
+      <view class="main_border"></view>
+    </view>
+  </van-tab>
+
+  <van-tab title="秋冬卫衣">
+    <view wx:for="{{list}}" wx:key="index" data-id="{{item._id}}" bindtap="tiaozhuan">
+      <view class="main">
+        <view class="img">
+          <image src="{{item.img}}" style="width:690rpx;height: 384rpx;"></image>
+        </view>
+      </view>
+      <view class="txt">
+        <view class="txt0">
+          <text class="txt1">{{item.title}}</text>
+          <text class="txt2">价格为指导价格，具体价格请联系相应负责人</text>
+          <view class="txt00">
+            <text class="txt3">￥{{item.price}}</text>
+            <text class="txt4">￥{{item.old_price}}</text>
+            <text class="txt5">立即预约</text>
+          </view>
+        </view>
+      </view>
+      <view class="main_border"></view>
+    </view>
+  </van-tab>
+  <van-tab title="翻领短袖">翻领短袖</van-tab>
+  <van-tab title="韩系校服">韩系校服</van-tab>
+  <van-tab title="马甲帽子">马甲帽子</van-tab>
+  <van-tab title="篮球服">篮球服</van-tab>
+  <van-tab title="围巾围裙">围巾围裙</van-tab>
+  <van-tab title="相册定制">相册定制</van-tab>
+  <van-tab title="冲锋衣">冲锋衣</van-tab>
+</van-tabs>
+
+

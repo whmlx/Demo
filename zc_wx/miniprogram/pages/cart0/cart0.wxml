@@ -1,0 +1,48 @@
+<!--pages/cart0/cart0.wxml-->
+<view wx:if="{{show}}" class="cart_null">
+  <image class="cart_null_img" src="/images/cart-null.png"></image>
+  <view class="cart_null_txt">购物车空空哒</view>
+  <text class="cart_null_button" bindtap="guangguang">去逛逛</text>
+</view>
+
+<view style="margin-bottom:100rpx;">
+  <view class="qx">
+    <van-checkbox wx:if="{{!show}}" value="{{ checkeds }}" bind:change="onChanges">全选</van-checkbox>
+  </view>
+  <van-checkbox-group value="{{ checked }}" bind:change="onChange">
+    <view class="cart_good" wx:for="{{list}}" wx:key="index">
+      <view class="cart_good_v1">
+        <van-checkbox name="{{item._id}}"></van-checkbox>
+      </view>
+      
+      <view>
+        <van-swipe-cell right-width="{{ 65 }}">
+          <van-cell-group>
+            <view class="cart_good_v2" bindtap="details" data-id="{{item.good_id}}">
+              <image src="{{item.img}}" class="cart_good_img"></image>
+            </view>
+
+            <view class="cart_good_v3">
+              <text class="cart_good_v3_txt">{{item.title}}</text>
+              <view class="cart_good_v3_v1">
+                <text class="cart_good_v3_money">￥{{item.price}}</text>
+                <van-stepper value="{{ item.sum }}" bind:change="onChangesum" class="sum" integer data-id="{{item._id}}" />
+              </view>
+            </view>
+          </van-cell-group>
+          <view slot="right" class="del" bindtap="del" data-delid="{{item._id}}">删除</view>
+        </van-swipe-cell>
+      </view>
+
+      <view class="clear"></view>
+    </view>
+  </van-checkbox-group>
+</view>
+
+<view wx:if="{{!show}}">
+  <van-submit-bar
+  price="{{ price }}"
+  button-text="提交订单"
+  bindtap="onSubmit"
+/>
+</view>
