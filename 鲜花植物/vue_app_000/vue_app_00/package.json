@@ -7,7 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^1.13.5",
     "mint-ui": "^2.2.9",
     "multer": "^1.4.2",
     "v-touch": "^1.5.2",
